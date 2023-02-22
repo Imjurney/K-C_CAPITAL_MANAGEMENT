@@ -1,0 +1,13 @@
+# Project commit message template
+
+##################
+# fix : 수정
+# add : 추가
+# feat : 새로운 기능 개발
+# update : 보완
+# test: 테스트를 추가하거나 수정했을 때를 의미
+# chore : build와 관련된 부분, 패키지 매니저 설정 등
+# style : 코드의 변화와 관련없는 포맷이나 세미콜론을 놓친 것과 같은 부분
+# refactor : 코드의 리팩토링
+# docs : 문서 관련 수정
+##################
