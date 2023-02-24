@@ -15,6 +15,9 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "embla-carousel-class-names": "7.0.9",
+    "embla-carousel-react": "7.0.9",
+    "embla-carousel-wheel-gestures": "3.0.0",
     "@babel/core": "7.21.0",
     "@storybook/addon-a11y": "6.5.16",
     "@storybook/addon-actions": "6.5.16",
