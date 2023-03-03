@@ -36,6 +36,7 @@
     "@vitejs/plugin-react-swc": "^3.0.0",
     "autoprefixer": "10.4.13",
     "babel-loader": "8.3.0",
+    "chromatic": "6.17.1",
     "clsx": "1.2.1",
     "embla-carousel-class-names": "7.0.9",
     "embla-carousel-react": "7.0.9",
