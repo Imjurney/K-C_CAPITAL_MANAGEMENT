@@ -1,4 +1,4 @@
-import LabelStyle from './Label.module.css';
+import LabelStyle from '@/components/Label/Label.module.css';
 import clsx from 'clsx';
 interface LabelProps {
   jobTitle?: string;

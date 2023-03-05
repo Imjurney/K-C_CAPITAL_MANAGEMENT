@@ -1,4 +1,4 @@
-import { Story, Meta, ComponentStory } from '@storybook/react';
+import { Meta, ComponentStory } from '@storybook/react';
 import { Label } from '@/components/Label/Label';
 
 export default {
