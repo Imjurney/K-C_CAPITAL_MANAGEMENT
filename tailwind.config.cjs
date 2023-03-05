@@ -9,7 +9,7 @@ const BRANDCOLOR = {
   contact_gray: '#7D8893',
   contact_border: '#CBD2DC',
   contents_dark: '#1A1A1A',
-}
+};
 module.exports = {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
@@ -30,7 +30,9 @@ module.exports = {
       },
     },
     screens: {
-      sm: '360px',
+      mobile: { min: '360px', max: '1023px' },
+      laptop: { min: '1024px', max: '1279px' },
+      desktop: { min: '1280px' },
     },
     boxShadow: {
       article_shadow:
@@ -39,4 +41,4 @@ module.exports = {
     },
   },
   plugins: [],
-}
+};
