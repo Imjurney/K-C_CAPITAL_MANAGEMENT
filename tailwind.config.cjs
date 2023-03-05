@@ -30,7 +30,9 @@ module.exports = {
       },
     },
     screens: {
-      sm: '360px',
+      mobile: { min: '360px', max: '1023px' },
+      laptop: { min: '1024px', max: '1279px' },
+      desktop: { min: '1280px' },
     },
     boxShadow: {
       article_shadow:
