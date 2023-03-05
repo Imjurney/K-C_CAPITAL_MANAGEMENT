@@ -1,7 +1,7 @@
-import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+// import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import ko from 'axe-core/locales/ko.json';
 import 'tailwindcss/tailwind.css';
-
+import { CUSTOM_VIEWPORT } from './customViewport.cjs';
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
@@ -11,7 +11,7 @@ export const parameters = {
     },
   },
   viewport: {
-    viewports: INITIAL_VIEWPORTS,
+    viewports: CUSTOM_VIEWPORT,
   },
   a11y: {
     config: {

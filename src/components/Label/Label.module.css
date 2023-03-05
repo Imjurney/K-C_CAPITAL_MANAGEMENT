@@ -1,0 +1,12 @@
+.normal {
+  @apply font-normal;
+}
+
+.bold {
+  @apply font-bold;
+}
+/* 
+.default {
+  @apply ;
+  @apply ;
+} */

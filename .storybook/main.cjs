@@ -1,4 +1,6 @@
 const path = require('path');
+const { mergeConfig, loadConfigFromFile } = require('vite');
+
 module.exports = {
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
@@ -23,12 +25,15 @@ module.exports = {
   features: {
     storyStoreV7: true,
   },
-  viteFinal: async (config, { configType }) => {
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      '@': path.resolve('../src'),
-    };
+  async viteFinal(config, { configType }) {
+    const { config: userConfig } = await loadConfigFromFile(
+      path.resolve(__dirname, '../vite.config.ts')
+    );
 
-    return config;
+    return mergeConfig(config, {
+      ...userConfig,
+      // manually specify plugins to avoid conflict
+      plugins: [],
+    });
   },
 };
