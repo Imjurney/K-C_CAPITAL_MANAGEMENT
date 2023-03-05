@@ -37,7 +37,7 @@ function FooterWrapper({ children }: FooterWrapper) {
   );
 }
 
-function test(datas: any[]) {
+function getFooterContentsItem(datas: any[]) {
   return (
     <ul className={clsx(ResPonsiveContents)}>
       {datas?.map(
@@ -72,7 +72,7 @@ function FooterContents({ width = 240 }: FooterContentsProps) {
           src="src/assets/FooterLogo.svg"
           alt="K&amp;C Capital Management 로고 입니다"
         />
-        {datas && test(datas)}
+        {datas && getFooterContentsItem(datas)}
       </address>
       <p className={clsx('text-kc-footer_gray text-sm', ResPonsiveCopyright)}>
         &copy;2022 K&amp;C Capital Management.
