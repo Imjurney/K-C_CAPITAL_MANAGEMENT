@@ -5,8 +5,13 @@
 .bold {
   @apply font-bold;
 }
-/* 
+
+.wrapper {
+  @apply flex gap-7 items-center;
+}
+
 .default {
-  @apply ;
-  @apply ;
-} */
+  @apply min-w-0 w-fit p-[0.625rem] rounded-full;
+  @apply bg-kc-red text-white;
+  @apply text-center;
+}

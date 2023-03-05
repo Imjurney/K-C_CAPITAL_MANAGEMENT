@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Header } from './Header';
 import './page.css';
-
+import { ReactComponent as Logo } from '@/assets/Logo.svg';
 type User = {
   name: string;
 };
@@ -12,13 +12,6 @@ export const PageTest: React.VFC = () => {
 
   return (
     <article>
-      <Header
-        user={user}
-        onLogin={() => setUser({ name: 'Jane Doe' })}
-        onLogout={() => setUser(undefined)}
-        onCreateAccount={() => setUser({ name: 'Jane Doe' })}
-      />
-
       <section className="bg-red-500">
         <h2>Pages in Storybook</h2>
         <p>
