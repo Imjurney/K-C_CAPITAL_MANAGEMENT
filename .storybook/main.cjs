@@ -32,7 +32,6 @@ module.exports = {
 
     return mergeConfig(config, {
       ...userConfig,
-      // manually specify plugins to avoid conflict
       plugins: [],
     });
   },
