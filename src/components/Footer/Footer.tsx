@@ -1,7 +1,8 @@
 import clsx from 'clsx';
 import { ReactNode, useEffect, useState } from 'react';
 import FooterStyle from '@/components/Footer/Footer.module.css';
-import axios, { AxiosResponse } from 'axios';
+import FooterLogo from '@/stories/assets/FooterLogo.svg';
+import axios from 'axios';
 
 // import { ReactComponent as FooterLogo } from '@/components/Footer/FooterLogo.svg';
 interface FooterWrapper {
@@ -10,6 +11,22 @@ interface FooterWrapper {
 interface FooterContentsProps {
   width?: number;
 }
+
+const _Dummy = [
+  {
+    subject: 'Fax',
+    contents: '+64 27 3159618',
+  },
+  {
+    subject: 'Tel',
+    contents: '+64 27 2229980',
+  },
+  {
+    subject: 'Address',
+    contents: '17 HAWDON STREET, SYDENHAM CHRISTCHURCH',
+    className: 'flex',
+  },
+];
 
 const ResPonsiveLayout = [
   'mobile:px-16 mobile:pt-10',
@@ -59,8 +76,8 @@ function getFooterContentsItem(datas: any[]) {
 function FooterContents({ width = 240 }: FooterContentsProps) {
   const [datas, setData] = useState<any[]>();
   useEffect(() => {
-    const getfooterInfromation = () => {
-      axios.get('src/data/footer.json').then((res) => setData(res.data));
+    const getfooterInfromation = async () => {
+      await axios.get('src/data/footer.json').then((res) => setData(res.data));
     };
     getfooterInfromation();
   }, []);
@@ -69,10 +86,10 @@ function FooterContents({ width = 240 }: FooterContentsProps) {
       <address className={clsx(FooterStyle.default, ResPonsiveLayout)}>
         <img
           width={width}
-          src="src/assets/FooterLogo.svg"
+          src={FooterLogo}
           alt="K&amp;C Capital Management 로고 입니다"
         />
-        {datas && getFooterContentsItem(datas)}
+        {_Dummy && getFooterContentsItem(_Dummy)}
       </address>
       <p className={clsx('text-kc-footer_gray text-sm', ResPonsiveCopyright)}>
         &copy;2022 K&amp;C Capital Management.
