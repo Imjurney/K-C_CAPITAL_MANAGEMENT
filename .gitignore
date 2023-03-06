@@ -1,16 +1,17 @@
 # Logs
 logs
 *.log
-npm-debug.log*
+npm-detlebug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
-
+.eslintcache
 node_modules
 dist
 dist-ssr
 *.local
+.eslintcache
 
 # Editor directories and files
 .vscode/*

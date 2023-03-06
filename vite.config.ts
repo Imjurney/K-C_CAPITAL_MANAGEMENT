@@ -2,13 +2,11 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
 import path from 'path';
 import svgr from 'vite-plugin-svgr';
-// https://vitejs.dev/config/
+import tsconfigPaths from 'vite-tsconfig-paths';
+
 export default defineConfig({
-  plugins: [react(), svgr()],
+  plugins: [react(), svgr(), tsconfigPaths()],
   resolve: {
-    alias: [
-      { find: '@', replacement: path.resolve('src') },
-      { find: '@/components', replacement: path.resolve('src/components') },
-    ],
+    alias: [{ find: '@', replacement: path.resolve('src') }],
   },
 });

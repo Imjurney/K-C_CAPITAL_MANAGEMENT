@@ -1,5 +1,8 @@
 const path = require('path');
+const tsconfigPaths = require('vite-tsconfig-paths').default;
 const { mergeConfig, loadConfigFromFile } = require('vite');
+const { default: reactSvgPlugin } = require('vite-plugin-react-svg');
+const { svgr } = require('vite-plugin-svgr');
 
 module.exports = {
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
@@ -32,7 +35,7 @@ module.exports = {
 
     return mergeConfig(config, {
       ...userConfig,
-      plugins: [],
+      plugins: [tsconfigPaths(), reactSvgPlugin(), svgr()],
     });
   },
 };

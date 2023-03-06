@@ -1,0 +1,11 @@
+.underlineBase {
+  @apply flex flex-col items-center;
+  @apply font-bold;
+  @apply mobile:text-lg mobile:leading-none laptop:text-3xl desktop:text-3xl;
+}
+.underlineBase::after {
+  @apply content-[''] border-[3px] block border-black w-40;
+  @apply mobile:mt-5;
+  @apply laptop:mt-7;
+  @apply desktop:mt-7;
+}
