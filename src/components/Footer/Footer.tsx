@@ -59,8 +59,8 @@ function getFooterContentsItem(datas: any[]) {
 function FooterContents({ width = 240 }: FooterContentsProps) {
   const [datas, setData] = useState<any[]>();
   useEffect(() => {
-    const getfooterInfromation = () => {
-      axios.get('src/data/footer.json').then((res) => setData(res.data));
+    const getfooterInfromation = async () => {
+      await axios.get('src/data/footer.json').then((res) => setData(res.data));
     };
     getfooterInfromation();
   }, []);
