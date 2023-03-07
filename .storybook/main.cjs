@@ -1,7 +1,7 @@
 const path = require('path');
 const tsconfigPaths = require('vite-tsconfig-paths').default;
 const { mergeConfig, loadConfigFromFile } = require('vite');
-const { default: reactSvgPlugin } = require('vite-plugin-react-svg');
+// const { default: reactSvgPlugin } = require('vite-plugin-react-svg');
 const { svgr } = require('vite-plugin-svgr');
 
 module.exports = {
@@ -11,6 +11,7 @@ module.exports = {
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
     '@storybook/addon-a11y',
+    'storybook-axios/register',
     {
       name: '@storybook/addon-postcss',
       options: {
@@ -35,7 +36,7 @@ module.exports = {
 
     return mergeConfig(config, {
       ...userConfig,
-      plugins: [tsconfigPaths(), reactSvgPlugin(), svgr()],
+      plugins: [],
     });
   },
 };
