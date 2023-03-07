@@ -29,14 +29,21 @@ module.exports = {
   features: {
     storyStoreV7: true,
   },
-  async viteFinal(config, { configType }) {
-    const { config: userConfig } = await loadConfigFromFile(
-      path.resolve(__dirname, '../vite.config.ts')
-    );
 
+  async viteFinal(config) {
     return mergeConfig(config, {
-      ...userConfig,
-      plugins: [],
+      plugins: [tsconfigPaths()],
     });
   },
 };
+
+//   async viteFinal(config, { configType }) {
+//     const { config: userConfig } = await loadConfigFromFile(
+//       path.resolve(__dirname, '../vite.config.ts')
+//     );
+//
+//     return mergeConfig(config, {
+//       ...userConfig,
+//       plugins: [],
+//     });
+//   },
