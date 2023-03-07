@@ -40,5 +40,5 @@ module.exports = {
       contents_shadow: '0px 0px 10px rgba(0, 0, 0, 0.2)',
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/line-clamp')],
 };
