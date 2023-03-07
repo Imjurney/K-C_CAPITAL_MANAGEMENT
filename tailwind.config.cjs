@@ -31,13 +31,14 @@ module.exports = {
     },
     screens: {
       mobile: { min: '360px', max: '1023px' },
-      laptop: { min: '1024px', max: '1279px' },
+      laptop: { min: '1023px', max: '1279px' },
       desktop: { min: '1280px' },
     },
     boxShadow: {
       article_shadow:
         '0px -4px 10px rgba(0, 0, 0, 0.1), 0px 4px 10px rgba(0, 0, 0, 0.1)',
       contents_shadow: '0px 0px 10px rgba(0, 0, 0, 0.2)',
+      shadow_sm: '0 1px 2px 0 rgb(0 0 0 / 0.05)',
     },
   },
   plugins: [require('@tailwindcss/line-clamp')],

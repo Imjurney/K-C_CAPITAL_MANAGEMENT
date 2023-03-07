@@ -1,0 +1,12 @@
+.ul {
+  @apply bg-kc-footer_lightgray w-full bg-opacity-80 text-kc-footer_gray text-sm text-center float-right;
+  @apply shadow-shadow_sm;
+}
+
+.ul > li {
+  @apply px-5 py-2;
+}
+
+.ul > li:hover {
+  @apply text-white;
+}
