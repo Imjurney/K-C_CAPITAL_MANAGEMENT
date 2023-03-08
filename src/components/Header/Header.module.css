@@ -1,12 +1,34 @@
 .ul {
-  @apply bg-kc-footer_lightgray w-full bg-opacity-80 text-kc-footer_gray text-sm text-center float-right;
+  @apply bg-kc-contents_dark w-2/3 h-[100vh] text-kc-footer_gray text-sm text-left float-left;
   @apply shadow-shadow_sm;
+  @apply laptop:hidden desktop:hidden;
+  @apply absolute top-0 z-50;
+  @apply pt-10;
+  @apply opacity-0;
 }
 
 .ul > li {
   @apply px-5 py-2;
+  @apply cursor-pointer;
 }
 
 .ul > li:hover {
   @apply text-white;
+  @apply cursor-pointer;
+}
+
+.wrapper {
+  @apply bg-black flex justify-between items-center px-5;
+  @apply mobile:py-4 laptop:py-8 desktop:py-8 desktop:px-10;
+  @apply sticky top-0;
+  @apply z-30;
+  @apply shadow-shadow_sm;
+}
+
+.navItem {
+  @apply text-white flex text-base leading-none;
+  @apply mobile:hidden;
+  @apply laptop:gap-5 ml-[111px];
+  @apply desktop:gap-[3.75rem] ml-[187px];
+  @apply cursor-pointer;
 }

@@ -2,8 +2,9 @@ import LogoImage from '@/assets/Logo.svg';
 import {
   createContext,
   ReactNode,
+  RefObject,
   useContext,
-  useEffect,
+  useLayoutEffect,
   useRef,
   useState,
 } from 'react';
@@ -13,20 +14,36 @@ import {
 } from 'react-icons/rx';
 import HeaderStyle from '@/components/Header/Header.module.css';
 import { gsap } from 'gsap';
+import clsx from 'clsx';
 
-interface test {
+/* -------------------------------------------------------------------------- */
+
+interface ToggleProps {
   children?: ReactNode;
   toggle?: boolean;
   setToggle?: () => void;
+  ref?: RefObject<HTMLUListElement>;
 }
 
-const defaultState = {
-  toggle: true,
-};
-const ToggleContext = createContext<test>(defaultState);
+interface NavigationProps {
+  children: ReactNode;
+}
 
-function ToggleProvider({ children }: test) {
+interface HeaderProps {
+  description?: string;
+}
+
+/* ---------------------------- contextAPI ---------------------------------------------- */
+const defaultState = {
+  toggle: false,
+};
+
+const ToggleContext = createContext<ToggleProps>(defaultState);
+
+function ToggleProvider({ children }: ToggleProps) {
   const [toggle, setToggle] = useState(defaultState.toggle);
+  const ref = useRef<HTMLUListElement>(null);
+
   return (
     <ToggleContext.Provider
       value={{
@@ -34,6 +51,7 @@ function ToggleProvider({ children }: test) {
         setToggle: () => {
           setToggle((toggle: boolean) => !toggle);
         },
+        ref,
       }}
     >
       {children}
@@ -45,6 +63,7 @@ const useSelector = () => {
   return useContext(ToggleContext);
 };
 
+/* --------------------------------- 컴포넌트 -------------------------------- */
 function Logo() {
   return (
     <button>
@@ -53,67 +72,119 @@ function Logo() {
   );
 }
 
-interface NavigationProps {
-  children: ReactNode;
-}
-function Navigation({ ...props }: NavigationProps) {
+function NavigationWrapper({ ...props }: NavigationProps) {
   return <nav>{props.children}</nav>;
 }
 
 function NavigationItem() {
-  const ref = useRef<HTMLUListElement>(null);
-  const { toggle } = useSelector();
-  useEffect(() => {
-    gsap.from(ref.current, {
-      opacity: 0,
-      duration: 1,
-    });
-  });
   return (
-    <Navigation>
-      {!toggle && (
-        <ul ref={ref} className={HeaderStyle.ul}>
-          <li>HOME</li>
-          <li>ABOUT US</li>
-          <li>INVESTMENTS</li>
-          <li>TESTIMONIALS</li>
-          <li>OTHER SERVICES</li>
-          <li>CONTACT</li>
-        </ul>
-      )}
-    </Navigation>
+    <ul className="mobile:hidden text-white flex gap-5 ml-[111px] text-base cursor-pointer;">
+      <li className="cursor-pointer">HOME</li>
+      <li>ABOUT US</li>
+      <li>INVESTMENTS</li>
+      <li>TESTIMONIALS</li>
+      <li>OTHER SERVICES</li>
+      <li>CONTACT</li>
+    </ul>
+  );
+}
+
+function BurgerNavigationItem() {
+  const { ref } = useSelector();
+
+  return (
+    <NavigationWrapper>
+      <ul ref={ref} className={HeaderStyle.ul} id="burger_list">
+        <li>HOME</li>
+        <li>ABOUT US</li>
+        <li>INVESTMENTS</li>
+        <li>TESTIMONIALS</li>
+        <li>OTHER SERVICES</li>
+        <li>CONTACT</li>
+      </ul>
+    </NavigationWrapper>
   );
 }
 
 function HamburgerButton() {
   const { toggle, setToggle } = useSelector();
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const isMounted = useRef(false);
+  useLayoutEffect(() => {
+    const cxt = gsap.context(() => {
+      buttonRef.current?.addEventListener('click', () => {
+        if (!isMounted.current) {
+          isMounted.current = true;
+          gsap.to('#burger_list', {
+            x: 0,
+            opacity: 1,
+            duration: 1,
+            ease: 'power1',
+          });
+        }
+        gsap.from('#burger_list', {
+          xPercent: !toggle ? -120 : 0,
+          opacity: 0.9,
+          duration: 1.1,
+          ease: 'power1',
+        });
+      });
+    });
+
+    return () => cxt.revert();
+  });
+
   return (
-    <button
-      onClick={setToggle}
-      aria-label="navigation_button"
-      className="text-white flex items-center"
-    >
-      {toggle ? (
-        <BurgerMenu size={18} strokeWidth={0.5} />
+    <>
+      {!toggle ? (
+        <button
+          ref={buttonRef}
+          onClick={setToggle}
+          aria-label="navigation_button"
+          className={clsx(
+            toggle ? 'burgerButton' : 'Xbutton',
+            'text-white flex items-center'
+          )}
+        >
+          <BurgerMenu
+            id="burgerButton"
+            className="burgerButton laptop:hidden desktop:hidden"
+            size={18}
+            strokeWidth={0.5}
+          />
+        </button>
       ) : (
-        <Xbutton size={20} />
+        <button
+          ref={buttonRef}
+          onClick={setToggle}
+          aria-label="navigation_button"
+          className={clsx(
+            toggle ? 'burgerButton' : 'Xbutton',
+            'text-white flex items-center'
+          )}
+        >
+          <Xbutton
+            id="Xbutton"
+            className="Xbutton laptop:hidden desktop:hidden"
+            size={20}
+          />
+        </button>
       )}
-    </button>
+    </>
   );
 }
-interface HeaderProps {
-  description?: string;
-}
+
 export function Header({ description = '홈' }: HeaderProps) {
   return (
     <ToggleProvider>
-      <header className="w-full">
+      <header className="w-full sticky top-0 h-[200vh]">
         <h1 className="sr-only">{description}페이지 입니다</h1>
-        <div className="bg-black py-4 px-5 flex justify-between items-center">
+        <div className={HeaderStyle.wrapper}>
           <Logo />
+          <NavigationItem />
           <HamburgerButton />
         </div>
-        <NavigationItem />
+        <BurgerNavigationItem />
       </header>
     </ToggleProvider>
   );
