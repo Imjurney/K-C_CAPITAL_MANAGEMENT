@@ -1,9 +1,10 @@
-import { ReactComponent as FooterLogo } from '@/components/Footer/FooterLogo.svg';
+import { Header } from './components/Header/Header';
 function App() {
   return (
     <div>
-      <FooterLogo />
-      <div className="w-20 h-20 bg-kc-red">test</div>
+      <Header />
+      <div className="w-20 h-20 bg-kc-red sticky top-0">test</div>
+      <div className="h-[1000vh]"></div>
     </div>
   );
 }

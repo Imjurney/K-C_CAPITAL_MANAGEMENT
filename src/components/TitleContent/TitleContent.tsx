@@ -11,7 +11,7 @@ export function TitleContent({ content = 'INVESTMENTS' }: TitleContent) {
   useEffect(() => {
     window.addEventListener('resize', () => {
       if (h2Ref.current?.textContent?.match('OTHER SERVICES')) {
-        if (document.body.getBoundingClientRect().width <= 360) {
+        if (document.body.getBoundingClientRect().width <= 720) {
           h2Ref.current.textContent = 'OTHER SERVICES';
         } else {
           h2Ref.current.textContent =
