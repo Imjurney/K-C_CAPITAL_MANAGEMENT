@@ -20,15 +20,26 @@
 .wrapper {
   @apply bg-black flex justify-between items-center px-5;
   @apply mobile:py-4 laptop:py-8 desktop:py-8 desktop:px-10;
-  @apply sticky top-0;
-  @apply z-30;
+  @apply sticky top-0 z-30;
   @apply shadow-shadow_sm;
 }
 
+.header {
+  @apply w-full sticky top-0 h-[200vh];
+}
 .navItem {
   @apply text-white flex text-base leading-none;
   @apply mobile:hidden;
-  @apply laptop:gap-5 ml-[111px];
-  @apply desktop:gap-[3.75rem] ml-[187px];
+  @apply laptop:gap-5 laptop:ml-[111px];
+  @apply desktop:gap-[3.75rem] desktop:ml-[164px];
+}
+
+.button {
+  @apply text-white;
+  @apply flex items-center;
+  @apply laptop:hidden desktop:hidden;
+}
+
+.navItem > li {
   @apply cursor-pointer;
 }

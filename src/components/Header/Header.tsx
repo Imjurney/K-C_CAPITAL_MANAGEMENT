@@ -78,8 +78,8 @@ function NavigationWrapper({ ...props }: NavigationProps) {
 
 function NavigationItem() {
   return (
-    <ul className="mobile:hidden text-white flex gap-5 ml-[111px] text-base cursor-pointer;">
-      <li className="cursor-pointer">HOME</li>
+    <ul className={HeaderStyle.navItem}>
+      <li>HOME</li>
       <li>ABOUT US</li>
       <li>INVESTMENTS</li>
       <li>TESTIMONIALS</li>
@@ -143,12 +143,12 @@ function HamburgerButton() {
           aria-label="navigation_button"
           className={clsx(
             toggle ? 'burgerButton' : 'Xbutton',
-            'text-white flex items-center'
+            HeaderStyle.button
           )}
         >
           <BurgerMenu
             id="burgerButton"
-            className="burgerButton laptop:hidden desktop:hidden"
+            className="burgerButton"
             size={18}
             strokeWidth={0.5}
           />
@@ -160,14 +160,10 @@ function HamburgerButton() {
           aria-label="navigation_button"
           className={clsx(
             toggle ? 'burgerButton' : 'Xbutton',
-            'text-white flex items-center'
+            HeaderStyle.button
           )}
         >
-          <Xbutton
-            id="Xbutton"
-            className="Xbutton laptop:hidden desktop:hidden"
-            size={20}
-          />
+          <Xbutton id="Xbutton" className="Xbutton" size={20} />
         </button>
       )}
     </>
@@ -177,7 +173,7 @@ function HamburgerButton() {
 export function Header({ description = '홈' }: HeaderProps) {
   return (
     <ToggleProvider>
-      <header className="w-full sticky top-0 h-[200vh]">
+      <header className={HeaderStyle.header}>
         <h1 className="sr-only">{description}페이지 입니다</h1>
         <div className={HeaderStyle.wrapper}>
           <Logo />
