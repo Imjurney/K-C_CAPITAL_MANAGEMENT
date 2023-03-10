@@ -2,7 +2,7 @@
 import ko from 'axe-core/locales/ko.json';
 import 'tailwindcss/tailwind.css';
 import '../src/index.css';
-import { CUSTOM_VIEWPORT } from './customViewport.cjs';
+import { CUSTOM_VIEWPORT } from './customViewport.js';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
