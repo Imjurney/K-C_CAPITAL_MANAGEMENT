@@ -2,19 +2,40 @@
   @apply flex flex-col;
   @apply border border-kc-contact_border;
   @apply mobile:w-[17.5rem];
+  @apply laptop:w-[36.625rem] laptop:flex-row;
+  @apply desktop:w-[36.625rem] desktop:flex-row;
 }
 
+.wrapper:focus-visible {
+  @apply outline-none ring-offset-2 ring-2 rounded-sm border-blue-500;
+}
+
+.mail_wrapper {
+  @apply laptop:flex laptop:items-center laptop:gap-2;
+  @apply desktop:flex desktop:items-center desktop:gap-2;
+}
 .outline_vertical {
   @apply text-kc-contact_gray font-medium;
   @apply flex;
   @apply mobile:pt-[0.625rem] mobile:flex-col mobile:ml-[0.625rem] mobile:text-sm;
-  @apply laptop:ml-2 laptop:w-[7.6875rem] laptop:items-center laptop:justify-center;
-  @apply desktop:w-[7.6875rem] desktop:items-center desktop:justify-center;
+  @apply laptop:ml-2 laptop:w-[7.6875rem] laptop:items-center laptop:justify-center laptop:flex-row;
+  @apply desktop:ml-2 desktop:w-[7.6875rem] desktop:items-center desktop:justify-center desktop:flex-row;
 }
 
 .outline_vertical::after {
   @apply content-[''] border-[1px] inline-block border-kc-contact_border;
   @apply mobile:mt-[0.6875rem] mobile:w-[16.25rem];
-  @apply laptop:ml-5 laptop:h-[1.375rem];
-  @apply desktop:ml-5 desktop:h-[1.375rem];
+  @apply laptop:ml-[3.625rem] laptop:h-[1.375rem];
+  @apply desktop:ml-[3.625rem] desktop:h-[1.375rem];
+}
+
+.input {
+  @apply outline-none;
+  @apply mobile:text-xs mobile:indent-3 mobile:w-[8rem] mobile:h-[2.0625rem];
+  @apply laptop:h-[2.625rem] laptop:w-[13rem] laptop:indent-2;
+  @apply desktop:h-[2.625rem] desktop:w-[13rem] desktop:indent-2;
+}
+
+.at_sign {
+  @apply text-base text-kc-contact_gray font-medium;
 }
