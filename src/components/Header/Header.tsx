@@ -13,7 +13,7 @@ import {
   RxHamburgerMenu as BurgerMenu,
 } from 'react-icons/rx';
 import HeaderStyle from '@/components/Header/Header.module.css';
-import { gsap } from 'gsap';
+import { gsap, Power4 } from 'gsap';
 import clsx from 'clsx';
 
 /* -------------------------------------------------------------------------- */
@@ -119,14 +119,14 @@ function HamburgerButton() {
             x: 0,
             opacity: 1,
             duration: 1,
-            ease: 'power1',
+            ease: Power4.easeOut,
           });
         }
         gsap.from('#burger_list', {
           xPercent: !toggle ? -120 : 0,
           opacity: 0.9,
           duration: 1.1,
-          ease: 'power1',
+          ease: Power4.easeOut,
         });
       });
     });
