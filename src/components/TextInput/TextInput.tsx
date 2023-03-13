@@ -1,24 +1,22 @@
-import { useForm, ValidationError } from '@formspree/react';
-import { ReactNode, useEffect, useRef } from 'react';
+import { TUseForm, useForm, ValidationError } from '@formspree/react';
+import { createContext, ReactNode, useEffect, useRef, useState } from 'react';
 import { Success } from '@/components/Success/Success';
 import TextInputStyle from '@/components/TextInput/TextInput.module.css';
-import { Button } from '../Button/Button';
 import clsx from 'clsx';
+import { EmailInput } from '../EmailInput/EmailInput';
+import { Button } from '../Button/Button';
+
 interface FormProvierProps {
-  uuid?: string;
-  children: ReactNode;
+  children?: ReactNode;
+  onSubmit: TUseForm[1];
 }
+
 function FormProvier({ ...props }: FormProvierProps) {
   const { children } = props;
-  props.uuid = 'xzbqvpab';
   const formRef = useRef<HTMLFormElement>(null);
-  const [state, handleSubmit, field] = useForm('contactForm');
-  if (state.succeeded) {
-    return <Success />;
-  }
 
   return (
-    <form ref={formRef} onSubmit={handleSubmit}>
+    <form ref={formRef} onSubmit={props.onSubmit}>
       {children}
     </form>
   );
@@ -41,8 +39,12 @@ export function TextInput({
   labelName,
   type = 'text',
 }: TextInputProps) {
+  const [state, handleSubmit, data] = useForm('contactForm');
+  if (state.succeeded) {
+    return <Success />;
+  }
   return (
-    <FormProvier>
+    <FormProvier onSubmit={handleSubmit}>
       <div
         aria-label="form"
         className={clsx(
@@ -57,6 +59,7 @@ export function TextInput({
           {labelName}
         </label>
         <input
+          required
           placeholder={placeholder}
           className={
             direction === 'vertical'
@@ -67,18 +70,9 @@ export function TextInput({
           name="firstName"
           id="firstName"
         />
+        {/* <EmailInput />
+        <ValidationError field="email" prefix="Email" errors={state.errors} /> */}
       </div>
-
-      <textarea
-        className="resize-none"
-        name="memo"
-        id="momo"
-        cols={10}
-        rows={1}
-      >
-        df
-      </textarea>
-      <button type="submit">dfd</button>
     </FormProvier>
   );
 }

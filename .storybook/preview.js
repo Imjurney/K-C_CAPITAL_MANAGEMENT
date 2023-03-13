@@ -3,7 +3,7 @@ import ko from 'axe-core/locales/ko.json';
 import 'tailwindcss/tailwind.css';
 import '../src/index.css';
 import { CUSTOM_VIEWPORT } from './customViewport.js';
-
+import { RecoilRoot } from 'recoil';
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {

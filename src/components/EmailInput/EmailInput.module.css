@@ -1,0 +1,20 @@
+.wrapper {
+  @apply flex flex-col;
+  @apply border border-kc-contact_border;
+  @apply mobile:w-[17.5rem];
+}
+
+.outline_vertical {
+  @apply text-kc-contact_gray font-medium;
+  @apply flex;
+  @apply mobile:pt-[0.625rem] mobile:flex-col mobile:ml-[0.625rem] mobile:text-sm;
+  @apply laptop:ml-2 laptop:w-[7.6875rem] laptop:items-center laptop:justify-center;
+  @apply desktop:w-[7.6875rem] desktop:items-center desktop:justify-center;
+}
+
+.outline_vertical::after {
+  @apply content-[''] border-[1px] inline-block border-kc-contact_border;
+  @apply mobile:mt-[0.6875rem] mobile:w-[16.25rem];
+  @apply laptop:ml-5 laptop:h-[1.375rem];
+  @apply desktop:ml-5 desktop:h-[1.375rem];
+}

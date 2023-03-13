@@ -1,6 +1,7 @@
 import { Story, Meta } from '@storybook/react';
 import { TextInput } from '@/components/TextInput/TextInput';
 import { FormspreeProvider } from '@formspree/react';
+import { RecoilRoot } from 'recoil';
 export default {
   title: 'Components/TextInput',
   component: TextInput,
@@ -36,11 +37,14 @@ export default {
       },
     },
   },
+
   decorators: [
     (Story) => (
-      <FormspreeProvider project="2159903036745448628">
-        <Story />
-      </FormspreeProvider>
+      <RecoilRoot>
+        <FormspreeProvider project="2159903036745448628">
+          <Story />
+        </FormspreeProvider>
+      </RecoilRoot>
     ),
   ],
 } as Meta;
@@ -75,5 +79,5 @@ PhoneInput.args = {
   type: 'tel',
   labelName: 'Phone',
   placeholder: 'Your Phone Number',
-  direction: 'vertical',
+  direction: 'horizon',
 };
