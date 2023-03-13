@@ -1,0 +1,73 @@
+.names_wrapper {
+  @apply flex;
+  @apply border border-kc-contact_border;
+}
+
+.names_wrapper:focus-visible {
+  @apply outline-none ring-offset-2 ring-2 rounded-sm border-blue-500;
+}
+
+.names_wrapper_vertical {
+  @apply mobile:w-[8.25rem] mobile:flex-col;
+  @apply mobile:text-xs;
+  @apply laptop:w-[17.375rem] laptop:text-base laptop:leading-none;
+  @apply desktop:w-[17.375rem] desktop:text-base desktop:leading-none;
+}
+
+.names_wrapper_horizon {
+  @apply mobile:w-[17.5rem] mobile:flex-col;
+  @apply mobile:text-xs;
+  @apply laptop:w-[36.625rem] laptop:text-base laptop:leading-none;
+  @apply desktop:w-[36.625rem] desktop:text-base desktop:leading-none;
+}
+
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+.outline_vertical {
+  @apply text-kc-contact_gray font-medium;
+  @apply flex;
+  @apply mobile:pt-[0.625rem] mobile:flex-col mobile:ml-2;
+  @apply laptop:ml-2 laptop:w-[7.6875rem] laptop:items-center laptop:justify-center;
+  @apply desktop:ml-2 desktop:w-[7.6875rem] desktop:items-center desktop:justify-center;
+}
+
+.outline_vertical::after {
+  @apply content-[''] border-[1px] inline-block border-kc-contact_border;
+  @apply mobile:mt-[0.6875rem] mobile:w-[7rem];
+  @apply laptop:ml-5 laptop:h-[1.375rem];
+  @apply desktop:ml-5 desktop:h-[1.375rem];
+}
+
+.input_vertical {
+  @apply self-center;
+  @apply mobile:text-center mobile:h-[2.0625rem];
+  @apply laptop:h-10 laptop:items-center laptop:indent-5 laptop:w-[9.6875rem];
+  @apply desktop:h-10 desktop:items-center desktop:indent-5 desktop:w-[9.6875rem];
+  @apply focus:outline-none;
+}
+
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+.outline_horizon {
+  @apply text-kc-contact_gray font-medium;
+  @apply flex text-justify;
+  @apply text-start;
+  @apply mobile:pt-[0.625rem] mobile:flex-col mobile:ml-2;
+  @apply laptop:ml-5 laptop:w-[7.6875rem] laptop:items-center;
+  @apply desktop:ml-5 desktop:w-[7.6875rem] desktop:items-center;
+}
+
+.outline_horizon::after {
+  @apply content-[''] border-[1px] inline-block border-kc-contact_border;
+  @apply mobile:mt-[0.6875rem] mobile:w-[16.25rem];
+  @apply laptop:ml-[3.25rem] laptop:h-[1.375rem];
+  @apply desktop:ml-[3.25rem] desktop:h-[1.375rem];
+}
+
+.input_horizon {
+  @apply mobile:text-start mobile:h-[2.0625rem]  mobile:indent-3;
+  @apply laptop:h-10 laptop:items-center laptop:indent-2 laptop:w-[29rem];
+  @apply desktop:h-10 desktop:items-center desktop:indent-2 desktop:w-[29rem];
+  @apply focus:outline-none;
+}
