@@ -15,7 +15,7 @@ import {
 import HeaderStyle from '@/components/Header/Header.module.css';
 import { gsap, Power4 } from 'gsap';
 import clsx from 'clsx';
-
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 /* -------------------------------------------------------------------------- */
 
 interface ToggleProps {
@@ -79,12 +79,25 @@ function NavigationWrapper({ ...props }: NavigationProps) {
 function NavigationItem() {
   return (
     <ul className={HeaderStyle.navItem}>
-      <li>HOME</li>
-      <li>ABOUT US</li>
-      <li>INVESTMENTS</li>
-      <li>TESTIMONIALS</li>
-      <li>OTHER SERVICES</li>
-      <li>CONTACT</li>
+      <Link to={'/'}>
+        <li>HOME</li>
+      </Link>
+      <Link to={'/about_us'}>
+        <li>ABOUT US</li>
+      </Link>
+      <Link to={'/investments'}>
+        <li>INVESTMENTS</li>
+      </Link>
+      <Link to={'/testimonials'}>
+        <li>TESTIMONIALS</li>
+      </Link>
+      <Link to={'/other_services'}>
+        <li>OTHER SERVICES</li>
+      </Link>
+
+      <Link to={'/contact'}>
+        <li>CONTACT</li>
+      </Link>
     </ul>
   );
 }
