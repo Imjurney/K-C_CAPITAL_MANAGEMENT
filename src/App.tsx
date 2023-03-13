@@ -1,12 +1,13 @@
 import { Header } from './components/Header/Header';
 import { TextInput } from './components/TextInput/TextInput';
+import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
+import ContactPage from './pages/Contact/ContactPage';
 function App() {
   return (
     <div>
-      {/* <Header /> */}
-
-      <div className="w-20 h-20 bg-kc-red sticky top-0">test</div>
-      <div className="h-[1000vh]"></div>
+      <Routes>
+        <Route path="/contact" element={<ContactPage />}></Route>
+      </Routes>
     </div>
   );
 }

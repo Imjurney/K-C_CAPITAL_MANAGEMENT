@@ -94,7 +94,6 @@ function NavigationItem() {
       <Link to={'/other_services'}>
         <li>OTHER SERVICES</li>
       </Link>
-
       <Link to={'/contact'}>
         <li>CONTACT</li>
       </Link>
@@ -103,7 +102,7 @@ function NavigationItem() {
 }
 
 function BurgerNavigationItem() {
-  const { ref } = useSelector();
+  const { ref, toggle } = useSelector();
 
   return (
     <NavigationWrapper>
@@ -140,8 +139,8 @@ function HamburgerButton() {
       buttonRef.current?.addEventListener('click', () => {
         if (!isMounted.current) {
           isMounted.current = true;
-          gsap.to('#burger_list', {
-            x: 0,
+          gsap.from('#burger_list', {
+            x: -100,
             opacity: 1,
             duration: 1,
             ease: Power4.easeOut,

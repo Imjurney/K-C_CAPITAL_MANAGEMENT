@@ -8,7 +8,7 @@
 }
 
 .names_wrapper_vertical {
-  @apply mobile:w-[8.25rem] mobile:flex-col;
+  @apply mobile:flex-col;
   @apply mobile:text-xs;
   @apply laptop:w-[17.375rem] laptop:text-base laptop:leading-none;
   @apply desktop:w-[17.375rem] desktop:text-base desktop:leading-none;

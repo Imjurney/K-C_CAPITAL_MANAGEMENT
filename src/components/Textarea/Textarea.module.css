@@ -12,7 +12,7 @@
 }
 .textarea {
   @apply resize-none outline-none;
-  @apply px-2.5 pt-2.5;
+  @apply mobile:px-2.5 laptop:px-3.5 desktop:px-3.5 pt-2.5;
   @apply mobile:h-[8.375rem];
   @apply laptop:h-[11.1875rem];
   @apply desktop:h-[11.1875rem];

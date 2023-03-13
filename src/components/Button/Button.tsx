@@ -9,7 +9,7 @@ interface ButtonProps {
 
 const ResPonsiveLayout = {
   Form: [
-    'text-base font-normal',
+    'text-base font-normal self-center',
     'mobile:px-5 mobile:py-2',
     'laptop:px-8 laptop:py-2.5',
     'desktop:px-8 desktop:py-2.5',

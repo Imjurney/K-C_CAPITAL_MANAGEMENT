@@ -1,9 +1,12 @@
 import { TUseForm } from '@formspree/react';
 import { ChangeEvent, useEffect, useRef, useState } from 'react';
 import EamilInputStyle from '@/components/EmailInput/EmailInput.module.css';
+import clsx from 'clsx';
 type TodoPreview = Pick<TUseForm[0], 'errors'>;
-
-export function EmailInput() {
+interface EmailInputProps {
+  className?: string;
+}
+export function EmailInput({ className }: EmailInputProps) {
   const test = useRef<HTMLInputElement>(null);
   const test2 = useRef<HTMLInputElement>(null);
   const [email, setEmail] = useState({
@@ -32,7 +35,7 @@ export function EmailInput() {
 
   return (
     <>
-      <div className={EamilInputStyle.wrapper} tabIndex={0}>
+      <div className={clsx(className, EamilInputStyle.wrapper)} tabIndex={0}>
         <label className={EamilInputStyle.outline_vertical} htmlFor="email">
           Email
         </label>
@@ -42,7 +45,7 @@ export function EmailInput() {
             onChange={changeIdHandler}
             ref={test}
             required
-            placeholder="Your Email address"
+            placeholder="kccompany01"
             type="text"
           />
           <span className={EamilInputStyle.at_sign}>&nbsp;@&nbsp;</span>

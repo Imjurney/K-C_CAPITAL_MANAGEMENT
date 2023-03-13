@@ -1,0 +1,15 @@
+.fieldset {
+  @apply flex flex-col items-center;
+  @apply mobile:gap-4 laptop:gap-5 desktop:gap-5;
+}
+
+.legend {
+  @apply text-center font-medium;
+  @apply mobile:text-base mobile:mb-[1.4375rem];
+  @apply laptop:text-3xl laptop:mb-11 laptop:pt-20;
+  @apply desktop:text-3xl desktop:mb-11 desktop:pt-20;
+}
+
+.form {
+  @apply mobile:py-7 desktop:pb-8 laptop:pb-8 laptop:w-[42.9375rem] desktop:w-[42.9375rem];
+}
