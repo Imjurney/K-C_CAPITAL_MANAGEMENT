@@ -12,6 +12,7 @@ module.exports = {
     '@storybook/addon-interactions',
     '@storybook/addon-a11y',
     'storybook-axios/register',
+    'storybook-addon-react-router-v6',
     {
       name: '@storybook/addon-postcss',
       options: {
