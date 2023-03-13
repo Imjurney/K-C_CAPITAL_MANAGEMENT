@@ -108,12 +108,24 @@ function BurgerNavigationItem() {
   return (
     <NavigationWrapper>
       <ul ref={ref} className={HeaderStyle.ul} id="burger_list">
-        <li>HOME</li>
-        <li>ABOUT US</li>
-        <li>INVESTMENTS</li>
-        <li>TESTIMONIALS</li>
-        <li>OTHER SERVICES</li>
-        <li>CONTACT</li>
+        <Link className={HeaderStyle.link} to={'/'}>
+          <li>HOME</li>
+        </Link>
+        <Link className={HeaderStyle.link} to={'/about_us'}>
+          <li>ABOUT US</li>
+        </Link>
+        <Link className={HeaderStyle.link} to={'/investments'}>
+          <li>INVESTMENTS</li>
+        </Link>
+        <Link className={HeaderStyle.link} to={'/testimonials'}>
+          <li>TESTIMONIALS</li>
+        </Link>
+        <Link className={HeaderStyle.link} to={'/other_services'}>
+          <li>OTHER SERVICES</li>
+        </Link>
+        <Link className={HeaderStyle.link} to={'/contact'}>
+          <li>CONTACT</li>
+        </Link>
       </ul>
     </NavigationWrapper>
   );
