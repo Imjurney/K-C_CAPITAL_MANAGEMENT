@@ -13,12 +13,14 @@
     "chromatic": "npx chromatic --project-token=95d5c58d264b"
   },
   "dependencies": {
+    "@formspree/react": "2.4.1",
     "axios": "1.3.4",
     "gsap": "3.11.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "4.7.1",
     "react-router-dom": "6.9.0",
+    "recoil": "0.7.7",
     "storybook-addon-react-router-v6": "0.2.1"
   },
   "devDependencies": {
