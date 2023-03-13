@@ -39,7 +39,7 @@ export function TextInput({
   labelName,
   type = 'text',
 }: TextInputProps) {
-  const [state, handleSubmit, data] = useForm('contactForm');
+  const [state, handleSubmit] = useForm('contactForm');
   if (state.succeeded) {
     return <Success />;
   }
@@ -76,5 +76,3 @@ export function TextInput({
     </FormProvier>
   );
 }
-
-// export {};
