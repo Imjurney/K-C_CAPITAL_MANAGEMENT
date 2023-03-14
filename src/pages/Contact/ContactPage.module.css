@@ -11,5 +11,7 @@
 }
 
 .form {
-  @apply mobile:py-7 desktop:pb-8 laptop:pb-8 laptop:w-[42.9375rem] desktop:w-[42.9375rem];
+  margin: 0 auto;
+  @apply bg-white;
+  @apply mobile:py-7 mobile:w-80 desktop:pb-8 laptop:pb-8 laptop:w-[42.9375rem] desktop:w-[42.9375rem];
 }

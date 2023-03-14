@@ -140,6 +140,7 @@ function HamburgerButton() {
         if (!isMounted.current) {
           isMounted.current = true;
           gsap.from('#burger_list', {
+            display: 'block',
             x: -100,
             opacity: 1,
             duration: 1,
@@ -147,6 +148,7 @@ function HamburgerButton() {
           });
         }
         gsap.from('#burger_list', {
+          display: 'block',
           xPercent: !toggle ? -120 : 0,
           opacity: 0.9,
           duration: 1.1,

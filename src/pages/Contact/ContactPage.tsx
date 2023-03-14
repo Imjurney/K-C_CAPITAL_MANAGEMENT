@@ -10,6 +10,8 @@ import { Header } from '@/components/Header/Header';
 import { Footer } from '@/components/Footer/Footer';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import { TitleContent } from '@/components/TitleContent/TitleContent';
+import { ContactLayout } from '@/components/Layout/ContactLayout';
+import { ContactBox } from '@/components/Contactbox/ContactBox';
 interface FormProvierProps {
   children?: ReactNode;
   onSubmit: TUseForm[1];
@@ -81,8 +83,13 @@ export default function ContactPage() {
   return (
     <>
       <Header />
-      <TitleContent content="CONTACT US" />
-      <Contact />
+      <div className="mb-6 pt-14">
+        <TitleContent content="CONTACT US" />
+      </div>
+      <ContactLayout>
+        <ContactBox />
+        <Contact />
+      </ContactLayout>
       <Footer />
     </>
   );
