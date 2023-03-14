@@ -1,7 +1,8 @@
 import { Story, Meta } from '@storybook/react';
 import { ContactBox } from '@/components/Contactbox/ContactBox';
 import { RecoilRoot } from 'recoil';
-
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+const queryClient = new QueryClient();
 export default {
   title: 'Components/ContactBox',
   component: ContactBox,
@@ -9,7 +10,9 @@ export default {
   decorators: [
     (Story) => (
       <RecoilRoot>
-        <Story />
+        <QueryClientProvider client={queryClient}>
+          <Story />
+        </QueryClientProvider>
       </RecoilRoot>
     ),
   ],

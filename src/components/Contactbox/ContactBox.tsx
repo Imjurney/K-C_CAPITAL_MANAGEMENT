@@ -6,24 +6,43 @@ import {
   MdOutlinePrint as Fax,
 } from 'react-icons/md';
 import { debounce } from 'lodash';
-import axios from 'axios';
+import { useRecoilValue } from 'recoil';
+import { addressAtom } from '@/atom/address';
+import { useQuery } from '@tanstack/react-query';
 
-interface ContactBox {
+const element = {
+  Tel: <Tel />,
+  Address: <Address />,
+  Fax: <Fax />,
+};
+
+interface props {
   icon?: {
-    type: 'Tel' | 'Fax' | 'Address';
+    type: 'Tel' | 'Address' | 'Fax';
     element: JSX.Element;
   };
 }
-export function ContactBox() {
+
+export function ContactBox({
+  icon = {
+    type: 'Address',
+    element: element.Address,
+  },
+}: props) {
   const [windowSize, setWindowSize] = useState({
     width: window.innerWidth,
   });
-  const [datas, setData] = useState<any[]>();
+  const addressData = useRecoilValue(addressAtom);
+  const { data } = useQuery(['Adress'], () => addressData, {
+    refetchOnWindowFocus: false,
+    cacheTime: 100000,
+    staleTime: 10000,
+  });
+  console.log(data);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const handleResize = useCallback(
     debounce(() => {
-      console.log(window.innerWidth);
       setWindowSize({
         width: window.innerWidth,
       });
@@ -31,13 +50,6 @@ export function ContactBox() {
     []
   );
   useEffect(() => {
-    const getfooterInfromation = async () => {
-      return await axios.get('src/data/footer.json').then((res) => {
-        setData(res.data);
-      });
-    };
-    getfooterInfromation();
-    console.log(datas);
     window.addEventListener('resize', handleResize);
     return () => {
       window.removeEventListener('resize', handleResize);
@@ -47,6 +59,23 @@ export function ContactBox() {
     <address>
       {
         <ul>
+          {data?.map((item, idex) => {
+            return (
+              <li key={idex}>
+                <IconContext.Provider
+                  value={{
+                    attr: icon?.element,
+                    size: Number(windowSize.width) >= 1024 ? 20 : 16,
+                  }}
+                >
+                  {icon?.element}
+                </IconContext.Provider>
+                <span> {item.subject}</span>
+                <span className={item.className}>{item.contents}</span>
+              </li>
+            );
+          })}
+
           <li>
             <Address
               className="fill-kc-red"

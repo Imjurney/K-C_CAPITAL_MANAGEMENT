@@ -12,6 +12,7 @@ import { BrowserRouter, Route, Link } from 'react-router-dom';
 import { TitleContent } from '@/components/TitleContent/TitleContent';
 import { ContactLayout } from '@/components/Layout/ContactLayout';
 import { ContactBox } from '@/components/Contactbox/ContactBox';
+
 interface FormProvierProps {
   children?: ReactNode;
   onSubmit: TUseForm[1];
@@ -42,7 +43,7 @@ function ContactForm() {
     <FormProvier onSubmit={handleSubmit}>
       <fieldset className={contact.fieldset}>
         <legend className={contact.legend}>Send a Massage</legend>
-        <div className="flex mobile:gap-4 laptop:gap-8 desktop:gap-8">
+        <div className="flex mobile:gap-x-4 mobile:px-5 laptop:gap-8 desktop:gap-8">
           <TextInput
             labelName={'First Name'}
             placeholder={'your first name'}
@@ -60,6 +61,7 @@ function ContactForm() {
         <div className="self-start ml-6 -mt-4 text-sm inline-block text-red-500">
           <ValidationError field="email" prefix="Email" errors={state.errors} />
         </div>
+
         <TextInput
           labelName={'Phone'}
           placeholder={'Your Phone Number'}
