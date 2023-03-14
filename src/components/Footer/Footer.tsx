@@ -42,9 +42,12 @@ function getFooterContentsItem(datas: any[]) {
   return (
     <ul className={clsx(ResPonsiveContents)}>
       {datas?.map(
-        (item: { subject: string; contents: string; className: string }) => {
+        (
+          item: { subject: string; contents: string; className: string },
+          index
+        ) => {
           return (
-            <li key={'footer'} className={item.className}>
+            <li key={index} className={item.className}>
               <span className={'text-kc-footer_lightgray'}>
                 {item.subject}.&nbsp;&nbsp;
               </span>

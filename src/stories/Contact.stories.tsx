@@ -21,6 +21,11 @@ export default {
       </RecoilRoot>
     ),
   ],
+  parameters: {
+    reactRouter: {
+      routePath: '/contact',
+    },
+  },
 } as Meta;
 
 const Template: Story = (args) => <ContactPage />;
