@@ -1,0 +1,14 @@
+.contact {
+  @apply flex;
+  @apply mobile:flex-col mobile:items-center mobile:justify-center;
+  @apply laptop:mr-[4.625rem] laptop:mt-16;
+  @apply desktop:mt-16 desktop:mr-10 desktop:mb-20;
+}
+
+.background {
+  @apply absolute desktop:pb-10  w-full mobile:h-[860px] mobile:mt-8 laptop:h-[644px] laptop:mt-[3.75rem] desktop:mt-5  desktop:h-[644px] -z-20 bg-kc-bg_lightgray;
+}
+
+.wrapper {
+  @apply w-full mobile:pb-11 laptop:mb-16 laptop:flex desktop:flex;
+}

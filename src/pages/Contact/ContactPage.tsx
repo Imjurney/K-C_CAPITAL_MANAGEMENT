@@ -85,7 +85,7 @@ export default function ContactPage() {
   return (
     <>
       <Header />
-      <div className="mb-6 pt-14">
+      <div className="mobile:mb-6 mobile:pt-14 laptop:pt-28 desktop:pt-[7.5rem]">
         <TitleContent content="CONTACT US" />
       </div>
       <ContactLayout>

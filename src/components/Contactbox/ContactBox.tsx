@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useCallback, useEffect, useState } from 'react';
 import { IconContext } from 'react-icons';
 import {
@@ -6,41 +7,14 @@ import {
   MdOutlinePrint as Fax,
 } from 'react-icons/md';
 import { debounce } from 'lodash';
-import { useRecoilValue } from 'recoil';
-import { addressAtom } from '@/atom/address';
-import { useQuery } from '@tanstack/react-query';
+import ContactPage from '@/pages/Contact/ContactPage.module.css';
+import contactBox from '@/components/Contactbox/ContactBox.module.css';
+import clsx from 'clsx';
 
-const element = {
-  Tel: <Tel />,
-  Address: <Address />,
-  Fax: <Fax />,
-};
-
-interface props {
-  icon?: {
-    type: 'Tel' | 'Address' | 'Fax';
-    element: JSX.Element;
-  };
-}
-
-export function ContactBox({
-  icon = {
-    type: 'Address',
-    element: element.Address,
-  },
-}: props) {
+export function ContactBox() {
   const [windowSize, setWindowSize] = useState({
     width: window.innerWidth,
   });
-  const addressData = useRecoilValue(addressAtom);
-  const { data } = useQuery(['Adress'], () => addressData, {
-    refetchOnWindowFocus: false,
-    cacheTime: 100000,
-    staleTime: 10000,
-  });
-  console.log(data);
-
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   const handleResize = useCallback(
     debounce(() => {
       setWindowSize({
@@ -56,44 +30,51 @@ export function ContactBox({
     };
   }, []);
   return (
-    <address>
+    <address className={contactBox.address}>
       {
-        <ul>
-          {data?.map((item, idex) => {
-            return (
-              <li key={idex}>
-                <IconContext.Provider
-                  value={{
-                    attr: icon?.element,
-                    size: Number(windowSize.width) >= 1024 ? 20 : 16,
-                  }}
-                >
-                  {icon?.element}
-                </IconContext.Provider>
-                <span> {item.subject}</span>
-                <span className={item.className}>{item.contents}</span>
-              </li>
-            );
-          })}
+        <ul className={contactBox.ul}>
+          <IconContext.Provider
+            value={{
+              className: 'fill-kc-red inline',
+              size: Number(windowSize.width) >= 1024 ? 26 : 20,
+            }}
+          >
+            <li className={ContactPage.li}>
+              <div className={ContactPage.div}>
+                <Address />
+                <span className="laptop:text-xl desktop:text-xl">ADDRESS</span>
+              </div>
+              <span
+                className={clsx(ContactPage.span, ContactPage.address_span)}
+              >
+                17 HAWDON STREET, SYDENHAM CHRISTCHURCH
+              </span>
+            </li>
 
-          <li>
-            <Address
-              className="fill-kc-red"
-              size={windowSize.width >= 1024 ? 20 : 16}
-            />
-          </li>
-          <li>
-            <Tel
-              className="fill-kc-red"
-              size={windowSize.width >= 1024 ? 20 : 16}
-            />
-          </li>
-          <li>
-            <Fax
-              className="fill-kc-red"
-              size={windowSize.width >= 1024 ? 20 : 16}
-            />
-          </li>
+            <li className={clsx(ContactPage.li)}>
+              <div className={clsx(ContactPage.div, 'mr-9')}>
+                <span>
+                  <Tel />
+                </span>
+                <span className="text-kc-red gap-4 aptop:text-xl desktop:text-xl">
+                  TEL
+                </span>
+              </div>
+              <span className={ContactPage.span}>+64 27 2229980</span>
+            </li>
+
+            <li className={ContactPage.li}>
+              <div className={clsx(ContactPage.div, 'mr-9')}>
+                <span>
+                  <Fax />
+                </span>
+                <span className="text-kc-red gap-4 laptop:text-xl desktop:text-xl">
+                  FAX
+                </span>
+              </div>
+              <span className={ContactPage.span}>+64 27 3159618</span>
+            </li>
+          </IconContext.Provider>
         </ul>
       }
     </address>
