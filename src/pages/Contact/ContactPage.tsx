@@ -36,9 +36,9 @@ function FormProvier({ ...props }: FormProvierProps) {
 function ContactForm() {
   const [state, handleSubmit] = useForm('contactForm');
   console.log(state.errors);
-  // if (state.succeeded) {
-  //   return <Success />;
-  // }
+  if (state.succeeded) {
+    location.reload();
+  }
   return (
     <FormProvier onSubmit={handleSubmit}>
       <fieldset className={contact.fieldset}>
