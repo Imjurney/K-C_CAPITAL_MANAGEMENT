@@ -1,5 +1,5 @@
-import axios from 'axios';
 import { atom, selector } from 'recoil';
+import footerData from '@/data/footer.json';
 
 export const addressAtom = atom<any[]>({
   key: 'Address',
@@ -9,8 +9,6 @@ export const addressAtom = atom<any[]>({
 export const currentaddressState = selector({
   key: 'Address',
   get: async () => {
-    return await axios.get('src/data/footer.json').then((res) => {
-      return res.data;
-    });
+    return footerData;
   },
 });

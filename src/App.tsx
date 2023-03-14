@@ -4,11 +4,9 @@ import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
 import ContactPage from './pages/Contact/ContactPage';
 function App() {
   return (
-    <div>
-      <Routes>
-        <Route path="/contact" element={<ContactPage />}></Route>
-      </Routes>
-    </div>
+    <Routes>
+      <Route path="/contact" element={<ContactPage />}></Route>
+    </Routes>
   );
 }
 

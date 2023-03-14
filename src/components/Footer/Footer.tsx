@@ -2,11 +2,8 @@ import clsx from 'clsx';
 import { ReactNode, useEffect, useState } from 'react';
 import FooterStyle from '@/components/Footer/Footer.module.css';
 import FooterLogo from '@/stories/assets/FooterLogo.svg';
-import axios from 'axios';
-import { addressAtom } from '@/atom/address';
-import { useRecoilValue } from 'recoil';
 import { useQuery } from '@tanstack/react-query';
-
+import footerData from '@/data/footer.json';
 // import { ReactComponent as FooterLogo } from '@/components/Footer/FooterLogo.svg';
 interface FooterWrapper {
   children: ReactNode;
@@ -14,22 +11,6 @@ interface FooterWrapper {
 interface FooterContentsProps {
   width?: number;
 }
-
-const _Dummy = [
-  {
-    subject: 'Fax',
-    contents: '+64 27 3159618',
-  },
-  {
-    subject: 'Tel',
-    contents: '+64 27 2229980',
-  },
-  {
-    subject: 'Address',
-    contents: '17 HAWDON STREET, SYDENHAM CHRISTCHURCH',
-    className: 'flex',
-  },
-];
 
 const ResPonsiveLayout = [
   'mobile:px-16 mobile:pt-10',
@@ -77,11 +58,11 @@ function getFooterContentsItem(datas: any[]) {
 }
 
 function FooterContents({ width = 240 }: FooterContentsProps) {
-  const addressData = useRecoilValue(addressAtom);
-  const { data } = useQuery(['address'], () => addressData, {
+  const { data } = useQuery(['address'], () => Promise.resolve(footerData), {
     staleTime: 10000,
     refetchOnWindowFocus: false,
   });
+
   return (
     <FooterWrapper>
       <address className={clsx(FooterStyle.default, ResPonsiveLayout)}>

@@ -13,6 +13,7 @@ module.exports = {
     '@storybook/addon-a11y',
     'storybook-axios/register',
     'storybook-addon-react-router-v6',
+    'storybook-addon-mock',
     {
       name: '@storybook/addon-postcss',
       options: {
