@@ -8,7 +8,7 @@ import { ReactNode, useRef } from 'react';
 import contact from '@/pages/Contact/ContactPage.module.css';
 import { Header } from '@/components/Header/Header';
 import { Footer } from '@/components/Footer/Footer';
-import { BrowserRouter, Route, Link } from 'react-router-dom';
+
 import { TitleContent } from '@/components/TitleContent/TitleContent';
 import { ContactLayout } from '@/components/Layout/ContactLayout';
 import { ContactBox } from '@/components/Contactbox/ContactBox';
@@ -35,8 +35,8 @@ function FormProvier({ ...props }: FormProvierProps) {
 
 function ContactForm() {
   const [state, handleSubmit] = useForm('contactForm');
-  console.log(state.errors);
   if (state.succeeded) {
+    alert('Thanks for your submission');
     location.reload();
   }
   return (
@@ -58,7 +58,7 @@ function ContactForm() {
           />
         </div>
         <EmailInput />
-        <div className="self-start ml-6 -mt-4 text-sm inline-block text-red-500">
+        <div className={contact.error}>
           <ValidationError field="email" prefix="Email" errors={state.errors} />
         </div>
 

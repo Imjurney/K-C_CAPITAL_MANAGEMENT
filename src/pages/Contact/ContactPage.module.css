@@ -23,6 +23,12 @@
   @apply desktop:flex-col desktop:gap-5 desktop:ml-[7.6875rem] desktop:mb-20;
 }
 
+.error {
+  @apply text-red-500;
+  @apply mobile:self-start mobile:ml-6  mobile:-mt-4  mobile:text-sm  mobile:inline-block;
+  @apply laptop:text-base laptop:self-start laptop:-mt-4 laptop:ml-1;
+  @apply desktop:text-base desktop:self-start desktop:-mt-4 desktop:ml-1;
+}
 .span {
   @apply font-normal text-kc-contact_gray;
   @apply laptop:text-base;

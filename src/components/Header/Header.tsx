@@ -137,7 +137,7 @@ function HamburgerButton() {
   const { toggle, setToggle } = useSelector();
   const buttonRef = useRef<HTMLButtonElement>(null);
   const isMounted = useRef(false);
-  console.log(toggle);
+
   useLayoutEffect(() => {
     const cxt = gsap.context(() => {
       buttonRef.current?.addEventListener('click', () => {
