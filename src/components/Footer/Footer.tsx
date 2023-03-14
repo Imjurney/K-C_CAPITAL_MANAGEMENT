@@ -3,6 +3,9 @@ import { ReactNode, useEffect, useState } from 'react';
 import FooterStyle from '@/components/Footer/Footer.module.css';
 import FooterLogo from '@/stories/assets/FooterLogo.svg';
 import axios from 'axios';
+import { addressAtom } from '@/atom/address';
+import { useRecoilValue } from 'recoil';
+import { useQuery } from '@tanstack/react-query';
 
 // import { ReactComponent as FooterLogo } from '@/components/Footer/FooterLogo.svg';
 interface FooterWrapper {
@@ -74,13 +77,11 @@ function getFooterContentsItem(datas: any[]) {
 }
 
 function FooterContents({ width = 240 }: FooterContentsProps) {
-  const [datas, setData] = useState<any[]>();
-  useEffect(() => {
-    const getfooterInfromation = async () => {
-      await axios.get('src/data/footer.json').then((res) => setData(res.data));
-    };
-    getfooterInfromation();
-  }, []);
+  const addressData = useRecoilValue(addressAtom);
+  const { data } = useQuery(['address'], () => addressData, {
+    staleTime: 10000,
+    refetchOnWindowFocus: false,
+  });
   return (
     <FooterWrapper>
       <address className={clsx(FooterStyle.default, ResPonsiveLayout)}>
@@ -89,7 +90,7 @@ function FooterContents({ width = 240 }: FooterContentsProps) {
           src={FooterLogo}
           alt="K&amp;C Capital Management 로고 입니다"
         />
-        {_Dummy && getFooterContentsItem(_Dummy)}
+        {data && getFooterContentsItem(data)}
       </address>
       <p className={clsx('text-kc-footer_gray text-sm', ResPonsiveCopyright)}>
         &copy;2022 K&amp;C Capital Management.

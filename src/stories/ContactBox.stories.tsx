@@ -1,11 +1,11 @@
 import { Story, Meta } from '@storybook/react';
-import { Footer } from '@/components/Footer/Footer';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ContactBox } from '@/components/Contactbox/ContactBox';
 import { RecoilRoot } from 'recoil';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 const queryClient = new QueryClient();
 export default {
-  title: 'Components/Footer',
-  component: Footer,
+  title: 'Components/ContactBox',
+  component: ContactBox,
   argTypes: { onClick: { action: 'clicked' } },
   decorators: [
     (Story) => (
@@ -18,6 +18,6 @@ export default {
   ],
 } as Meta;
 
-const Template: Story = (args) => <Footer />;
+const Template: Story = (args) => <ContactBox />;
 
 export const Primary = Template.bind({});

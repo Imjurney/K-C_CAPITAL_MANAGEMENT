@@ -1,0 +1,13 @@
+.address {
+  @apply flex mobile:place-content-center;
+  @apply laptop:justify-center;
+  @apply w-full;
+}
+
+.ul {
+  @apply not-italic flex flex-col;
+  @apply mobile:text-sm mobile:gap-5 mobile:my-6;
+  @apply laptop:justify-center;
+  @apply laptop:mt-36;
+  @apply desktop:mt-36;
+}

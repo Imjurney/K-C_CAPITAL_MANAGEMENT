@@ -31,3 +31,9 @@ export const OTHER_SERVIECE = Template.bind({});
 OTHER_SERVIECE.args = {
   content: 'OTHER SERVICES WE PROVIDE TO OUR INVESTORS',
 };
+
+export const CONTACT_US = Template.bind({});
+
+CONTACT_US.args = {
+  content: 'CONTACT US',
+};

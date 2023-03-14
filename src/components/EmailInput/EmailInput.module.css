@@ -30,12 +30,13 @@
 }
 
 .input {
-  @apply outline-none;
-  @apply mobile:text-xs mobile:indent-3 mobile:w-[8rem] mobile:h-[2.0625rem];
+  @apply outline-none text-start;
+  @apply mobile:text-xs  mobile:w-[8rem] mobile:h-[2.0625rem] mobile:indent-3;
   @apply laptop:h-[2.625rem] laptop:w-[13rem] laptop:indent-2;
   @apply desktop:h-[2.625rem] desktop:w-[13rem] desktop:indent-2;
 }
 
 .at_sign {
   @apply text-base text-kc-contact_gray font-medium;
+  @apply mobile:text-sm;
 }

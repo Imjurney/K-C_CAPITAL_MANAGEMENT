@@ -1,6 +1,7 @@
 .ul {
   @apply bg-kc-contents_dark w-2/3 h-[100vh] text-kc-footer_gray text-sm text-left float-left;
   @apply shadow-shadow_sm;
+  @apply mobile:hidden;
   @apply laptop:hidden desktop:hidden;
   @apply absolute top-0 z-50;
   @apply pt-10;
@@ -25,7 +26,7 @@
 }
 
 .header {
-  @apply w-full sticky top-0 h-[200vh];
+  @apply w-full sticky top-0;
 }
 .navItem {
   @apply text-white flex text-base leading-none;

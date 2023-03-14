@@ -3,11 +3,14 @@ import {
   createContext,
   ReactNode,
   RefObject,
+  useCallback,
   useContext,
+  useEffect,
   useLayoutEffect,
   useRef,
   useState,
 } from 'react';
+import { debounce } from 'lodash';
 import {
   RxCross2 as Xbutton,
   RxHamburgerMenu as BurgerMenu,
@@ -15,7 +18,7 @@ import {
 import HeaderStyle from '@/components/Header/Header.module.css';
 import { gsap, Power4 } from 'gsap';
 import clsx from 'clsx';
-import { BrowserRouter, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 /* -------------------------------------------------------------------------- */
 
 interface ToggleProps {
@@ -94,7 +97,6 @@ function NavigationItem() {
       <Link to={'/other_services'}>
         <li>OTHER SERVICES</li>
       </Link>
-
       <Link to={'/contact'}>
         <li>CONTACT</li>
       </Link>
@@ -103,7 +105,7 @@ function NavigationItem() {
 }
 
 function BurgerNavigationItem() {
-  const { ref } = useSelector();
+  const { ref, toggle } = useSelector();
 
   return (
     <NavigationWrapper>
@@ -135,19 +137,22 @@ function HamburgerButton() {
   const { toggle, setToggle } = useSelector();
   const buttonRef = useRef<HTMLButtonElement>(null);
   const isMounted = useRef(false);
+  console.log(toggle);
   useLayoutEffect(() => {
     const cxt = gsap.context(() => {
       buttonRef.current?.addEventListener('click', () => {
         if (!isMounted.current) {
           isMounted.current = true;
-          gsap.to('#burger_list', {
-            x: 0,
+          gsap.from('#burger_list', {
+            display: 'block',
+            x: -100,
             opacity: 1,
             duration: 1,
             ease: Power4.easeOut,
           });
         }
         gsap.from('#burger_list', {
+          display: 'block',
           xPercent: !toggle ? -120 : 0,
           opacity: 0.9,
           duration: 1.1,
@@ -161,7 +166,19 @@ function HamburgerButton() {
 
   return (
     <>
-      {!toggle ? (
+      {toggle ? (
+        <button
+          ref={buttonRef}
+          onClick={setToggle}
+          aria-label="navigation_button"
+          className={clsx(
+            toggle ? 'burgerButton' : 'Xbutton',
+            HeaderStyle.button
+          )}
+        >
+          <Xbutton id="Xbutton" className="Xbutton" size={20} />
+        </button>
+      ) : (
         <button
           ref={buttonRef}
           onClick={setToggle}
@@ -178,24 +195,36 @@ function HamburgerButton() {
             strokeWidth={0.5}
           />
         </button>
-      ) : (
-        <button
-          ref={buttonRef}
-          onClick={setToggle}
-          aria-label="navigation_button"
-          className={clsx(
-            toggle ? 'burgerButton' : 'Xbutton',
-            HeaderStyle.button
-          )}
-        >
-          <Xbutton id="Xbutton" className="Xbutton" size={20} />
-        </button>
       )}
     </>
   );
 }
 
 export function Header({ description = '홈' }: HeaderProps) {
+  const { toggle, setToggle } = useSelector();
+  const [windowSize, setWindowSize] = useState({
+    width: window.innerWidth,
+  });
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const handleResize = useCallback(
+    debounce(() => {
+      setWindowSize({
+        width: window.innerWidth,
+      });
+    }, 100),
+    []
+  );
+  useEffect(() => {
+    if (windowSize.width >= 1024) {
+      toggle === false;
+    }
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [toggle]);
+
   return (
     <ToggleProvider>
       <header className={HeaderStyle.header}>
@@ -205,7 +234,7 @@ export function Header({ description = '홈' }: HeaderProps) {
           <NavigationItem />
           <HamburgerButton />
         </div>
-        <BurgerNavigationItem />
+        {windowSize.width < 1024 && <BurgerNavigationItem />}
       </header>
     </ToggleProvider>
   );
