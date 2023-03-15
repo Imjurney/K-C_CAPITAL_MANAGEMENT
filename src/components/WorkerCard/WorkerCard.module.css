@@ -1,0 +1,13 @@
+.embla {
+  overflow: hidden;
+  @apply bg-red-600;
+}
+.embla__container {
+  display: flex;
+  @apply bg-red-100;
+}
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  @apply bg-red-200;
+}

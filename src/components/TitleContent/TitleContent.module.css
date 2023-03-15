@@ -1,7 +1,7 @@
 .underlineBase {
   @apply flex flex-col items-center;
   @apply font-bold;
-  @apply mobile:text-lg mobile:leading-none laptop:text-3xl desktop:text-3xl;
+  @apply mobile:text-lg mobile:leading-none  mobile:text-center laptop:text-3xl desktop:text-3xl;
 }
 
 .underlineBase::after {
@@ -9,4 +9,23 @@
   @apply mobile:mt-5;
   @apply laptop:mt-7;
   @apply desktop:mt-7;
+}
+
+.underlineBase_sub {
+  @apply flex flex-col items-center;
+  @apply break-all;
+  /* @apply whitespace-nowrap; */
+  @apply font-bold;
+  @apply mobile:text-base mobile:leading-none  mobile:text-center laptop:text-3xl desktop:text-3xl;
+}
+
+.underlineBase_sub::after {
+  @apply content-[''] border-[3px] block border-black w-40;
+  @apply mobile:mt-5;
+  @apply laptop:mt-7;
+  @apply desktop:mt-7;
+}
+
+.p {
+  @apply text-base font-medium mt-2 leading-none whitespace-normal;
 }

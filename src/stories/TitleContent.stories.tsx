@@ -37,3 +37,9 @@ export const CONTACT_US = Template.bind({});
 CONTACT_US.args = {
   content: 'CONTACT US',
 };
+
+// export const Subject = Template.bind({});
+//
+// Subject.args = {
+//   content: 'experience with K&C CAPITAL MANAGEMENT',
+// };

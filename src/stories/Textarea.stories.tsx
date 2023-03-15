@@ -9,4 +9,4 @@ export default {
 
 const Template: Story = (args) => <Textarea />;
 
-export const textarea = Template.bind({});
+export const Primary = Template.bind({});
