@@ -1,12 +1,12 @@
 import { Story, Meta } from '@storybook/react';
-import { Textarea } from '@/components/Textarea/Textarea';
+import { TopBanner } from '@/components/TopBanner/TopBanner';
 
 export default {
-  title: 'Components/Textarea',
-  component: Textarea,
+  title: 'Components/TopBanne',
+  component: TopBanner,
   argTypes: { onClick: { action: 'clicked' } },
 } as Meta;
 
-const Template: Story = (args) => <Textarea />;
+const Template: Story = (args) => <TopBanner />;
 
 export const Primary = Template.bind({});
