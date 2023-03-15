@@ -44,7 +44,7 @@ const defaultState = {
 const ToggleContext = createContext<ToggleProps>(defaultState);
 
 function ToggleProvider({ children }: ToggleProps) {
-  const [toggle, setToggle] = useState(defaultState.toggle);
+  const [toggle, setToggle] = useState(false);
   const ref = useRef<HTMLUListElement>(null);
 
   return (
@@ -134,68 +134,46 @@ function BurgerNavigationItem() {
 }
 
 function HamburgerButton() {
-  const { toggle, setToggle } = useSelector();
+  const { toggle, setToggle, ref } = useSelector();
   const buttonRef = useRef<HTMLButtonElement>(null);
-  const isMounted = useRef(false);
 
   useLayoutEffect(() => {
-    const cxt = gsap.context(() => {
-      buttonRef.current?.addEventListener('click', () => {
-        if (!isMounted.current) {
-          isMounted.current = true;
-          gsap.from('#burger_list', {
-            display: 'block',
-            x: -100,
-            opacity: 1,
-            duration: 1,
-            ease: Power4.easeOut,
-          });
-        }
-        gsap.from('#burger_list', {
-          display: 'block',
-          xPercent: !toggle ? -120 : 0,
-          opacity: 0.9,
-          duration: 1.1,
-          ease: Power4.easeOut,
-        });
-      });
+    const tweens = gsap.to('#burger_list', {
+      translateX: -1000,
+      duration: 2,
+      ease: Power4.easeOut,
+      opacity: 0.9,
     });
-
-    return () => cxt.revert();
+    if (toggle) {
+      tweens.reverse();
+      gsap.to('#burger_list', {
+        translateX: 0,
+        duration: 2,
+        ease: Power4.easeOut,
+        opacity: 0.9,
+      });
+    }
   });
 
   return (
     <>
-      {toggle ? (
-        <button
-          ref={buttonRef}
-          onClick={setToggle}
-          aria-label="navigation_button"
-          className={clsx(
-            toggle ? 'burgerButton' : 'Xbutton',
-            HeaderStyle.button
-          )}
-        >
+      <button
+        ref={buttonRef}
+        onClick={setToggle}
+        aria-label="navigation_button"
+        className={HeaderStyle.button}
+      >
+        {toggle ? (
           <Xbutton id="Xbutton" className="Xbutton" size={20} />
-        </button>
-      ) : (
-        <button
-          ref={buttonRef}
-          onClick={setToggle}
-          aria-label="navigation_button"
-          className={clsx(
-            toggle ? 'burgerButton' : 'Xbutton',
-            HeaderStyle.button
-          )}
-        >
+        ) : (
           <BurgerMenu
             id="burgerButton"
             className="burgerButton"
             size={18}
             strokeWidth={0.5}
           />
-        </button>
-      )}
+        )}
+      </button>
     </>
   );
 }

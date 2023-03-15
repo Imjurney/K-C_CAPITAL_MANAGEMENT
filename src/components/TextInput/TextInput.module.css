@@ -35,8 +35,8 @@
 .outline_vertical::after {
   @apply content-[''] border-[1px] inline-block border-kc-contact_border;
   @apply mobile:mt-[0.6875rem] mobile:w-[7rem];
-  @apply laptop:ml-5 laptop:h-[1.375rem];
-  @apply desktop:ml-5 desktop:h-[1.375rem];
+  @apply laptop:ml-7 laptop:h-[1.375rem];
+  @apply desktop:ml-7 desktop:h-[1.375rem];
 }
 
 .input_vertical {
