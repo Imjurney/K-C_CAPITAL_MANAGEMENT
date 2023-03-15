@@ -1,6 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useCallback, useEffect, useState } from 'react';
-import { IconContext } from 'react-icons';
 import {
   MdOutlinePhoneInTalk as Tel,
   MdOutlineApartment as Address,
@@ -10,6 +9,7 @@ import { debounce } from 'lodash';
 import ContactPage from '@/pages/Contact/ContactPage.module.css';
 import contactBox from '@/components/Contactbox/ContactBox.module.css';
 import clsx from 'clsx';
+import { IconContext } from 'react-icons';
 
 export function ContactBox() {
   const [windowSize, setWindowSize] = useState({
@@ -36,7 +36,7 @@ export function ContactBox() {
           <IconContext.Provider
             value={{
               className: 'fill-kc-red inline',
-              size: Number(windowSize.width) >= 1024 ? 26 : 20,
+              size: windowSize.width >= 1024 ? 26 : 20,
             }}
           >
             <li className={ContactPage.li}>

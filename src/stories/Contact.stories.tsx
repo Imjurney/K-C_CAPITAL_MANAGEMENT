@@ -4,6 +4,7 @@ import { FormspreeProvider } from '@formspree/react';
 import { RecoilRoot } from 'recoil';
 import { withRouter } from 'storybook-addon-react-router-v6';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
 const queryClient = new QueryClient();
 export default {
   title: 'Page/ContactPage',
@@ -12,13 +13,11 @@ export default {
   decorators: [
     withRouter,
     (Story) => (
-      <RecoilRoot>
-        <QueryClientProvider client={queryClient}>
-          <FormspreeProvider project="2159903036745448628">
-            <Story />
-          </FormspreeProvider>
-        </QueryClientProvider>
-      </RecoilRoot>
+      <QueryClientProvider client={queryClient}>
+        <FormspreeProvider project="2159903036745448628">
+          <Story />
+        </FormspreeProvider>
+      </QueryClientProvider>
     ),
   ],
   parameters: {

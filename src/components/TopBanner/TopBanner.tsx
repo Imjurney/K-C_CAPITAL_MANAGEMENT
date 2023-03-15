@@ -14,7 +14,7 @@ export function TopBanner() {
     <section className="text-center text-white flex flex-col items-center relative mobile:h-[15rem] laptop:h-[45rem] desktop:h-[45rem]">
       <img
         className="brightness-50 absolute -z-20 object-cover bg-center mobile:h-[15rem] laptop:h-[45rem] desktop:h-[45rem]"
-        src={`/src/assets/${home['home'][0].image_url1}`}
+        src={`/assets/img/${home['home'][0].image_url1}`}
       />
       <h1
         ref={h1Ref}

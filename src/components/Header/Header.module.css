@@ -26,7 +26,7 @@
 }
 
 .header {
-  @apply w-full sticky top-0;
+  @apply w-full sticky top-0 z-50;
 }
 .navItem {
   @apply text-white flex text-base leading-none;

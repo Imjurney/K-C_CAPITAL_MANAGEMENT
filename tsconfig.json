@@ -13,6 +13,8 @@
     "moduleResolution": "Node",
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "declaration": true,
+    "declarationDir": "./types",
     "typeRoots": ["./types", "./node_modules/@types"],
     "noEmit": true,
     "jsx": "react-jsx",
@@ -23,6 +25,7 @@
       "@components/*": ["components/*"]
     }
   },
+
   "include": ["src", "custom.d.ts"],
   "exclude": ["node_modules", "types"],
   "references": [{ "path": "./tsconfig.node.json" }]
