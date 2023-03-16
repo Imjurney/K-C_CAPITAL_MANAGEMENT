@@ -17,16 +17,19 @@ export default function HomePage() {
 
 function SubBanner() {
   return (
-    <div className="w-[1200px] absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] justify-self-center">
-      <img src="/assets/img/sub_banner.jpg" className="w-[1200px]" />
-      <p className="text-white inline-flex flex-col justify-center">
-        Helping you make a successful New Zealand real estate investment, your
-        partner K&C CAPITAL MANAGEMENT.
-      </p>
-      <Button type={'button'} layOutDesign={'Normal'}>
-        Read more
-      </Button>
-    </div>
+    <>
+      <div className="item">
+        {/* <img src="/assets/img/sub_banner.jpg" className="w-[1200px]" /> */}
+
+        <p className="text-white flex-col justify-center flex">
+          Helping you make a successful New Zealand real estate investment, your
+          partner K&C CAPITAL MANAGEMENT.
+        </p>
+        <Button type={'button'} layOutDesign={'Normal'}>
+          Read more
+        </Button>
+      </div>
+    </>
   );
 }
 

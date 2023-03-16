@@ -10,7 +10,7 @@ import {
   useRef,
   useState,
 } from 'react';
-import { debounce } from 'lodash';
+import { debounce, flatMap, toPairs } from 'lodash';
 import {
   RxCross2 as Xbutton,
   RxHamburgerMenu as BurgerMenu,
@@ -20,7 +20,7 @@ import navdata from '@/data/nav.json';
 import { Link, NavLink } from 'react-router-dom';
 import { navigation_animation } from '@/utils/navigation_animation';
 import { useQuery } from '@tanstack/react-query';
-import { gsap, Power4 } from 'gsap';
+
 /* -------------------------------------------------------------------------- */
 
 interface ToggleProps {
@@ -175,7 +175,7 @@ function HamburgerButton() {
   );
 }
 
-export function Header({ description = '홈' }: HeaderProps) {
+export function Header({ description = 'This is HomePage' }: HeaderProps) {
   const { toggle } = useSelector();
   const [windowSize, setWindowSize] = useState({
     width: window.innerWidth,
@@ -192,20 +192,19 @@ export function Header({ description = '홈' }: HeaderProps) {
   );
 
   useEffect(() => {
-    if (windowSize.width >= 1024) {
-      toggle === false;
-    }
+    if (windowSize.width >= 1024) toggle === true;
+
     window.addEventListener('resize', handleResize);
 
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, [toggle]);
+  }, []);
 
   return (
     <ToggleProvider>
       <header className={HeaderStyle.header}>
-        <h1 className="sr-only">{description}페이지 입니다</h1>
+        <h1 className="sr-only">{description}</h1>
         <div className={HeaderStyle.wrapper}>
           <Logo />
           <NavigationItem />
