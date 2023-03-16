@@ -95,18 +95,19 @@ function NavigationWrapper({ ...props }: NavigationProps) {
 
 function NavigationItem() {
   const { data } = useSelector();
+
   return (
     <ul className={HeaderStyle.navItem}>
       {data?.map((item, index) => {
         return (
           <NavLink
-            key={index}
+            key={`${item.navitem}_${index}`}
             to={item.route}
             className={({ isActive }) =>
               isActive ? HeaderStyle.link__active : ''
             }
           >
-            <li>{item.navitem}</li>
+            <li className="inline">{item.navitem}</li>
           </NavLink>
         );
       })}

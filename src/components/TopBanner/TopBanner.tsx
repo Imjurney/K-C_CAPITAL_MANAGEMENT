@@ -9,8 +9,7 @@ export function TopBanner() {
     tl.from(h1Ref.current, { y: -10, opacity: 0, duration: 1 });
     tl.from(pRef.current, { opacity: 0, stagger: 0.1 });
   }, []);
-  // mobile:h-[15rem] laptop:h-[45rem] desktop:h-[45rem]
-  //  mobile:mt-[5.75rem] laptop:mt-[17.8125rem] desktop:mt-[17.8125rem]
+
   return (
     <section className="relative text-white">
       <img
@@ -20,7 +19,7 @@ export function TopBanner() {
       <div className="absolute text-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
         <h1
           ref={h1Ref}
-          className="leading-none mobile:text-2xl inline-block laptop:text-[5rem] desktop:text-[5rem] justify-self-center mobile:font-medium laptop:font-medium desktop:font-bold"
+          className="leading-none mobile:text-2xl block laptop:text-[5rem] desktop:text-[5rem] justify-self-center mobile:font-medium laptop:font-medium desktop:font-bold"
         >
           Grow&nbsp;your&nbsp;investment
         </h1>

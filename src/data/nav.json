@@ -4,7 +4,7 @@
     "route": "/"
   },
   {
-    "navitem": "ABOUT US",
+    "navitem": "ABOUTUS",
     "route": "/about_us"
   },
   {
@@ -16,7 +16,7 @@
     "route": "/testimonials"
   },
   {
-    "navitem": "OTHER SERVICES",
+    "navitem": "OTHERSERVICES",
     "route": "/other_services"
   },
   {

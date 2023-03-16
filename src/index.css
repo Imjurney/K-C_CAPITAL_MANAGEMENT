@@ -31,4 +31,7 @@
     @apply text-white;
     @apply font-medium text-[1.625rem] leading-[100%];
   }
+  .ab_center {
+    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+  }
 }

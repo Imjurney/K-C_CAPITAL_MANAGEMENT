@@ -7,12 +7,28 @@
     },
     "contents_2": {
       "subject": "New Zealand Real Estate Investment, Why Us?",
-      "description": {
-        "first": "K&C CAPITAL is a safe company.",
-        "second": "Deliver guaranted returns",
-        "third": "Ensuring a safe and sound",
-        "Fourth": "Continuous investment portfolio management"
-      }
+      "description": [
+        {
+          "order": "first",
+          "contents": "K&C CAPITAL is a safe company.",
+          "position": "col-span-2"
+        },
+        {
+          "order": "second",
+          "contents": "Deliver guaranted returns",
+          "position": "col-span-1"
+        },
+        {
+          "order": "third",
+          "contents": "Ensuring a safe and sound",
+          "position": "col-span-1"
+        },
+        {
+          "order": "Fourth",
+          "contents": "Continuous investment portfolio management",
+          "position": "col-span-2"
+        }
+      ]
     },
     "contents_3": {
       "subject": "How do we manage investment?",
