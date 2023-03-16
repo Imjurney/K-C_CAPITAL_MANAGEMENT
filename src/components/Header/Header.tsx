@@ -16,9 +16,11 @@ import {
   RxHamburgerMenu as BurgerMenu,
 } from 'react-icons/rx';
 import HeaderStyle from '@/components/Header/Header.module.css';
+import navdata from '@/data/nav.json';
+import { Link, NavLink } from 'react-router-dom';
+import { navigation_animation } from '@/utils/navigation_animation';
+import { useQuery } from '@tanstack/react-query';
 import { gsap, Power4 } from 'gsap';
-import clsx from 'clsx';
-import { Link } from 'react-router-dom';
 /* -------------------------------------------------------------------------- */
 
 interface ToggleProps {
@@ -26,6 +28,10 @@ interface ToggleProps {
   toggle?: boolean;
   setToggle?: () => void;
   ref?: RefObject<HTMLUListElement>;
+  data?: {
+    navitem: string;
+    route: string;
+  }[];
 }
 
 interface NavigationProps {
@@ -46,7 +52,14 @@ const ToggleContext = createContext<ToggleProps>(defaultState);
 function ToggleProvider({ children }: ToggleProps) {
   const [toggle, setToggle] = useState(false);
   const ref = useRef<HTMLUListElement>(null);
-
+  const { data } = useQuery(
+    ['NavigationItem'],
+    () => Promise.resolve(navdata),
+    {
+      staleTime: 10000,
+      refetchOnWindowFocus: false,
+    }
+  );
   return (
     <ToggleContext.Provider
       value={{
@@ -55,6 +68,7 @@ function ToggleProvider({ children }: ToggleProps) {
           setToggle((toggle: boolean) => !toggle);
         },
         ref,
+        data: data,
       }}
     >
       {children}
@@ -69,9 +83,9 @@ const useSelector = () => {
 /* --------------------------------- 컴포넌트 -------------------------------- */
 function Logo() {
   return (
-    <button>
+    <Link to={'/'}>
       <img src={LogoImage} width={160} alt="홈으로 가기" />
-    </button>
+    </Link>
   );
 }
 
@@ -80,79 +94,62 @@ function NavigationWrapper({ ...props }: NavigationProps) {
 }
 
 function NavigationItem() {
+  const { data } = useSelector();
   return (
     <ul className={HeaderStyle.navItem}>
-      <Link to={'/'}>
-        <li>HOME</li>
-      </Link>
-      <Link to={'/about_us'}>
-        <li>ABOUT US</li>
-      </Link>
-      <Link to={'/investments'}>
-        <li>INVESTMENTS</li>
-      </Link>
-      <Link to={'/testimonials'}>
-        <li>TESTIMONIALS</li>
-      </Link>
-      <Link to={'/other_services'}>
-        <li>OTHER SERVICES</li>
-      </Link>
-      <Link to={'/contact'}>
-        <li>CONTACT</li>
-      </Link>
+      {data?.map((item, index) => {
+        return (
+          <NavLink
+            key={index}
+            to={item.route}
+            className={({ isActive }) =>
+              isActive ? HeaderStyle.link__active : ''
+            }
+          >
+            <li>{item.navitem}</li>
+          </NavLink>
+        );
+      })}
     </ul>
   );
 }
 
 function BurgerNavigationItem() {
-  const { ref, toggle } = useSelector();
+  const { ref, data } = useSelector();
 
   return (
     <NavigationWrapper>
       <ul ref={ref} className={HeaderStyle.ul} id="burger_list">
-        <Link className={HeaderStyle.link} to={'/'}>
-          <li>HOME</li>
-        </Link>
-        <Link className={HeaderStyle.link} to={'/about_us'}>
-          <li>ABOUT US</li>
-        </Link>
-        <Link className={HeaderStyle.link} to={'/investments'}>
-          <li>INVESTMENTS</li>
-        </Link>
-        <Link className={HeaderStyle.link} to={'/testimonials'}>
-          <li>TESTIMONIALS</li>
-        </Link>
-        <Link className={HeaderStyle.link} to={'/other_services'}>
-          <li>OTHER SERVICES</li>
-        </Link>
-        <Link className={HeaderStyle.link} to={'/contact'}>
-          <li>CONTACT</li>
-        </Link>
+        {data?.map((item, index) => {
+          return (
+            <Link key={index} className={HeaderStyle.link} to={item.route}>
+              <li>{item.navitem}</li>
+            </Link>
+          );
+        })}
       </ul>
     </NavigationWrapper>
   );
 }
 
 function HamburgerButton() {
-  const { toggle, setToggle, ref } = useSelector();
+  const { toggle, setToggle } = useSelector();
   const buttonRef = useRef<HTMLButtonElement>(null);
-
-  useLayoutEffect(() => {
-    const tweens = gsap.to('#burger_list', {
-      translateX: -1000,
-      duration: 2,
-      ease: Power4.easeOut,
-      opacity: 0.9,
-    });
+  useEffect(() => {
     if (toggle) {
-      tweens.reverse();
-      gsap.to('#burger_list', {
-        translateX: 0,
-        duration: 2,
-        ease: Power4.easeOut,
-        opacity: 0.9,
-      });
+      document.body.style.cssText = `
+        position: fixed;
+        top: -${window.scrollY}px;
+        width: 100%; 
+      `;
     }
+
+    return () => {
+      document.body.style.cssText = '';
+    };
+  });
+  useLayoutEffect(() => {
+    navigation_animation('#burger_list', toggle);
   });
 
   return (
@@ -179,7 +176,7 @@ function HamburgerButton() {
 }
 
 export function Header({ description = '홈' }: HeaderProps) {
-  const { toggle, setToggle } = useSelector();
+  const { toggle } = useSelector();
   const [windowSize, setWindowSize] = useState({
     width: window.innerWidth,
   });
@@ -193,11 +190,13 @@ export function Header({ description = '홈' }: HeaderProps) {
     }, 100),
     []
   );
+
   useEffect(() => {
     if (windowSize.width >= 1024) {
       toggle === false;
     }
     window.addEventListener('resize', handleResize);
+
     return () => {
       window.removeEventListener('resize', handleResize);
     };

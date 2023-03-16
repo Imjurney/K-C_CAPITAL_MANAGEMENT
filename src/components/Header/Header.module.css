@@ -4,12 +4,22 @@
   @apply laptop:hidden desktop:hidden;
   @apply absolute top-0 z-50;
   @apply pt-10;
-  @apply -translate-x-[100%];
+  @apply mobile:-translate-x-[1000px];
 }
 
 .link > li {
   @apply px-5 py-2;
-  @apply cursor-pointer;
+}
+
+.link__active {
+  @apply text-kc-red;
+  @apply font-medium;
+  @apply relative;
+}
+
+.link__active::after {
+  @apply content-[''] border block border-kc-red absolute w-10;
+  @apply -bottom-4 left-1/2 -translate-x-1/2;
 }
 
 .link > li:hover {
@@ -30,7 +40,7 @@
 .navItem {
   @apply text-white flex text-base leading-none;
   @apply mobile:hidden;
-  @apply laptop:gap-5 laptop:ml-[111px];
+  @apply laptop:gap-10 laptop:ml-[111px];
   @apply desktop:gap-[3.75rem] desktop:ml-[164px];
 }
 
