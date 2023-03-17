@@ -84,7 +84,7 @@ const useSelector = () => {
 function Logo() {
   return (
     <Link to={'/'}>
-      <img src={LogoImage} width={160} alt="홈으로 가기" />
+      <img src={LogoImage} width={160} alt="go to the HomePage" />
     </Link>
   );
 }
@@ -100,15 +100,16 @@ function NavigationItem() {
     <ul className={HeaderStyle.navItem}>
       {data?.map((item, index) => {
         return (
-          <NavLink
-            key={`${item.navitem}_${index}`}
-            to={item.route}
-            className={({ isActive }) =>
-              isActive ? HeaderStyle.link__active : ''
-            }
-          >
-            <li className="inline">{item.navitem}</li>
-          </NavLink>
+          <li className="inline" key={`${item.navitem}_${index}`}>
+            <NavLink
+              to={item.route}
+              className={({ isActive }) =>
+                isActive ? HeaderStyle.link__active : ''
+              }
+            >
+              {item.navitem}
+            </NavLink>
+          </li>
         );
       })}
     </ul>
@@ -204,7 +205,7 @@ export function Header({ description = 'This is HomePage' }: HeaderProps) {
 
   return (
     <ToggleProvider>
-      <header className={HeaderStyle.header}>
+      <header className={HeaderStyle.header} title="K&C Management Navigation">
         <h1 className="sr-only">{description}</h1>
         <div className={HeaderStyle.wrapper}>
           <Logo />

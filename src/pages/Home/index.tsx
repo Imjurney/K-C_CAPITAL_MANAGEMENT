@@ -17,7 +17,7 @@ function SubBanner() {
   return (
     <img
       src={`/assets/img/home/${home.home[1].image_url2}`}
-      className={HomeStyle.image}
+      className={clsx(HomeStyle.image, 'desktop:ab_center laptop:ab_center')}
       alt="k&c capital Management introduce picture"
     />
   );
@@ -79,6 +79,7 @@ export default function HomePage() {
   const [windowSize, setWindowSize] = useState({
     width: window.innerWidth,
   });
+
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const handleResize = useCallback(
     debounce(() => {
@@ -103,7 +104,11 @@ export default function HomePage() {
         {windowSize.width < 1024 ? (
           <Carousel
             slides={[
-              <SlideItem key={'tewt1'} />,
+              <SlideItem
+                imageName="slide_1.jpeg"
+                alt="K&C CAPITAL is a safe company."
+                key={'tewt1'}
+              />,
               <SlideItem key={'tewt2'} />,
               <SlideItem key={'tewt3'} />,
               <SlideItem key={'tewt4'} />,

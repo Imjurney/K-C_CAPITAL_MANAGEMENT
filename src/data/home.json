@@ -11,22 +11,26 @@
         {
           "order": "first",
           "contents": "K&C CAPITAL is a safe company.",
-          "position": "col-span-2"
+          "position": "col-span-4",
+          "image_name": "slide_1.jpeg"
         },
         {
           "order": "second",
           "contents": "Deliver guaranted returns",
-          "position": "col-span-1"
+          "position": "col-span-2",
+          "image_name": "slide_2.jpeg"
         },
         {
           "order": "third",
           "contents": "Ensuring a safe and sound",
-          "position": "col-span-1"
+          "position": "col-span-2",
+          "image_name": "slide_3.jpeg"
         },
         {
           "order": "Fourth",
           "contents": "Continuous investment portfolio management",
-          "position": "col-span-2"
+          "position": "col-span-4",
+          "image_name": "slide_4.jpeg"
         }
       ]
     },

@@ -6,7 +6,7 @@
 
 .image {
   @apply desktop:w-[64rem];
-  @apply desktop:ab_center laptop:ab_center z-20;
+  @apply z-20;
 }
 
 .p {
@@ -59,9 +59,9 @@
 }
 
 .slide__grid__wrapper {
-  @apply laptop:overflow-hidden;
-  @apply laptop:grid laptop:grid-rows-1 laptop:gap-5;
+  @apply grid grid-flow-row-dense grid-cols-4;
   @apply laptop:mx-5 laptop:mt-[9.375rem];
+  @apply laptop:overflow-hidden;
   @apply desktop:overflow-hidden;
   @apply desktop:grid desktop:grid-rows-1 desktop:gap-5;
   @apply desktop:mx-[8.9375rem] desktop:mt-[12.5rem];

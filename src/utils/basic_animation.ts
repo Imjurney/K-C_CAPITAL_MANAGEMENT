@@ -5,7 +5,7 @@ export function basic_animation(
   ref_2: MutableRefObject<null>
 ) {
   gsap.from(ref_1.current, {
-    y: -20,
+    y: -40,
     duration: 2,
     ease: 'power3.out',
     opacity: 0,
@@ -17,7 +17,7 @@ export function basic_animation(
     },
   });
   gsap.from(ref_2.current, {
-    y: 20,
+    y: 40,
     duration: 2,
     ease: 'power3.out',
     opacity: 0,

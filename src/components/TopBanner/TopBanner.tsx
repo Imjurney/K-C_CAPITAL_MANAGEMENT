@@ -15,6 +15,7 @@ export function TopBanner() {
       <img
         className="brightness-50 -z-50 w-full"
         src={`/assets/img/${home['home'][0].image_url1}`}
+        alt="K&C Capital Mangagement introduce Picture"
       />
       <div className="absolute text-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
         <h1

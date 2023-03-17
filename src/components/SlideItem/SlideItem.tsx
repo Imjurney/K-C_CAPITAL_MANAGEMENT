@@ -1,8 +1,11 @@
 import clsx from 'clsx';
 import { Button } from '@/components/Button/Button';
 import HomeStyle from '@/pages/Home/Home.module.css';
+
 type SlideitemProps = {
   className?: string;
+  imageName?: string;
+  alt?: string;
 };
 
 interface SlideItemDescroption {
@@ -30,20 +33,21 @@ export function SlideItemDescription({
   );
 }
 
-export function SlideImage({ className }: SlideitemProps) {
+export function SlideImage({ className, imageName, alt }: SlideitemProps) {
   return (
     <img
       className={clsx(HomeStyle.slide__imgs, className)}
-      src="/assets/img/home/slide/slide_1.jpeg"
-      alt=""
+      src={`/assets/img/home/slide/${imageName}`}
+      alt={`this picture is about "${alt}"`}
     />
   );
 }
-export function SlideItem() {
+
+export function SlideItem({ imageName, alt }: SlideitemProps) {
   return (
     <>
-      <SlideImage />
-      <SlideItemDescription />
+      <SlideImage imageName={imageName} alt={alt} />
+      <SlideItemDescription order="dsfsd" description="dsfsdf" />
     </>
   );
 }
