@@ -3,6 +3,9 @@
   @apply laptop:w-[30.25rem] laptop:h-[15.0625rem];
   @apply desktop:w-[35.5rem] desktop:h-[13.9375rem];
   @apply mobile:flex mobile:flex-col mobile:justify-center;
+  @apply mobile:px-7 mobile:pb-5;
+  @apply mobile:rounded-[1.25rem];
+  @apply mobile:bg-white;
 }
 
 .carouselWide__card__icon {
@@ -18,6 +21,7 @@
 .carouselWide__card__dt {
   @apply flex laptop:items-center desktop:items-center;
   @apply mobile:gap-[0.625rem] laptop:gap-5 desktop:gap-5;
+  @apply mobile:mt-5;
 }
 
 .carouselWide__card__figcaption {
@@ -25,19 +29,39 @@
   @apply laptop:text-3xl;
   @apply desktop:text-4xl;
   @apply font-medium;
+  @apply self-center;
 }
 
 .carouselWide__card__p {
   @apply break-all;
   @apply mt-5;
   @apply desktop:pr-4 laptop:pr-2;
-  @apply mobile:px-7;
   @apply laptop:w-[30.25rem];
   @apply laptop:h-[8.75rem];
   @apply desktop:w-[35.5rem];
   @apply desktop:h-[7rem];
+  @apply mobile:w-[12.75rem] h-[10.125rem];
   @apply mobile:text-xs mobile:mt-7;
   @apply laptop:text-sm;
   @apply desktop:text-sm;
   @apply font-medium;
+}
+
+.carouselWide__card__button {
+  @apply mobile:hidden;
+}
+
+.carouselWide__card__more__button {
+  @apply flex items-center;
+  @apply desktop:justify-center laptop:justify-center mobile:justify-end mobile:mt-4;
+}
+
+.button__outline {
+  @apply border-2 border-black self-center;
+}
+
+/* ---------------------------- 슬라이드 래퍼 ---------------------------------------------- */
+.carouselWide__container {
+  @apply laptop:w-[32rem] desktop:w-[37rem] mobile:w-full;
+  @apply mobile:mt-0 mobile:mr-auto mobile:bg-kc-bg_lightgray rounded-md;
 }

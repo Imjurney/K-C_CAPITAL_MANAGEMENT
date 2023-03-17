@@ -163,12 +163,12 @@ function HamburgerButton() {
         className={HeaderStyle.button}
       >
         {toggle ? (
-          <Xbutton id="Xbutton" className="Xbutton" size={20} />
+          <Xbutton id="Xbutton" className="Xbutton" size={'20'} />
         ) : (
           <BurgerMenu
             id="burgerButton"
             className="burgerButton"
-            size={18}
+            size={'18'}
             strokeWidth={0.5}
           />
         )}

@@ -18,7 +18,7 @@ export function SlideCard() {
   return (
     <figure ref={ref} className={SlideCardStyle.card_wrapper}>
       <div className={SlideCardStyle.icon_wrapper}>
-        <Apart color="#E7020F" size={48} className="m-0" />
+        <Apart color="#E7020F" size={'48'} className="m-0" />
       </div>
       <figcaption className={SlideCardStyle.figcaption}>
         <span>investment</span>
