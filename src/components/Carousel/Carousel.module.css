@@ -1,0 +1,43 @@
+.carouselWide__card__wrapper {
+  @apply laptop:ml-4 desktop:ml-4;
+  @apply laptop:w-[30.25rem] laptop:h-[15.0625rem];
+  @apply desktop:w-[35.5rem] desktop:h-[13.9375rem];
+  @apply mobile:flex mobile:flex-col mobile:justify-center;
+}
+
+.carouselWide__card__icon {
+  @apply flex items-center justify-center bg-kc-red;
+  @apply mobile:w-10 mobile:h-10;
+  @apply mobile:rounded-[0.25rem];
+  @apply laptop:w-20 laptop:h-20;
+  @apply laptop:rounded-[0.625rem];
+  @apply desktop:w-20 desktop:h-20;
+  @apply desktop:flex desktop:items-center desktop:justify-center desktop:rounded-[0.625rem];
+}
+
+.carouselWide__card__dt {
+  @apply flex laptop:items-center desktop:items-center;
+  @apply mobile:gap-[0.625rem] laptop:gap-5 desktop:gap-5;
+}
+
+.carouselWide__card__figcaption {
+  @apply mobile:text-base;
+  @apply laptop:text-3xl;
+  @apply desktop:text-4xl;
+  @apply font-medium;
+}
+
+.carouselWide__card__p {
+  @apply break-all;
+  @apply mt-5;
+  @apply desktop:pr-4 laptop:pr-2;
+  @apply mobile:px-7;
+  @apply laptop:w-[30.25rem];
+  @apply laptop:h-[8.75rem];
+  @apply desktop:w-[35.5rem];
+  @apply desktop:h-[7rem];
+  @apply mobile:text-xs mobile:mt-7;
+  @apply laptop:text-sm;
+  @apply desktop:text-sm;
+  @apply font-medium;
+}

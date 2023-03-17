@@ -1,0 +1,20 @@
+.card_wrapper {
+  @apply mobile:hidden;
+  @apply laptop:shadow-article_shadow laptop:w-40 laptop:h-40;
+  @apply laptop:inline-flex laptop:flex-col laptop:justify-center laptop:items-center laptop:bg-white;
+  @apply laptop:py-7 laptop:px-12 laptop:rounded-[0.625rem] laptop:gap-2;
+  @apply desktop:shadow-article_shadow desktop:w-40 desktop:h-40;
+  @apply desktop:inline-flex desktop:flex-col desktop:justify-center desktop:items-center desktop:bg-white;
+  @apply desktop:py-7 desktop:px-12 desktop:rounded-[0.625rem] desktop:gap-2;
+}
+
+.icon_wrapper {
+  @apply mobile:hidden;
+  @apply w-[3.75rem] h-[3.75rem] flex items-center justify-center;
+  @apply outline outline-kc-red rounded-lg;
+}
+
+.figcaption {
+  @apply mobile:hidden;
+  @apply grid justify-items-center text-base leading-4;
+}

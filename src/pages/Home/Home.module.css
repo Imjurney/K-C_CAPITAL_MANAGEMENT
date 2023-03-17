@@ -34,6 +34,7 @@
   @apply desktop:absolute  desktop:bottom-12  desktop:left-1/2  desktop:-translate-x-1/2;
   @apply laptop:absolute  laptop:bottom-12  laptop:left-1/2  laptop:-translate-x-1/2;
 }
+/* -------------------------------------------------------------------------- */
 
 .slide {
   @apply desktop:w-full;
@@ -58,15 +59,6 @@
   @apply desktop:pt-[7.5rem] desktop:pb-[8.125rem];
 }
 
-.slide__grid__wrapper {
-  @apply grid grid-flow-row-dense grid-cols-4;
-  @apply laptop:mx-5 laptop:mt-[9.375rem];
-  @apply laptop:overflow-hidden;
-  @apply desktop:overflow-hidden;
-  @apply desktop:grid desktop:grid-rows-1 desktop:gap-5;
-  @apply desktop:mx-[8.9375rem] desktop:mt-[12.5rem];
-}
-
 .slide__grid__items {
   @apply laptop:h-[12.5rem] laptop:w-full;
   @apply laptop:rounded-[1.25rem];
@@ -76,8 +68,29 @@
   @apply desktop:object-center desktop:object-cover;
 }
 
+.slide__grid__wrapper {
+  @apply grid bg-white;
+  @apply grid-flow-row-dense gap-5 grid-cols-2;
+  @apply laptop:mx-5 laptop:mt-[9.375rem] laptop:mb-[6.25rem];
+  @apply laptop:overflow-hidden;
+  @apply desktop:overflow-hidden;
+  @apply desktop:mx-[8.9375rem] desktop:mt-[12.5rem] desktop:mb-[6.25rem];
+}
+
+.slide__grid__wrapper > div {
+  @apply relative;
+}
+
+.slide__grid__wrapper > div:first-child {
+  @apply col-span-2;
+}
+
+.slide__grid__wrapper > div:last-child {
+  @apply col-span-2;
+}
+
 .slide__Description {
-  @apply mobile:relative text-white;
+  @apply text-white;
 }
 
 .slide__Description > span {
@@ -92,8 +105,13 @@
 }
 
 .slide__Description__button {
-  @apply absolute hover:bg-kc-footer_lightgray;
+  @apply absolute hover:bg-kc-footer_lightgray transition ease-in-out delay-150;
   @apply mobile:-top-[19rem] mobile:left-[10.25rem];
   @apply laptop:right-0 laptop:top-5 laptop:-translate-x-7;
   @apply desktop:right-0 desktop:top-5 desktop:-translate-x-7;
 }
+
+.slide__Description__button:hover {
+  @apply -translate-y-1 scale-110 bg-red-300 duration-300;
+}
+/* -------------------------------------------------------------------------- */

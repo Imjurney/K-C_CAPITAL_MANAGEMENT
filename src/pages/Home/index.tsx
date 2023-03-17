@@ -12,7 +12,11 @@ import { debounce } from 'lodash';
 import { Carousel } from '@/components/Carousel/Carousel';
 import { SlideItem } from '@/components/SlideItem/SlideItem';
 import { GridBanner } from '@/components/GridBanner/GridBanner';
-
+import LogoImage from '@/assets/Logo_white.svg';
+import { MdApartment as Apart } from 'react-icons/md';
+import { SlideCard } from '@/components/SlideCard/SlideCard';
+import useEmblaCarousel, { EmblaOptionsType } from 'embla-carousel-react';
+import { CarouselWide } from '@/components/Carousel/CarouselWide';
 function SubBanner() {
   return (
     <img
@@ -41,7 +45,11 @@ function SubBannerDescription() {
         </span>
       </p>
       <div ref={buttonWrapperRef} className={HomeStyle.button_wrapper}>
-        <Button type={'button'} layOutDesign={'Normal'}>
+        <Button
+          className="transition-all"
+          type={'button'}
+          layOutDesign={'Normal'}
+        >
           Read&nbsp;more
         </Button>
       </div>
@@ -103,17 +111,19 @@ export default function HomePage() {
       <SlideBanner>
         {windowSize.width < 1024 ? (
           <Carousel
-            slides={[
-              <SlideItem
-                imageName="slide_1.jpeg"
-                alt="K&C CAPITAL is a safe company."
-                key={'tewt1'}
-              />,
-              <SlideItem key={'tewt2'} />,
-              <SlideItem key={'tewt3'} />,
-              <SlideItem key={'tewt4'} />,
-              <SlideItem key={'tewt5'} />,
-            ]}
+            slides={
+              [
+                // <SlideItem
+                //   imageName="slide_1.jpeg"
+                //   alt="K&C CAPITAL is a safe company."
+                //   key={'tewt1'}
+                // />,
+                // <SlideItem key={'tewt2'} />,
+                // <SlideItem key={'tewt3'} />,
+                // <SlideItem key={'tewt4'} />,
+                // <SlideItem key={'tewt5'} />,
+              ]
+            }
             options={{
               align: 'start',
               loop: true,
@@ -125,7 +135,25 @@ export default function HomePage() {
           <GridBanner />
         )}
       </SlideBanner>
-      <section className="h-[100vh] bg-blue-200"></section>
+      <section className="h-[83.4375rem] pt-[6.25rem] bg-kc-bg_lightgray relative">
+        <div className="pb-[3.75rem]">
+          <TitleContent content="How do we manage investment?" />
+        </div>
+        {/* 여긴 원형 */}
+        {/* <div className="absolute -left-[21.5625rem] py-7">
+          <div className="bg-red-200 w-[57.125rem] h-[57.125rem] rounded-full flex justify-center items-center">
+            <div className="bg-white w-[28.625rem] h-[28.625rem] rounded-full -left-[7.3125rem] outline outline-kc-red outline-[5.75rem] flex items-center justify-center">
+              <img
+                src={LogoImage}
+                width={200}
+                alt="K&C Capital Management Logo"
+              />
+            </div>
+          </div>
+        </div> */}
+        {/* 여기까지 */}
+        <CarouselWide />
+      </section>
       <Footer />
     </>
   );
