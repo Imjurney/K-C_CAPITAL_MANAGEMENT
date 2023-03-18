@@ -1,28 +1,26 @@
-import { MdApartment as Apart } from 'react-icons/md';
 import SlideCardStyle from '@/components/SlideCard/SlideCard.module.css';
-import { useEffect, useRef } from 'react';
-import { gsap } from 'gsap/all';
-export function SlideCard() {
-  const ref = useRef<HTMLElement>(null);
-  useEffect(() => {
-    const tl = gsap.timeline();
+import { CUSTOM_ICONS } from '@/data/icon/icon';
+import clsx from 'clsx';
+import { MdApartment } from 'react-icons/md';
+interface SlideCardProps {
+  name?: string;
+  name2?: string;
+  icon?: JSX.Element;
+  className?: string;
+}
 
-    tl.to(ref.current, {
-      duration: 1,
-      css: {
-        backgroundColor: '#D3D3D3',
-      },
-    });
-    tl.reverse();
-  }, []);
+export function SlideCard({
+  name = 'investment',
+  name2 = 'company',
+  icon,
+  className,
+}: SlideCardProps) {
   return (
-    <figure ref={ref} className={SlideCardStyle.card_wrapper}>
-      <div className={SlideCardStyle.icon_wrapper}>
-        <Apart color="#E7020F" size={'48'} className="m-0" />
-      </div>
+    <figure className={clsx(SlideCardStyle.card_wrapper, className)}>
+      <div className={SlideCardStyle.icon_wrapper}>{icon}</div>
       <figcaption className={SlideCardStyle.figcaption}>
-        <span>investment</span>
-        <span>company</span>
+        <span>{name}</span>
+        <span>{name2}</span>
       </figcaption>
     </figure>
   );

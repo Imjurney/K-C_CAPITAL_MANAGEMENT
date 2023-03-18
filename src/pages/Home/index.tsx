@@ -4,19 +4,17 @@ import { Header } from '@/components/Header/Header';
 import { TitleContent } from '@/components/TitleContent/TitleContent';
 import { TopBanner } from '@/components/TopBanner/TopBanner';
 import HomeStyle from '@/pages/Home/Home.module.css';
-import { ReactNode, useCallback, useEffect, useRef, useState } from 'react';
+import { ReactNode, useEffect, useRef } from 'react';
 import { basic_animation } from '@/utils/basic_animation';
 import home from '@/data/image.json';
+import contents from '@/data/home.json';
 import clsx from 'clsx';
-import { debounce } from 'lodash';
 import { Carousel } from '@/components/Carousel/Carousel';
-import { SlideItem } from '@/components/SlideItem/SlideItem';
 import { GridBanner } from '@/components/GridBanner/GridBanner';
-import LogoImage from '@/assets/Logo_white.svg';
-import { MdApartment as Apart } from 'react-icons/md';
-import { SlideCard } from '@/components/SlideCard/SlideCard';
-import useEmblaCarousel, { EmblaOptionsType } from 'embla-carousel-react';
+import { Circle } from '@/components/Circle/Circle';
 import { CarouselWide } from '@/components/Carousel/CarouselWide';
+import { useInnerWidthState } from '@/utils/useInnerWidthState';
+
 function SubBanner() {
   return (
     <img
@@ -84,25 +82,7 @@ function SlideBanner({ children }: SlideBannerProps) {
 }
 
 export default function HomePage() {
-  const [windowSize, setWindowSize] = useState({
-    width: window.innerWidth,
-  });
-
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const handleResize = useCallback(
-    debounce(() => {
-      setWindowSize({
-        width: window.innerWidth,
-      });
-    }, 100),
-    []
-  );
-  useEffect(() => {
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+  const [windowSize] = useInnerWidthState();
   return (
     <>
       <Header />
@@ -139,19 +119,16 @@ export default function HomePage() {
         <div className="pb-[3.75rem]">
           <TitleContent content="How do we manage investment?" />
         </div>
-        {/* 여긴 원형 */}
-        {/* <div className="absolute -left-[21.5625rem] py-7">
-          <div className="bg-red-200 w-[57.125rem] h-[57.125rem] rounded-full flex justify-center items-center">
-            <div className="bg-white w-[28.625rem] h-[28.625rem] rounded-full -left-[7.3125rem] outline outline-kc-red outline-[5.75rem] flex items-center justify-center">
-              <img
-                src={LogoImage}
-                width={200}
-                alt="K&C Capital Management Logo"
-              />
-            </div>
-          </div>
-        </div> */}
-        {/* 여기까지 */}
+        <p className="absolute left-1/2  leading-normal text-kc-article_gray66 top-1/3 whitespace-pre-line inline-block text-2xl text-start">
+          <span>We suggest you </span>
+          <strong className="font-medium text-black">
+            the best investment destination
+          </strong>
+          <span className="block">based on rigorous review</span>
+          <span>and detailed financial analysis.</span>
+        </p>
+        <Circle />
+        {/* flex flex-col text-base w-[16.375rem] z-20" */}
         <CarouselWide />
       </section>
       <Footer />

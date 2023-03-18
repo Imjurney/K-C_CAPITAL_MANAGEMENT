@@ -1,41 +1,43 @@
-import { IconBaseProps } from 'react-icons';
 import { MdApartment } from 'react-icons/md';
 
-interface IconsProps {
-  size?: number;
-  color?: string;
-}
-function Score({ size, color }: IconsProps) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 36 32"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M0 32V30.3H4.2V29H2.1V27.3H4.2V26H0V24.3H5.9V32H0ZM10.45 29.55V26.55H36V29.55H10.45ZM0 19.85V18.25L3.75 13.85H0V12.15H5.9V13.75L2.1 18.15H5.9V19.85H0ZM10.45 17.4V14.4H36V17.4H10.45ZM2.1 7.8V1.7H0V0H3.8V7.8H2.1ZM10.45 5.25V2.25H36V5.25H10.45Z"
-        fill={color}
-      />
-    </svg>
-  );
-}
+import CustomIcon from '@/utils/creactCustomIcon';
 
 export const CUSTOM_ICONS = [
   {
     id: 1,
-    name: 'apart',
-    icon_name: [<MdApartment key={'kc_custom_icon_apart'} />],
+    name: 'investment',
+    name2: 'company',
+    discription:
+      'We invest in companies developing real estate, especially in residential properties where the securities provided are safe and sound. We carefully select the companies we invest through our extensive research and analysis of the companies’ performance, credibility, and potential to grow.',
+    icon_name: [<MdApartment color="white" key={'kc_custom_icon_apart'} />],
+    path: '/Contact',
   },
   {
     id: 2,
-    name: 'Score',
-    icon_name: [<Score key={'kc_custom_icon_Score'} />],
+    name: 'Investment',
+    name2: 'Strategy',
+    discription:
+      'We invest in companies developing real estate, especially in residential properties where the securities provided are safe and sound. We carefully select the companies we invest through our extensive research and analysis of the companies’ performance, credibility, and potential to grow.',
+    icon_name: [
+      <CustomIcon icon="Score" color="White" key={'kc_custom_icon_Score'} />,
+    ],
+    path: '/Contact',
   },
   {
     id: 3,
-    name: 'apart',
-    icon_name: [<MdApartment key={'kc_custom_icon'} />],
+    name: 'Secured',
+    name2: 'Reinvestment',
+    discription:
+      'We invest in companies developing real estate, especially in residential properties where the securities provided are safe and sound. We carefully select the companies we invest through our extensive research and analysis of the companies’ performance, credibility, and potential to grow.',
+    icon_name: [
+      <CustomIcon icon="Cycle" color="White" key={'kc_custom_icon_Cycle'} />,
+    ],
+    path: '/Home',
   },
+];
+
+export const VariationIcon = [
+  <MdApartment size={48} color="#E7020F" key={'kc_custom_icon_apart'} />,
+  <CustomIcon icon="Score" color="#E7020F" key={'kc_custom_icon_Score'} />,
+  <CustomIcon icon="Cycle" color="#E7020F" key={'kc_custom_icon_Cycle'} />,
 ];

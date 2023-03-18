@@ -7,65 +7,92 @@ import style from '@/components/Carousel/Carousel.module.css';
 import { IconContext } from 'react-icons';
 import { useInnerWidthState } from '@/utils/useInnerWidthState';
 import { Link } from 'react-router-dom';
+import { CUSTOM_ICONS } from '@/data/icon/icon';
+
 type PropType = {
   options?: EmblaOptionsType;
   slides?: ReactNode[];
 };
 
-type CarouselWideSlideCardType = {
-  icon?: ReactNode;
-};
-
 interface CarouselWideSlideCardProps {
-  icon?: ReactNode;
   subject?: string;
+  subject2?: string;
   description?: string;
+  icon: {
+    element?: Element[] | JSX.Element;
+  };
+  path: string;
 }
 
 function CarouselWideSlideCard({
-  subject = ' investment company',
-  description = 'We invest in companies developing real estate, especially in residential properties where the securities provided are safe and sound. We carefully select the companies we invest through ourextensive research and analysis of the companies’ performance, credibility, and potential to grow.',
+  path,
+  icon = {
+    element: <Apart key={'Apart'} color="white" />,
+  },
+  subject = 'investment',
+  subject2 = 'company',
+  description,
 }: CarouselWideSlideCardProps) {
   const [window] = useInnerWidthState();
   return (
-    <dl className={style.carouselWide__card__wrapper} key={1}>
-      <dt className={style.carouselWide__card__dt}>
-        <figure className={style.carouselWide__card__icon}>
-          <IconContext.Provider
-            value={{
-              size: window.width >= 1024 ? 48 : 24,
-            }}
-          >
-            <Apart color="white" />
-          </IconContext.Provider>
-        </figure>
-        <figcaption className={style.carouselWide__card__figcaption}>
-          {subject}
-        </figcaption>
-      </dt>
-      <dd className="self-center">
-        <p className={style.carouselWide__card__p}>{description}</p>
-      </dd>
-      <div className={style.carouselWide__card__more__button}>
-        <Link to={'/Contact'}>
-          <Button
-            className={style.button__outline}
-            color="White"
-            type={'button'}
-            layOutDesign={'Normal'}
-          >
-            ReadMore
-          </Button>
-        </Link>
-      </div>
-    </dl>
+    <>
+      <dl className={style.carouselWide__card__wrapper}>
+        <dt className={style.carouselWide__card__dt}>
+          <figure className={style.carouselWide__card__icon}>
+            <IconContext.Provider
+              value={{
+                color: 'white',
+                size: window.width >= 1024 ? 48 : 24,
+              }}
+            >
+              {icon.element}
+            </IconContext.Provider>
+          </figure>
+          <figcaption className={style.carouselWide__card__figcaption}>
+            {subject}&nbsp;{subject2}
+          </figcaption>
+        </dt>
+        <dd className="self-center">
+          <p className={style.carouselWide__card__p}>{description}</p>
+        </dd>
+        <div className={style.carouselWide__card__more__button}>
+          <Link to={path}>
+            <Button
+              className={style.button__outline}
+              color="White"
+              type={'button'}
+              layOutDesign={'Normal'}
+            >
+              ReadMore
+            </Button>
+          </Link>
+        </div>
+      </dl>
+    </>
   );
 }
+
+function CarouselWideSlideCardGroup() {
+  return CUSTOM_ICONS.map((item, index) => {
+    return (
+      <CarouselWideSlideCard
+        key={index}
+        subject={item.name}
+        subject2={item.name2}
+        description={item.discription}
+        icon={{
+          element: item.icon_name[0],
+        }}
+        path={item.path}
+      />
+    );
+  });
+}
+
 export function CarouselWide(props: PropType) {
-  const { options, slides } = props; // props로 가져온 옵션과 슬라이드 리스트
+  const { options } = props; // props로 가져온 옵션과 슬라이드 리스트
   const [emblaRef, embla] = useEmblaCarousel(options); // 슬라이더 구현에 필요한 요소들을 useEmblaCarousel 에서 가져온다.
-  const [selectedIndex, setSelectedindex] = useState(0); // 현재 보여지는 인덱스를 설정
-  const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
+
   useEmblaCarousel.globalOptions = { loop: true };
   const scrollPrev = useCallback(() => {
     if (embla) embla.scrollPrev();
@@ -74,27 +101,12 @@ export function CarouselWide(props: PropType) {
   const scrollNext = useCallback(() => {
     if (embla) embla.scrollNext();
   }, [embla]);
-  const onSelect = useCallback(() => {
-    if (!embla) return;
-    setSelectedindex(embla.selectedScrollSnap());
-    // selectedScrollSnap:  선택한 스냅 Point의 인덱스를 가져온다.
-  }, [embla, setSelectedindex]);
-  useEffect(() => {
-    if (!embla) return;
-    onSelect();
-    setScrollSnaps(embla.scrollSnapList());
-    embla.on('select', onSelect);
-  }, [embla, setScrollSnaps, onSelect]);
 
   return (
     <div className={style.carouselWide__container}>
       <div className="overflow-hidden rounded-md" ref={emblaRef}>
         <div className="flex flex-col flex-wrap h-[20.625rem] flex-none">
-          {[
-            <CarouselWideSlideCard key={1} />,
-            <CarouselWideSlideCard key={2} />,
-            <CarouselWideSlideCard key={3} />,
-          ].map((slide, index) => (
+          {CarouselWideSlideCardGroup().map((slide, index) => (
             <div className="relative mr-4" key={index}>
               {slide}
             </div>

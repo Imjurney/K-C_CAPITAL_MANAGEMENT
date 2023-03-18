@@ -32,7 +32,9 @@
     },
     "contents_3": {
       "subject": "How do we manage investment?",
-      "description": "We suggest you the best investment destination based on rigorous review and detailed financial analysis.",
+      "description_1": "We suggest you",
+      "important": "the best investment destination",
+      "description_2": "based on rigorous review and detailed financial analysis.",
       "sub_contents": {
         "investment company": "We invest in companies developing real estate, especially in residential properties where the securities provided are safe and sound. We carefully select the companies we invest through our extensive research and analysis of the companies’ performance, credibility, and potential to grow.",
         "Investment Strategy": "입력하시오",

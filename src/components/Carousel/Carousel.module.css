@@ -62,6 +62,8 @@
 
 /* ---------------------------- 슬라이드 래퍼 ---------------------------------------------- */
 .carouselWide__container {
-  @apply laptop:w-[32rem] desktop:w-[37rem] mobile:w-full;
+  @apply laptop:absolute laptop:left-1/2 laptop:top-[55%];
+  @apply desktop:absolute desktop:left-1/2 desktop:top-[55%];
+  @apply laptop:w-[30.25rem] desktop:w-[35.25rem] mobile:w-full;
   @apply mobile:mt-0 mobile:mr-auto mobile:bg-kc-bg_lightgray rounded-md;
 }
