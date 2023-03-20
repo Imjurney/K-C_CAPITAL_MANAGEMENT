@@ -1,38 +1,12 @@
-import { TUseForm } from '@formspree/react';
-import { ChangeEvent, useEffect, useRef, useState } from 'react';
 import EamilInputStyle from '@/components/EmailInput/EmailInput.module.css';
 import clsx from 'clsx';
-type TodoPreview = Pick<TUseForm[0], 'errors'>;
+import { UseFormRegister, FieldValues } from 'react-hook-form';
+
 interface EmailInputProps {
   className?: string;
+  register: UseFormRegister<FieldValues>;
 }
-export function EmailInput({ className }: EmailInputProps) {
-  const test = useRef<HTMLInputElement>(null);
-  const test2 = useRef<HTMLInputElement>(null);
-  const [email, setEmail] = useState({
-    id: '',
-    mail: '',
-  });
-
-  const changeMailHandler = (e: ChangeEvent<HTMLInputElement>) => {
-    const { value } = e.target;
-    setEmail({
-      ...email,
-      ['mail']: value,
-    });
-  };
-
-  const changeIdHandler = (e: ChangeEvent<HTMLInputElement>) => {
-    const { value } = e.target;
-    setEmail({
-      ...email,
-      ['id']: value,
-    });
-  };
-
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  useEffect(() => {}, [email]);
-
+export function EmailInput({ className, register }: EmailInputProps) {
   return (
     <>
       <div className={clsx(className, EamilInputStyle.wrapper)} tabIndex={0}>
@@ -42,27 +16,13 @@ export function EmailInput({ className }: EmailInputProps) {
         <div className={EamilInputStyle.mail_wrapper}>
           <input
             className={EamilInputStyle.input}
-            onChange={changeIdHandler}
-            ref={test}
             required
-            placeholder="kccompany01"
-            type="text"
-          />
-          <span className={EamilInputStyle.at_sign}>&nbsp;@&nbsp;</span>
-          <input
-            className={EamilInputStyle.input}
-            onChange={changeMailHandler}
-            ref={test2}
-            required
-            placeholder="google.com"
+            {...(register && register('email'))}
+            placeholder="kccompany01 @ google.com"
+            name="email"
             type="text"
           />
         </div>
-        <input
-          type="hidden"
-          value={email.id + '@' + email.mail}
-          name={'email'}
-        />
       </div>
     </>
   );

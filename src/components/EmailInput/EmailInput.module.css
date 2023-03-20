@@ -11,6 +11,7 @@
 }
 
 .mail_wrapper {
+  @apply w-full;
   @apply laptop:flex laptop:items-center laptop:gap-2;
   @apply desktop:flex desktop:items-center desktop:gap-2;
 }
@@ -18,8 +19,8 @@
   @apply text-kc-contact_gray font-medium;
   @apply flex;
   @apply mobile:pt-[0.625rem] mobile:flex-col mobile:ml-[0.625rem] mobile:text-sm;
-  @apply laptop:ml-2 laptop:w-[7.6875rem] laptop:items-center laptop:justify-center laptop:flex-row;
-  @apply desktop:ml-2 desktop:w-[7.6875rem] desktop:items-center desktop:justify-center desktop:flex-row;
+  @apply laptop:ml-5 laptop:w-[7.6875rem] laptop:items-center laptop:justify-center laptop:flex-row;
+  @apply desktop:ml-5 desktop:w-[7.6875rem] desktop:items-center desktop:justify-center desktop:flex-row;
 }
 
 .outline_vertical::after {
@@ -30,13 +31,8 @@
 }
 
 .input {
-  @apply outline-none text-start;
-  @apply mobile:text-xs  mobile:w-[8rem] mobile:h-[2.0625rem] mobile:indent-3;
-  @apply laptop:h-[2.625rem] laptop:w-[13rem] laptop:indent-2;
-  @apply desktop:h-[2.625rem] desktop:w-[13rem] desktop:indent-2;
-}
-
-.at_sign {
-  @apply text-base text-kc-contact_gray font-medium;
-  @apply mobile:text-sm;
+  @apply outline-none text-start w-full;
+  @apply mobile:text-xs mobile:h-[2.0625rem] mobile:indent-3;
+  @apply laptop:h-[2.625rem] laptop:indent-6;
+  @apply desktop:h-[2.625rem]  desktop:indent-6;
 }

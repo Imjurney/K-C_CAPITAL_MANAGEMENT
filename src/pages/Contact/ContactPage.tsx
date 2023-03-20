@@ -2,9 +2,8 @@ import { Button } from '@/components/Button/Button';
 import { EmailInput } from '@/components/EmailInput/EmailInput';
 import { Textarea } from '@/components/Textarea/Textarea';
 import { TextInput } from '@/components/TextInput/TextInput';
-import { TUseForm, useForm, ValidationError } from '@formspree/react';
 import clsx from 'clsx';
-import { ReactNode, useRef } from 'react';
+import { ReactNode, useCallback, useState } from 'react';
 import contact from '@/pages/Contact/ContactPage.module.css';
 import { Header } from '@/components/Header/Header';
 import { Footer } from '@/components/Footer/Footer';
@@ -12,68 +11,76 @@ import { Footer } from '@/components/Footer/Footer';
 import { TitleContent } from '@/components/TitleContent/TitleContent';
 import { ContactLayout } from '@/components/Layout/ContactLayout';
 import { ContactBox } from '@/components/Contactbox/ContactBox';
+import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
+import axios from 'axios';
 
-interface FormProvierProps {
+interface RHFormProps {
   children?: ReactNode;
-  onSubmit: TUseForm[1];
+  onSubmit: React.FormEventHandler<HTMLFormElement>;
 }
-
-function FormProvier({ ...props }: FormProvierProps) {
-  const { children } = props;
-  const formRef = useRef<HTMLFormElement>(null);
+function RHForm({ children, onSubmit }: RHFormProps) {
+  const [RHFDevTool, setRHFDevTool] = useState(<></>);
 
   return (
     <form
+      onSubmit={onSubmit}
       className={clsx('shadow-article_shadow', contact.form)}
-      ref={formRef}
-      onSubmit={props.onSubmit}
     >
       {children}
+      {RHFDevTool}
     </form>
   );
 }
 
 function ContactForm() {
-  const [state, handleSubmit] = useForm('contactForm');
-  if (state.succeeded) {
-    alert('Thanks for your submission');
-    location.reload();
-  }
+  const { register, handleSubmit, getValues } = useForm<FieldValues>();
+
+  // { test: "test-input", test1: "test1-input" }
+  const onSubmitHandler: SubmitHandler<FieldValues> = useCallback((data) => {
+    axios
+      .post('http://localhost:3005/back/mail', data)
+      .then((res) => console.log(res))
+      .catch((err) => console.error(err));
+  }, []);
+
   return (
-    <FormProvier onSubmit={handleSubmit}>
+    <RHForm onSubmit={handleSubmit(onSubmitHandler)}>
       <fieldset className={contact.fieldset}>
         <legend className={contact.legend}>Send a Massage</legend>
         <div className="flex mobile:gap-x-4 mobile:px-5 laptop:gap-8 desktop:gap-8">
           <TextInput
+            register={register}
             labelName={'First Name'}
             placeholder={'your first name'}
             direction={'vertical'}
             type={'text'}
+            name={'firstName'}
           />
           <TextInput
+            register={register}
             labelName={'Last Name'}
             placeholder={'your last name'}
             direction={'vertical'}
             type={'text'}
+            name={'lastName'}
           />
         </div>
-        <EmailInput />
-        <div className={contact.error}>
-          <ValidationError field="email" prefix="Email" errors={state.errors} />
-        </div>
+        <EmailInput register={register} />
 
         <TextInput
+          register={register}
           labelName={'Phone'}
           placeholder={'Your Phone Number'}
           direction={'horizon'}
           type={'tel'}
+          name={'Phone'}
         />
-        <Textarea />
+        <Textarea register={register} />
         <Button type={'submit'} layOutDesign={'Form'}>
           Submit
         </Button>
       </fieldset>
-    </FormProvier>
+    </RHForm>
   );
 }
 
