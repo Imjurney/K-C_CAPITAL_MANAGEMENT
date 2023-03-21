@@ -157,6 +157,7 @@ function HamburgerButton() {
   return (
     <>
       <button
+        type="button"
         ref={buttonRef}
         onClick={setToggle}
         aria-label="navigation_button"
