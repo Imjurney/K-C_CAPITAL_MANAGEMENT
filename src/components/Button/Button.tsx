@@ -3,8 +3,10 @@ import { ReactNode } from 'react';
 
 interface ButtonProps {
   type: 'submit' | 'button' | 'reset';
-  layOutDesign: 'Form' | 'Normal';
+  layOutDesign: 'Form' | 'Normal' | 'More';
+  color?: 'Red' | 'White';
   children?: ReactNode;
+  className?: string;
 }
 
 const ResPonsiveLayout = {
@@ -19,19 +21,23 @@ const ResPonsiveLayout = {
     'laptop:px-10 laptop:py-5 laptop:font-medium laptop:text-base',
     'desktop:px-10 desktop:py-5 desktop:font-medium desktop:text-base',
   ],
+  More: ['px-5 py-2'],
 };
 
+const colors = {
+  Red: 'rounded-full bg-kc-red text-white',
+  White: 'rounded-full bg-white text-black',
+};
 export function Button({
   type = 'button',
   children,
   layOutDesign,
+  color = 'Red',
+  className,
 }: ButtonProps) {
   return (
     <button
-      className={clsx(
-        'rounded-full bg-kc-red text-white',
-        ResPonsiveLayout[layOutDesign]
-      )}
+      className={clsx(className, colors[color], ResPonsiveLayout[layOutDesign])}
       type={type}
     >
       {children}

@@ -23,7 +23,7 @@ function WorkerCardButton({ children, className }: WorkerCardButtonProps) {
 export function LeftWorkerCardButton() {
   return (
     <WorkerCardButton className="ml-10">
-      <BsChevronLeft size={20} strokeWidth={0.5} />
+      <BsChevronLeft size={'20'} strokeWidth={0.5} />
     </WorkerCardButton>
   );
 }
@@ -31,7 +31,7 @@ export function LeftWorkerCardButton() {
 export function RightWorkerCardButton() {
   return (
     <WorkerCardButton className="mr-10">
-      <BsChevronRight size={20} strokeWidth={0.5} />
+      <BsChevronRight size={'20'} strokeWidth={0.5} />
     </WorkerCardButton>
   );
 }

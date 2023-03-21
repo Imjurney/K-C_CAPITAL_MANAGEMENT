@@ -10,15 +10,17 @@ import {
   useRef,
   useState,
 } from 'react';
-import { debounce } from 'lodash';
+import { debounce, flatMap, toPairs } from 'lodash';
 import {
   RxCross2 as Xbutton,
   RxHamburgerMenu as BurgerMenu,
 } from 'react-icons/rx';
 import HeaderStyle from '@/components/Header/Header.module.css';
-import { gsap, Power4 } from 'gsap';
-import clsx from 'clsx';
-import { Link } from 'react-router-dom';
+import navdata from '@/data/nav.json';
+import { Link, NavLink } from 'react-router-dom';
+import { navigation_animation } from '@/utils/navigation_animation';
+import { useQuery } from '@tanstack/react-query';
+
 /* -------------------------------------------------------------------------- */
 
 interface ToggleProps {
@@ -26,6 +28,10 @@ interface ToggleProps {
   toggle?: boolean;
   setToggle?: () => void;
   ref?: RefObject<HTMLUListElement>;
+  data?: {
+    navitem: string;
+    route: string;
+  }[];
 }
 
 interface NavigationProps {
@@ -44,9 +50,16 @@ const defaultState = {
 const ToggleContext = createContext<ToggleProps>(defaultState);
 
 function ToggleProvider({ children }: ToggleProps) {
-  const [toggle, setToggle] = useState(defaultState.toggle);
+  const [toggle, setToggle] = useState(false);
   const ref = useRef<HTMLUListElement>(null);
-
+  const { data } = useQuery(
+    ['NavigationItem'],
+    () => Promise.resolve(navdata),
+    {
+      staleTime: 10000,
+      refetchOnWindowFocus: false,
+    }
+  );
   return (
     <ToggleContext.Provider
       value={{
@@ -55,6 +68,7 @@ function ToggleProvider({ children }: ToggleProps) {
           setToggle((toggle: boolean) => !toggle);
         },
         ref,
+        data: data,
       }}
     >
       {children}
@@ -69,9 +83,9 @@ const useSelector = () => {
 /* --------------------------------- 컴포넌트 -------------------------------- */
 function Logo() {
   return (
-    <button>
-      <img src={LogoImage} width={160} alt="홈으로 가기" />
-    </button>
+    <Link to={'/'}>
+      <img src={LogoImage} width={160} alt="go to the HomePage" />
+    </Link>
   );
 }
 
@@ -80,54 +94,41 @@ function NavigationWrapper({ ...props }: NavigationProps) {
 }
 
 function NavigationItem() {
+  const { data } = useSelector();
+
   return (
     <ul className={HeaderStyle.navItem}>
-      <Link to={'/'}>
-        <li>HOME</li>
-      </Link>
-      <Link to={'/about_us'}>
-        <li>ABOUT US</li>
-      </Link>
-      <Link to={'/investments'}>
-        <li>INVESTMENTS</li>
-      </Link>
-      <Link to={'/testimonials'}>
-        <li>TESTIMONIALS</li>
-      </Link>
-      <Link to={'/other_services'}>
-        <li>OTHER SERVICES</li>
-      </Link>
-      <Link to={'/contact'}>
-        <li>CONTACT</li>
-      </Link>
+      {data?.map((item, index) => {
+        return (
+          <li className="inline" key={`${item.navitem}_${index}`}>
+            <NavLink
+              to={item.route}
+              className={({ isActive }) =>
+                isActive ? HeaderStyle.link__active : ''
+              }
+            >
+              {item.navitem}
+            </NavLink>
+          </li>
+        );
+      })}
     </ul>
   );
 }
 
 function BurgerNavigationItem() {
-  const { ref, toggle } = useSelector();
+  const { ref, data } = useSelector();
 
   return (
     <NavigationWrapper>
       <ul ref={ref} className={HeaderStyle.ul} id="burger_list">
-        <Link className={HeaderStyle.link} to={'/'}>
-          <li>HOME</li>
-        </Link>
-        <Link className={HeaderStyle.link} to={'/about_us'}>
-          <li>ABOUT US</li>
-        </Link>
-        <Link className={HeaderStyle.link} to={'/investments'}>
-          <li>INVESTMENTS</li>
-        </Link>
-        <Link className={HeaderStyle.link} to={'/testimonials'}>
-          <li>TESTIMONIALS</li>
-        </Link>
-        <Link className={HeaderStyle.link} to={'/other_services'}>
-          <li>OTHER SERVICES</li>
-        </Link>
-        <Link className={HeaderStyle.link} to={'/contact'}>
-          <li>CONTACT</li>
-        </Link>
+        {data?.map((item, index) => {
+          return (
+            <Link key={index} className={HeaderStyle.link} to={item.route}>
+              <li>{item.navitem}</li>
+            </Link>
+          );
+        })}
       </ul>
     </NavigationWrapper>
   );
@@ -136,72 +137,48 @@ function BurgerNavigationItem() {
 function HamburgerButton() {
   const { toggle, setToggle } = useSelector();
   const buttonRef = useRef<HTMLButtonElement>(null);
-  const isMounted = useRef(false);
+  useEffect(() => {
+    if (toggle) {
+      document.body.style.cssText = `
+        position: fixed;
+        top: -${window.scrollY}px;
+        width: 100%; 
+      `;
+    }
 
+    return () => {
+      document.body.style.cssText = '';
+    };
+  });
   useLayoutEffect(() => {
-    const cxt = gsap.context(() => {
-      buttonRef.current?.addEventListener('click', () => {
-        if (!isMounted.current) {
-          isMounted.current = true;
-          gsap.from('#burger_list', {
-            display: 'block',
-            x: -100,
-            opacity: 1,
-            duration: 1,
-            ease: Power4.easeOut,
-          });
-        }
-        gsap.from('#burger_list', {
-          display: 'block',
-          xPercent: !toggle ? -120 : 0,
-          opacity: 0.9,
-          duration: 1.1,
-          ease: Power4.easeOut,
-        });
-      });
-    });
-
-    return () => cxt.revert();
+    navigation_animation('#burger_list', toggle);
   });
 
   return (
     <>
-      {toggle ? (
-        <button
-          ref={buttonRef}
-          onClick={setToggle}
-          aria-label="navigation_button"
-          className={clsx(
-            toggle ? 'burgerButton' : 'Xbutton',
-            HeaderStyle.button
-          )}
-        >
-          <Xbutton id="Xbutton" className="Xbutton" size={20} />
-        </button>
-      ) : (
-        <button
-          ref={buttonRef}
-          onClick={setToggle}
-          aria-label="navigation_button"
-          className={clsx(
-            toggle ? 'burgerButton' : 'Xbutton',
-            HeaderStyle.button
-          )}
-        >
+      <button
+        ref={buttonRef}
+        onClick={setToggle}
+        aria-label="navigation_button"
+        className={HeaderStyle.button}
+      >
+        {toggle ? (
+          <Xbutton id="Xbutton" className="Xbutton" size={'20'} />
+        ) : (
           <BurgerMenu
             id="burgerButton"
             className="burgerButton"
-            size={18}
+            size={'18'}
             strokeWidth={0.5}
           />
-        </button>
-      )}
+        )}
+      </button>
     </>
   );
 }
 
-export function Header({ description = '홈' }: HeaderProps) {
-  const { toggle, setToggle } = useSelector();
+export function Header({ description = 'This is HomePage' }: HeaderProps) {
+  const { toggle } = useSelector();
   const [windowSize, setWindowSize] = useState({
     width: window.innerWidth,
   });
@@ -215,20 +192,21 @@ export function Header({ description = '홈' }: HeaderProps) {
     }, 100),
     []
   );
+
   useEffect(() => {
-    if (windowSize.width >= 1024) {
-      toggle === false;
-    }
+    if (windowSize.width >= 1024) toggle === true;
+
     window.addEventListener('resize', handleResize);
+
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, [toggle]);
+  }, []);
 
   return (
     <ToggleProvider>
-      <header className={HeaderStyle.header}>
-        <h1 className="sr-only">{description}페이지 입니다</h1>
+      <header className={HeaderStyle.header} title="K&C Management Navigation">
+        <h1 className="sr-only">{description}</h1>
         <div className={HeaderStyle.wrapper}>
           <Logo />
           <NavigationItem />

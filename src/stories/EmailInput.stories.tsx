@@ -10,6 +10,7 @@ import {
   UseFormRegisterReturn,
 } from 'react-hook-form';
 import { withRouter } from 'storybook-addon-react-router-v6';
+import React from 'react';
 
 const queryClient = new QueryClient();
 // eslint-disable-next-line react-hooks/rules-of-hooks

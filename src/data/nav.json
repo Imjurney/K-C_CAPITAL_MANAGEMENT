@@ -1,10 +1,26 @@
 [
   {
-    "navitem1": "HOME",
-    "navitem2": "ABOUT US",
-    "navitem3": "INVESTMENTS",
-    "navitem4": "TESTIMONIALS",
-    "navitem5": "OTHER SERVICES",
-    "navitem6": "CONTACT"
+    "navitem": "HOME",
+    "route": "/"
+  },
+  {
+    "navitem": "ABOUTUS",
+    "route": "/about_us"
+  },
+  {
+    "navitem": "INVESTMETS",
+    "route": "/investments"
+  },
+  {
+    "navitem": "TESTIMONIALS",
+    "route": "/testimonials"
+  },
+  {
+    "navitem": "OTHERSERVICES",
+    "route": "/other_services"
+  },
+  {
+    "navitem": "CONTACT",
+    "route": "/contact"
   }
 ]

@@ -94,7 +94,7 @@ function Contact() {
 export default function ContactPage() {
   return (
     <>
-      <Header />
+      <Header description="this is Contact Page" />
       <div className="mobile:mb-6 mobile:pt-14 laptop:pt-28 desktop:pt-[7.5rem]">
         <TitleContent content="CONTACT US" />
       </div>
