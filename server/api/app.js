@@ -45,13 +45,13 @@ app.post('/back/mail', async (req, res, next) => {
     };
     await mailSender
       .sendGmail(emailParam)
-      .then(() => res.status(200).send('저장 및 발송 성공'));
-    // .catch(() => res.status(500).send('에러'));
+      .then(() => res.status(200).send('저장 및 발송 성공'))
+      .catch(() => res.status(500).send('에러'));
   } catch (err) {
     console.error(err);
     next(err);
   }
 });
-app.listen(3005, () => {
+app.listen(3007, () => {
   console.log('서버 실행 중!');
 });

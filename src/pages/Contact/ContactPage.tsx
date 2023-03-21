@@ -38,7 +38,10 @@ function ContactForm() {
   // { test: "test-input", test1: "test1-input" }
   const onSubmitHandler: SubmitHandler<FieldValues> = useCallback((data) => {
     axios
-      .post('http://localhost:3005/back/mail', data)
+      .post(
+        'https://asia-northeast3-send-email-134f4.cloudfunctions.net/back/mail',
+        data
+      )
       .then((res) => console.log(res))
       .catch((err) => console.error(err));
   }, []);
