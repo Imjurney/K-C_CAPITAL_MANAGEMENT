@@ -39,7 +39,7 @@ function ContactForm() {
   const onSubmitHandler: SubmitHandler<FieldValues> = useCallback((data) => {
     axios
       .post(
-        'https://asia-northeast3-send-email-134f4.cloudfunctions.net/back',
+        'https://asia-northeast3-send-email-134f4.cloudfunctions.net/backC',
         data
       )
       .then((res) => console.log(res))
