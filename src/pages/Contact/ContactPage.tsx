@@ -2,57 +2,73 @@ import { Button } from '@/components/Button/Button';
 import { EmailInput } from '@/components/EmailInput/EmailInput';
 import { Textarea } from '@/components/Textarea/Textarea';
 import { TextInput } from '@/components/TextInput/TextInput';
-import clsx from 'clsx';
-import { ReactNode, useCallback, useState } from 'react';
+import { FormEventHandler, PropsWithChildren, useCallback } from 'react';
 import contact from '@/pages/Contact/ContactPage.module.css';
 import { Header } from '@/components/Header/Header';
 import { Footer } from '@/components/Footer/Footer';
-
 import { TitleContent } from '@/components/TitleContent/TitleContent';
 import { ContactLayout } from '@/components/Layout/ContactLayout';
 import { ContactBox } from '@/components/Contactbox/ContactBox';
-import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
+import {
+  FieldValues,
+  FormProvider,
+  SubmitErrorHandler,
+  SubmitHandler,
+  useForm,
+} from 'react-hook-form';
 import axios from 'axios';
 
-interface RHFormProps {
-  children?: ReactNode;
-  onSubmit: React.FormEventHandler<HTMLFormElement>;
+interface IRHForm<FormType extends object> {
+  onSubmit: SubmitHandler<FormType>;
+  onInvalid?: SubmitErrorHandler<FormType>;
+  onReset?: FormEventHandler<HTMLFormElement>;
 }
-function RHForm({ children, onSubmit }: RHFormProps) {
-  const [RHFDevTool, setRHFDevTool] = useState(<></>);
+
+export function RHForm<FormType extends object>({
+  children,
+  onSubmit,
+  onReset,
+}: PropsWithChildren<IRHForm<FormType>>) {
+  const methods = useForm<FormType>();
+
+  useCallback<FormEventHandler<HTMLFormElement>>(
+    (e) => {
+      methods.reset();
+      if (onReset) {
+        onReset(e);
+      }
+    },
+    [methods, onReset]
+  );
 
   return (
-    <form
-      onSubmit={onSubmit}
-      className={clsx('shadow-article_shadow', contact.form)}
-    >
-      {children}
-      {RHFDevTool}
-    </form>
+    <FormProvider {...methods}>
+      <form onReset={onReset} onSubmit={methods.handleSubmit(onSubmit)}>
+        {children}
+      </form>
+    </FormProvider>
   );
 }
-
 function ContactForm() {
-  const { register, handleSubmit, getValues } = useForm<FieldValues>();
-
-  // { test: "test-input", test1: "test1-input" }
   const onSubmitHandler: SubmitHandler<FieldValues> = useCallback((data) => {
     axios
       .post(
-        'https://asia-northeast3-send-email-134f4.cloudfunctions.net/backC',
+        'https://australia-southeast1-send-email-134f4.cloudfunctions.net/back/mail',
         data
       )
-      .then((res) => console.log(res))
+      .then((res) => {
+        alert('thanks for your Submition');
+        location.reload();
+      })
       .catch((err) => console.error(err));
   }, []);
 
   return (
-    <RHForm onSubmit={handleSubmit(onSubmitHandler)}>
+    <RHForm onSubmit={onSubmitHandler}>
       <fieldset className={contact.fieldset}>
         <legend className={contact.legend}>Send a Massage</legend>
         <div className="flex mobile:gap-x-4 mobile:px-5 laptop:gap-8 desktop:gap-8">
           <TextInput
-            register={register}
             labelName={'First Name'}
             placeholder={'your first name'}
             direction={'vertical'}
@@ -60,7 +76,6 @@ function ContactForm() {
             name={'firstName'}
           />
           <TextInput
-            register={register}
             labelName={'Last Name'}
             placeholder={'your last name'}
             direction={'vertical'}
@@ -68,17 +83,16 @@ function ContactForm() {
             name={'lastName'}
           />
         </div>
-        <EmailInput register={register} />
+        <EmailInput name={'email'} />
 
         <TextInput
-          register={register}
           labelName={'Phone'}
           placeholder={'Your Phone Number'}
           direction={'horizon'}
           type={'tel'}
           name={'Phone'}
         />
-        <Textarea register={register} />
+        <Textarea name={'message'} />
         <Button type={'submit'} layOutDesign={'Form'}>
           Submit
         </Button>

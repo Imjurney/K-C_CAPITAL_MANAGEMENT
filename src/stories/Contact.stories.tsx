@@ -2,7 +2,7 @@ import { Story, Meta } from '@storybook/react';
 import ContactPage from '@/pages/Contact/ContactPage';
 import { action } from '@storybook/addon-actions';
 import { FormProvider, useForm } from 'react-hook-form';
-import { RecoilRoot } from 'recoil';
+
 import { withRouter } from 'storybook-addon-react-router-v6';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 

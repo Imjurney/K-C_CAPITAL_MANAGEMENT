@@ -10,7 +10,6 @@ import {
   UseFormRegisterReturn,
 } from 'react-hook-form';
 import { withRouter } from 'storybook-addon-react-router-v6';
-import React from 'react';
 
 const queryClient = new QueryClient();
 // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -44,15 +43,6 @@ export default {
   },
 } as Meta;
 
-const Template: Story = (args) => (
-  <EmailInput
-    register={function <TFieldName extends string = string>(
-      name: TFieldName,
-      options?: RegisterOptions<FieldValues, TFieldName> | undefined
-    ): UseFormRegisterReturn<TFieldName> {
-      throw new Error('Function not implemented.');
-    }}
-  />
-);
+const Template: Story = (args) => <EmailInput name={'massage'} />;
 
 export const Email = Template.bind({});
