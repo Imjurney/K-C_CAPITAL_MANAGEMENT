@@ -1,6 +1,5 @@
 import { Story, Meta } from '@storybook/react';
 import { TextInput } from '@/components/TextInput/TextInput';
-import { FormspreeProvider } from '@formspree/react';
 import { RecoilRoot } from 'recoil';
 export default {
   title: 'Components/TextInput',
@@ -41,9 +40,7 @@ export default {
   decorators: [
     (Story) => (
       <RecoilRoot>
-        <FormspreeProvider project="2159903036745448628">
-          <Story />
-        </FormspreeProvider>
+        <Story />
       </RecoilRoot>
     ),
   ],

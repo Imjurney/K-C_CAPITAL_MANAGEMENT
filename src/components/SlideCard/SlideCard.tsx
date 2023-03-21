@@ -1,7 +1,7 @@
 import SlideCardStyle from '@/components/SlideCard/SlideCard.module.css';
-import { CUSTOM_ICONS } from '@/data/icon/icon';
+
 import clsx from 'clsx';
-import { MdApartment } from 'react-icons/md';
+
 interface SlideCardProps {
   name?: string;
   name2?: string;

@@ -1,8 +1,7 @@
-import { TUseForm } from '@formspree/react';
 import { ChangeEvent, useEffect, useRef, useState } from 'react';
 import EamilInputStyle from '@/components/EmailInput/EmailInput.module.css';
 import clsx from 'clsx';
-type TodoPreview = Pick<TUseForm[0], 'errors'>;
+
 interface EmailInputProps {
   className?: string;
 }
