@@ -1,8 +1,0 @@
-{
-  "forms": {
-    "contactForm": {
-      "name": "Contact Form",
-      "actions": [{ "type": "email", "to": "hentt@naver.com" }]
-    }
-  }
-}

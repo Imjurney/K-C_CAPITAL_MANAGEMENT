@@ -1,6 +1,11 @@
 import TextareaStyle from '@/components/Textarea/Textarea.module.css';
 
-export function Textarea() {
+import { UseFormRegister, FieldValues } from 'react-hook-form';
+
+interface TextareatProps {
+  register: UseFormRegister<FieldValues>;
+}
+export function Textarea({ register }: TextareatProps) {
   return (
     <div className={TextareaStyle.names_wrapper}>
       <label className={TextareaStyle.label} htmlFor="message">
@@ -8,8 +13,8 @@ export function Textarea() {
       </label>
       <textarea
         className={TextareaStyle.textarea}
-        name="message"
         id="message"
+        {...(register && register('message'))}
         cols={10}
         rows={1}
         placeholder="put your extra message"

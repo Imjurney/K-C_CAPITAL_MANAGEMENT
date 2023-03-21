@@ -1,4 +1,10 @@
 import TextInputStyle from '@/components/TextInput/TextInput.module.css';
+import {
+  FieldErrors,
+  FieldValues,
+  RegisterOptions,
+  UseFormRegister,
+} from 'react-hook-form';
 import clsx from 'clsx';
 
 interface TextInputProps {
@@ -6,6 +12,10 @@ interface TextInputProps {
   placeholder: string;
   direction: 'horizon' | 'vertical';
   type: string;
+  register: UseFormRegister<FieldValues>;
+  errors?: FieldErrors;
+  validationSchema?: RegisterOptions;
+  name: string;
 }
 const directions = {
   horizon: TextInputStyle.outline_horizon,
@@ -16,6 +26,8 @@ export function TextInput({
   direction = 'vertical',
   placeholder,
   labelName,
+  register,
+  name,
   type = 'text',
 }: TextInputProps) {
   return (
@@ -35,17 +47,16 @@ export function TextInput({
       <input
         required
         placeholder={placeholder}
+        {...(register && register(name))}
         className={
           direction === 'vertical'
             ? TextInputStyle.input_vertical
             : TextInputStyle.input_horizon
         }
         type={type}
-        name={labelName.toLowerCase()}
-        id="firstName"
+        name={name}
+        id={name}
       />
-      {/* <EmailInput />
-        <ValidationError field="email" prefix="Email" errors={state.errors} /> */}
     </div>
   );
 }
