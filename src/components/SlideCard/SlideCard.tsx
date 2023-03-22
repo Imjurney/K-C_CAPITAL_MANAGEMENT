@@ -1,5 +1,5 @@
 import SlideCardStyle from '@/components/SlideCard/SlideCard.module.css';
-
+import { VariationIcon } from '@/data/icon/icon';
 import clsx from 'clsx';
 
 interface SlideCardProps {
@@ -12,7 +12,7 @@ interface SlideCardProps {
 export function SlideCard({
   name = 'investment',
   name2 = 'company',
-  icon,
+  icon = VariationIcon[0],
   className,
 }: SlideCardProps) {
   return (

@@ -11,8 +11,8 @@
 }
 
 .form {
-  margin: 0 auto;
   @apply bg-white;
+  margin: 0 auto;
   @apply mobile:py-7 mobile:w-80 desktop:pb-8 laptop:pb-8 laptop:px-12 desktop:px-12 laptop:w-[42.9375rem] desktop:w-[42.9375rem];
 }
 

@@ -17,6 +17,7 @@ import {
   useForm,
 } from 'react-hook-form';
 import axios from 'axios';
+import clsx from 'clsx';
 
 interface IRHForm<FormType extends object> {
   onSubmit: SubmitHandler<FormType>;
@@ -43,7 +44,11 @@ export function RHForm<FormType extends object>({
 
   return (
     <FormProvider {...methods}>
-      <form onReset={onReset} onSubmit={methods.handleSubmit(onSubmit)}>
+      <form
+        onReset={onReset}
+        className={clsx('shadow-article_shadow', contact.form)}
+        onSubmit={methods.handleSubmit(onSubmit)}
+      >
         {children}
       </form>
     </FormProvider>
@@ -53,11 +58,11 @@ function ContactForm() {
   const onSubmitHandler: SubmitHandler<FieldValues> = useCallback((data) => {
     axios
       .post(
-        'https://australia-southeast1-send-email-134f4.cloudfunctions.net/back/mail',
+        'https://asia-northeast3-send-email-134f4.cloudfunctions.net/back/mail',
         data
       )
       .then((res) => {
-        alert('thanks for your Submition');
+        alert('thanks for your submission');
         location.reload();
       })
       .catch((err) => console.error(err));
@@ -67,7 +72,7 @@ function ContactForm() {
     <RHForm onSubmit={onSubmitHandler}>
       <fieldset className={contact.fieldset}>
         <legend className={contact.legend}>Send a Massage</legend>
-        <div className="flex mobile:gap-x-4 mobile:px-5 laptop:gap-8 desktop:gap-8">
+        <div className="flex mobile:gap-x-3 mobile:px-5 laptop:gap-8 desktop:gap-8">
           <TextInput
             labelName={'First Name'}
             placeholder={'your first name'}

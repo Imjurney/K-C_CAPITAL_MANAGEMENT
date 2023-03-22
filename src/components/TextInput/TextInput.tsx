@@ -18,7 +18,7 @@ interface IRHInput<FormType extends object>
   labelName: string;
   placeholder: string;
   direction: 'horizon' | 'vertical';
-  type: string;
+  type?: string;
 }
 
 const directions = {
