@@ -67,3 +67,12 @@
   @apply laptop:w-[30.25rem] desktop:w-[35.25rem] mobile:w-full;
   @apply mobile:mt-0 mobile:mr-auto mobile:bg-kc-bg_lightgray rounded-md;
 }
+
+/* -------------------------------------------------------------------------- */
+.animation_on {
+  @apply scale-110 duration-300 ease-in-out;
+}
+
+.animation_off {
+  @apply scale-110 duration-300 ease-in-out;
+}

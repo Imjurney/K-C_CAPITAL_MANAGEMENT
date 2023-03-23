@@ -1,6 +1,7 @@
 import { MdApartment } from 'react-icons/md';
 
 import CustomIcon from '@/utils/creactCustomIcon';
+import { CalcuIcon, PassPort, Report, Grow } from './Icons';
 
 export const CUSTOM_ICONS = [
   {
@@ -36,6 +37,32 @@ export const CUSTOM_ICONS = [
   },
 ];
 
+export const INVESTOR_ICON = [
+  {
+    id: 1,
+    name: 'Provision of accounting',
+    name2: 'and tax services',
+    icon_name: { icon: <CalcuIcon key={'kc_custom_icon_Calcu'} /> },
+  },
+  {
+    id: 2,
+    name: 'Confirmation of successful visa',
+    name2: null,
+    icon_name: { icon: <PassPort key={'kc_custom_icon_PassPort'} /> },
+  },
+  {
+    id: 3,
+    name: 'Provide investment reports',
+    name2: null,
+    icon_name: { icon: <Report key={'kc_custom_icon_Report'} /> },
+  },
+  {
+    id: 4,
+    name: 'Reinvestment Assessment ',
+    name2: 'and Support',
+    icon_name: { icon: <Grow key={'kc_custom_icon_Grow'} /> },
+  },
+];
 export const VariationIcon = [
   <MdApartment size={48} color="#E7020F" key={'kc_custom_icon_apart'} />,
   <CustomIcon icon="Score" color="#E7020F" key={'kc_custom_icon_Score'} />,

@@ -18,11 +18,7 @@ export function GridBanner() {
       {data &&
         data[0].contents_2.description.map((item, index) => {
           return (
-            <div
-              // className={'col-span-2'}
-              role={`banner_${index + 1}`}
-              key={`GridBanner__${index}`}
-            >
+            <div role={`banner_${index + 1}`} key={`GridBanner__${index}`}>
               <SlideImage
                 imageName={item.image_name}
                 alt={item.contents}

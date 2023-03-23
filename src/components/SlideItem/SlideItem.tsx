@@ -2,15 +2,14 @@ import clsx from 'clsx';
 import { Button } from '@/components/Button/Button';
 import HomeStyle from '@/pages/Home/Home.module.css';
 
-type SlideitemProps = {
-  className?: string;
-  imageName?: string;
-  alt?: string;
-};
-
 interface SlideItemDescroption {
   order?: string;
   description?: string;
+}
+interface SlideitemProps extends SlideItemDescroption {
+  className?: string;
+  imageName?: string;
+  alt?: string;
 }
 
 export function SlideItemDescription({
@@ -21,14 +20,14 @@ export function SlideItemDescription({
     <div className={HomeStyle.slide__Description}>
       <span>{order}</span>
       <p className={HomeStyle.slide}>{description}</p>
-      <Button
+      {/* <Button
         color="White"
         type={'button'}
         layOutDesign={'More'}
         className={HomeStyle.slide__Description__button}
       >
         more
-      </Button>
+      </Button> */}
     </div>
   );
 }
@@ -43,11 +42,16 @@ export function SlideImage({ className, imageName, alt }: SlideitemProps) {
   );
 }
 
-export function SlideItem({ imageName, alt }: SlideitemProps) {
+export function SlideItem({
+  imageName,
+  alt,
+  order,
+  description,
+}: SlideitemProps) {
   return (
     <>
       <SlideImage imageName={imageName} alt={alt} />
-      <SlideItemDescription order="dsfsd" description="dsfsdf" />
+      <SlideItemDescription order={order} description={description} />
     </>
   );
 }

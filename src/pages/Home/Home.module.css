@@ -40,7 +40,7 @@
   @apply desktop:w-full;
   @apply laptop:w-full;
   @apply text-base font-semibold;
-  @apply mobile:w-[7.8rem] mobile:absolute mobile:bottom-[1.875rem] mobile:left-[1.875rem];
+  @apply mobile:w-[10rem] mobile:absolute mobile:bottom-[1.875rem] mobile:left-[1.875rem];
   @apply laptop:bottom-7 laptop:left-7 laptop:absolute;
   @apply desktop:bottom-7 desktop:left-7 desktop:absolute;
 }
@@ -115,3 +115,21 @@
   @apply -translate-y-1 scale-110 bg-red-300 duration-300;
 }
 /* -------------------------------------------------------------------------- */
+
+.comment_p {
+  @apply text-kc-article_gray66 leading-normal;
+  @apply mobile:flex mobile:my-8 mobile:flex-col mobile:mx-12 mobile:text-start;
+  @apply laptop:absolute desktop:absolute;
+  @apply laptop:left-1/2 desktop:left-1/2 laptop:top-1/3 desktop:top-1/3;
+  @apply whitespace-pre-line desktop:inline-block laptop:inline-block text-start;
+  @apply desktop:text-2xl laptop:text-xl;
+}
+
+.comment_p > span:first-child {
+  @apply mobile:block;
+}
+
+/* -------------------------------------------------------------------------- */
+
+.aside {
+}

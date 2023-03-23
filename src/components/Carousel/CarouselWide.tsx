@@ -1,5 +1,5 @@
 import useEmblaCarousel, { EmblaOptionsType } from 'embla-carousel-react';
-import { ReactNode, useCallback, useEffect, useState } from 'react';
+import { ReactNode, useCallback, useRef } from 'react';
 import { Button } from '@/components/Button/Button';
 import { HiOutlineArrowLeft, HiOutlineArrowRight } from 'react-icons/hi';
 import { MdApartment as Apart } from 'react-icons/md';
@@ -8,6 +8,7 @@ import { IconContext } from 'react-icons';
 import { useInnerWidthState } from '@/utils/useInnerWidthState';
 import { Link } from 'react-router-dom';
 import { CUSTOM_ICONS } from '@/data/icon/icon';
+import { Circle } from '../Circle/Circle';
 
 type PropType = {
   options?: EmblaOptionsType;
@@ -34,6 +35,7 @@ function CarouselWideSlideCard({
   description,
 }: CarouselWideSlideCardProps) {
   const [window] = useInnerWidthState();
+
   return (
     <>
       <dl className={style.carouselWide__card__wrapper}>
@@ -92,6 +94,7 @@ function CarouselWideSlideCardGroup() {
 export function CarouselWide(props: PropType) {
   const { options } = props; // props로 가져온 옵션과 슬라이드 리스트
   const [emblaRef, embla] = useEmblaCarousel(options); // 슬라이더 구현에 필요한 요소들을 useEmblaCarousel 에서 가져온다.
+  const carouselRef = useRef<HTMLDivElement>(null);
 
   useEmblaCarousel.globalOptions = { loop: true };
   const scrollPrev = useCallback(() => {
@@ -103,31 +106,39 @@ export function CarouselWide(props: PropType) {
   }, [embla]);
 
   return (
-    <div className={style.carouselWide__container}>
-      <div className="overflow-hidden rounded-md" ref={emblaRef}>
-        <div className="flex flex-col flex-wrap h-[20.625rem] flex-none">
-          {CarouselWideSlideCardGroup().map((slide, index) => (
-            <div className="relative mr-4" key={index}>
-              {slide}
-            </div>
-          ))}
+    <>
+      <Circle embla={embla} />
+      <div className={style.carouselWide__container}>
+        <div className="overflow-hidden rounded-md" ref={emblaRef}>
+          <div className="flex flex-col flex-wrap h-[20.625rem] flex-none">
+            {CarouselWideSlideCardGroup().map((slide, index) => (
+              <div
+                id={index.toString()}
+                ref={carouselRef}
+                className="relative mr-4"
+                key={index}
+              >
+                {slide}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="flex gap-8 ml-4 pt-[3.75rem] mobile:hidden">
+          <button
+            className={style.carouselWide__card__button}
+            onClick={scrollPrev}
+          >
+            <HiOutlineArrowLeft size={'32'} />
+          </button>
+          <button
+            onClick={scrollNext}
+            className={style.carouselWide__card__button}
+          >
+            <HiOutlineArrowRight size={'32'} strokeWidth={0.1} />
+          </button>
         </div>
       </div>
-
-      <div className="flex gap-8 ml-4 pt-[3.75rem] mobile:hidden">
-        <button
-          className={style.carouselWide__card__button}
-          onClick={scrollPrev}
-        >
-          <HiOutlineArrowLeft size={'32'} />
-        </button>
-        <button
-          onClick={scrollNext}
-          className={style.carouselWide__card__button}
-        >
-          <HiOutlineArrowRight size={'32'} strokeWidth={0.1} />
-        </button>
-      </div>
-    </div>
+    </>
   );
 }

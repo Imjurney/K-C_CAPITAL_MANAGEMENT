@@ -10,7 +10,7 @@ import {
   useRef,
   useState,
 } from 'react';
-import { debounce, flatMap, toPairs } from 'lodash';
+import { debounce } from 'lodash';
 import {
   RxCross2 as Xbutton,
   RxHamburgerMenu as BurgerMenu,
