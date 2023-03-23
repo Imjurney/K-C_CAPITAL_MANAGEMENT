@@ -5,8 +5,17 @@ import { useCallback, useEffect, useRef } from 'react';
 
 export interface TitleContent {
   content?: string;
+  color?: 'Default' | 'White';
 }
-export function TitleContent({ content = 'INVESTMENTS' }: TitleContent) {
+
+const Colors = {
+  Default: TitleStyle.underlineBase,
+  White: TitleStyle.underlineBase__white,
+};
+export function TitleContent({
+  content = 'INVESTMENTS',
+  color = 'Default',
+}: TitleContent) {
   const h2Ref = useRef<HTMLHeadingElement>(null);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -30,7 +39,7 @@ export function TitleContent({ content = 'INVESTMENTS' }: TitleContent) {
   }, []);
   return (
     <>
-      <h2 ref={h2Ref} className={clsx(TitleStyle.underlineBase)}>
+      <h2 ref={h2Ref} className={clsx(Colors[color])}>
         {content}
       </h2>
     </>

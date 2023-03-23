@@ -2,8 +2,8 @@ import { MutableRefObject } from 'react';
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import SplitText from 'gsap';
-gsap.registerPlugin(ScrollTrigger);
-gsap.registerPlugin(SplitText);
+// gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(SplitText);
 export function basic_animation(
   ref_1: MutableRefObject<null>,
   ref_2: MutableRefObject<null>
@@ -15,10 +15,8 @@ export function basic_animation(
       scrollTrigger: {
         trigger: ref_2.current,
         start: 'top center',
-        end: 'bottom bottom',
+        end: 'bottom center',
         toggleActions: 'restart none none none',
-        markers: true,
-        // pin: true,
       },
     })
     .from(ref_1.current, {
@@ -26,7 +24,6 @@ export function basic_animation(
       duration: 3,
       ease: 'power3.out',
       opacity: 0,
-      delay: 1,
     });
 }
 
@@ -42,7 +39,6 @@ export function aside_animation(
         start: 'top center',
         end: 'bottom center',
         toggleActions: 'restart none none none',
-        markers: true,
       },
     })
     .from(ref_1.current, {

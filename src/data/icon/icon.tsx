@@ -37,7 +37,13 @@ export const CUSTOM_ICONS = [
   },
 ];
 
-export const INVESTOR_ICON = [
+interface Props {
+  id: number;
+  name: string;
+  name2: string | null;
+  icon_name: { icon: JSX.Element };
+}
+export const INVESTOR_ICON: Props[] = [
   {
     id: 1,
     name: 'Provision of accounting',

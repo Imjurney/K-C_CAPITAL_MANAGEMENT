@@ -55,7 +55,7 @@ export function Circle({ embla }: emblaProps) {
         className={clsx(
           'fix desktop:-translate-y-[560%] desktop:translate-x-[80%] laptop:-translate-y-[560%] laptop:translate-x-[80%]',
           selectedIndex === 0
-            ? 'bg-red-200 scale-125 duration-300 ease-in-out'
+            ? 'scale-125 duration-300 ease-in-out'
             : 'duration-300 ease-in-out'
         )}
       />

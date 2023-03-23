@@ -6,6 +6,7 @@ const BRANDCOLOR = {
   footer_gray: '#848484',
   article_gray: '#666666',
   article_gray66: '#868686',
+  article_bg: '#494949',
   contact_gray: '#7D8893',
   contact_border: '#CBD2DC',
   contents_dark: '#1A1A1A',

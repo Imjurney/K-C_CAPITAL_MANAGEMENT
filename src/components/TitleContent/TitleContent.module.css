@@ -11,6 +11,18 @@
   @apply desktop:mt-7;
 }
 
+.underlineBase__white {
+  @apply flex flex-col items-center text-white;
+  @apply font-bold;
+  @apply mobile:text-lg mobile:leading-none  mobile:text-center laptop:text-3xl desktop:text-3xl;
+}
+.underlineBase__white::after {
+  @apply content-[''] border-[3px] block border-white w-40;
+  @apply mobile:mt-5;
+  @apply laptop:mt-7;
+  @apply desktop:mt-7;
+}
+
 .underlineBase_sub {
   @apply flex flex-col items-center;
   @apply break-all;
