@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Gun Kim",
+    "careears": [
+      {
+        "career_from": 2010,
+        "career_to": 2014,
+        "detail": "Quantity Surveyor of Design Plus Build Ltd"
+      },
+      {
+        "career_from": 2015,
+        "career_to": "Present",
+        "detail": "Director of GNS Interior Systems Ltd"
+      }
+    ]
+  },
+  {
+    "name": "Steven W. J Choi",
+    "careears": [
+      {
+        "career_from": 2010,
+        "career_to": 2014,
+        "detail": "Quantity Surveyor of Design Plus Build Ltd"
+      },
+      {
+        "career_from": 2015,
+        "career_to": "Present",
+        "detail": "Director of GNS Interior Systems Ltd"
+      }
+    ]
+  }
+]

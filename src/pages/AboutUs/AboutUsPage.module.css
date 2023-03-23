@@ -1,0 +1,15 @@
+.section__top {
+  @apply bg-white;
+  @apply mobile:pt-[3.75rem] laptop:pt-[7.5rem]  desktop:pt-[7.1875rem];
+}
+
+.figure {
+  @apply mobile:mt-[1.875rem];
+}
+.figcaption {
+  @apply text-white;
+  @apply mobile:bg-kc-contents_dark mobile:w-full;
+  @apply mobile:text-center;
+  @apply mobile:px-2 mobile:pt-5 mobile:pb-10;
+  @apply absolute top-3/4;
+}
