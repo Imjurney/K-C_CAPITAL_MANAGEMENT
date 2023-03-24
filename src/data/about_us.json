@@ -1,6 +1,12 @@
 [
   {
     "name": "Gun Kim",
+    "role": {
+      "css": "bold",
+      "1": "CEO",
+      "2": "Founder",
+      "description": "The principal of the Company, Gun Kim has over 20 years experience in Construction industry. Prior to establishing K&C Capital, he worked at New Zealand local building company for 5 years and currently running his own construction company for 8 years. Gun Kim holds a Bachelor of Architecture design and engineering from Myongji University in South Korea and Diploma of Quantity Surveying from Christchuch Polytechnic Institute of Technology. He is passionate about cost and risk management in construction projects."
+    },
     "careears": [
       {
         "career_from": 2010,
@@ -16,16 +22,22 @@
   },
   {
     "name": "Steven W. J Choi",
+    "role": {
+      "css": "normal",
+      "1": "CFO",
+      "2": "Co-Founder",
+      "description": "Steven worked in the financial industry for last 18 years providing the service for lending, project finance, insurance, and investments. He is a NZ registered financial adviser and currently a director of Summit Financial Planner Group Ltd. He has extensive knowledges and experiences in the finance field which gives sound foundation and structure to the K&C capital to build up the investment & finance strategies."
+    },
     "careears": [
       {
-        "career_from": 2010,
-        "career_to": 2014,
-        "detail": "Quantity Surveyor of Design Plus Build Ltd"
+        "career_from": 2004,
+        "career_to": 2006,
+        "detail": "AMP Financial adviser"
       },
       {
-        "career_from": 2015,
+        "career_from": 2006,
         "career_to": "Present",
-        "detail": "Director of GNS Interior Systems Ltd"
+        "detail": "Director of Summit Financial Planner Group Ltd"
       }
     ]
   }

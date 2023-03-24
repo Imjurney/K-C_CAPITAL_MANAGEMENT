@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { useLayoutEffect, useRef } from 'react';
@@ -5,11 +6,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 interface CareerProps {
   careerfrom1: number;
-  careerto1: number;
+  careerto1: number | string;
   detail1: string;
   careerfrom2: number;
-  careerto2: string;
+  careerto2: string | number;
   detail2: string;
+  className?: string;
 }
 export function Career({
   careerfrom1 = 2010,
@@ -18,6 +20,7 @@ export function Career({
   careerfrom2 = 2015,
   careerto2 = 'present',
   detail2 = 'Director of GNS Interior Systems Ltd',
+  className,
 }: CareerProps) {
   const parentsRef = useRef(null);
   const presentRef = useRef(null);
@@ -28,7 +31,7 @@ export function Career({
         .timeline({
           scrollTrigger: {
             trigger: parentsRef.current,
-            start: 'top center',
+            start: 'top 80%',
             end: 'buttom center',
             toggleActions: 'restart none none none',
           },
@@ -38,7 +41,7 @@ export function Career({
           duration: 2,
           ease: 'power3.out',
           opacity: 1,
-          css: { height: 74 },
+          css: { height: 70 },
         })
         .from(presentRef.current, {
           yPercent: -10,
@@ -52,7 +55,10 @@ export function Career({
   }, []);
 
   return (
-    <div ref={parentsRef} className="flex">
+    <div
+      ref={parentsRef}
+      className={clsx('flex mobile:px-5 p-10 pt-7', className)}
+    >
       <div className="inline-flex flex-col">
         <div className="w-4 h-4 rounded-full bg-kc-contact_border"></div>
         <div
@@ -61,12 +67,12 @@ export function Career({
         ></div>
         <div className="w-4 h-4 rounded-full bg-kc-contact_border"></div>
       </div>
-      <div className="ml-3.5 flex flex-col mobile:gap-10 gap-8">
+      <div className="ml-3 flex flex-col mobile:gap-7 gap-8">
         <div className="flex flex-col">
           <span className="text-kc-contact_gray mobile:font-normal font-bold text-xl">
             {careerfrom1}&nbsp;-&nbsp;{careerto1}
           </span>
-          <span className="mobile:text-sm mobile:font-bold text-kc-contact_gray text-base">
+          <span className="mobile:text-sm mobile:font-bold text-kc-contact_gray text-base mobile:whitespace-nowrap">
             {detail1}
           </span>
         </div>
