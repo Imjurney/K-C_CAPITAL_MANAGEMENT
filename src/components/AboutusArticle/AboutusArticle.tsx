@@ -20,7 +20,7 @@ export function AboutusArticle() {
   return (
     <section
       className={clsx(
-        'relative laptop:pt-[29.5625rem] desktop:pt-[23.5625rem]',
+        'relative',
         width.width > 359 && width.width < 720 && toggle
           ? 'mobile:h-[33rem] mobile:pb-[3.75rem]'
           : 'mobile:h-[48rem] mobile:pb-[3.75rem]',

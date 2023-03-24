@@ -7,6 +7,6 @@
   @apply desktop:font-medium;
   @apply w-[94%] laptop:h-[37.375rem] desktop:h-[27rem];
   @apply p-7 mobile:pb-0;
-  @apply laptop:-top-1/2;
-  @apply desktop:-top-1/2;
+  @apply laptop:-mt-[230px];
+  @apply desktop:-mt-[230px];
 }
