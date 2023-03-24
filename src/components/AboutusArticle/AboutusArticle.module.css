@@ -1,0 +1,12 @@
+.article {
+  @apply bg-white;
+  @apply absolute left-1/2 -translate-x-1/2;
+  @apply mobile:text-sm mobile:w-[85%];
+  @apply mobile:px-3 mobile:pt-5;
+  @apply font-normal;
+  @apply desktop:font-medium;
+  @apply w-[94%] laptop:h-[37.375rem] desktop:h-[27rem];
+  @apply p-7 mobile:pb-0;
+  @apply laptop:-top-1/2;
+  @apply desktop:-top-1/2;
+}

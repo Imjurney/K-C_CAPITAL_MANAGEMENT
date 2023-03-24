@@ -36,7 +36,7 @@ export function Label({
   return (
     <figcaption id={id} className={clsx(LabelStyle.wrapper, responsiveLabel)}>
       <span
-        id="name"
+        id={`${id}_span`}
         className={clsx(TextWeightType[nameTextWeight], responsiveName)}
       >
         {name}
