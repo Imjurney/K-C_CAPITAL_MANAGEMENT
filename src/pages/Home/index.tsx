@@ -18,6 +18,9 @@ import { useQuery } from '@tanstack/react-query';
 import { Button } from '@/components/Button/Button';
 import { gsap } from 'gsap/all';
 import { INVESTOR_ICON } from '@/data/icon/icon';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+import matchMedia from 'gsap';
+import { Link } from 'react-router-dom';
 
 function SubBanner() {
   return (
@@ -143,90 +146,6 @@ function FooterBanner() {
     </aside>
   );
 }
-/* -------------------------최종 컴포넌트------------------------------------------------- */
-export default function HomePage() {
-  const [windowSize] = useInnerWidthState();
-  const { data } = useQuery(['SlideData'], () => Promise.resolve(contents));
-
-  return (
-    <>
-      <Header description="this is Home Page" />
-      <TopBanner />
-      <WhatWedoBanner />
-      <SlideBanner>
-        {windowSize.width < 1024 ? (
-          <Carousel
-            slides={[
-              data && (
-                <SlideItem
-                  imageName={data[0].contents_2.description[0].image_name}
-                  alt={data[0].contents_2.description[0].contents}
-                  order={data[0].contents_2.description[0].order}
-                  description={data[0].contents_2.description[0].contents}
-                  key={'content1'}
-                />
-              ),
-              data && (
-                <SlideItem
-                  imageName={data[0].contents_2.description[1].image_name}
-                  alt={data[0].contents_2.description[1].contents}
-                  order={data[0].contents_2.description[1].order}
-                  description={data[0].contents_2.description[1].contents}
-                  key={'content2'}
-                />
-              ),
-              data && (
-                <SlideItem
-                  imageName={data[0].contents_2.description[2].image_name}
-                  alt={data[0].contents_2.description[2].contents}
-                  order={data[0].contents_2.description[2].order}
-                  description={data[0].contents_2.description[2].contents}
-                  key={'content3'}
-                />
-              ),
-              data && (
-                <SlideItem
-                  imageName={data[0].contents_2.description[3].image_name}
-                  alt={data[0].contents_2.description[3].contents}
-                  order={data[0].contents_2.description[3].order}
-                  description={data[0].contents_2.description[3].contents}
-                  key={'content4'}
-                />
-              ),
-            ]}
-            options={{
-              align: 'start',
-              loop: true,
-              skipSnaps: true,
-              inViewThreshold: 0.3,
-            }}
-          />
-        ) : (
-          <GridBanner />
-        )}
-      </SlideBanner>
-      <CircleAnimationSection />
-      <section className="bg-red-400 relative">
-        <aside className={clsx('ab_center', HomeStyle.aside)}>
-          There are other services for investors!
-          <button
-            className="flex w-16 h-16 justify-center items-center bg-kc-red"
-            type="button"
-          >
-            <FiChevronDown size={40} />
-          </button>
-        </aside>
-        <AsideBanner />
-      </section>
-      <FooterBanner />
-      <Footer />
-    </>
-  );
-}
-
-import ScrollTrigger from 'gsap/ScrollTrigger';
-import matchMedia from 'gsap';
-import { Link } from 'react-router-dom';
 
 function AsideBanner() {
   const iconRef = useRef([]);
@@ -299,5 +218,92 @@ function AsideBanner() {
         </Link>
       </div>
     </article>
+  );
+}
+
+/* -------------------------최종 컴포넌트------------------------------------------------- */
+export default function HomePage() {
+  const [windowSize] = useInnerWidthState();
+  const { data } = useQuery(['SlideData'], () => Promise.resolve(contents));
+
+  return (
+    <>
+      <Header description="this is Home Page" />
+      <TopBanner />
+      <WhatWedoBanner />
+      <SlideBanner>
+        {windowSize.width < 1024 ? (
+          <Carousel
+            slides={[
+              data && (
+                <SlideItem
+                  imageName={data[0].contents_2.description[0].image_name}
+                  alt={data[0].contents_2.description[0].contents}
+                  order={data[0].contents_2.description[0].order}
+                  description={data[0].contents_2.description[0].contents}
+                  key={'content1'}
+                />
+              ),
+              data && (
+                <SlideItem
+                  imageName={data[0].contents_2.description[1].image_name}
+                  alt={data[0].contents_2.description[1].contents}
+                  order={data[0].contents_2.description[1].order}
+                  description={data[0].contents_2.description[1].contents}
+                  key={'content2'}
+                />
+              ),
+              data && (
+                <SlideItem
+                  imageName={data[0].contents_2.description[2].image_name}
+                  alt={data[0].contents_2.description[2].contents}
+                  order={data[0].contents_2.description[2].order}
+                  description={data[0].contents_2.description[2].contents}
+                  key={'content3'}
+                />
+              ),
+              data && (
+                <SlideItem
+                  imageName={data[0].contents_2.description[3].image_name}
+                  alt={data[0].contents_2.description[3].contents}
+                  order={data[0].contents_2.description[3].order}
+                  description={data[0].contents_2.description[3].contents}
+                  key={'content4'}
+                />
+              ),
+            ]}
+            options={{
+              align: 'start',
+              loop: true,
+              skipSnaps: true,
+              inViewThreshold: 0.3,
+            }}
+          />
+        ) : (
+          <GridBanner />
+        )}
+      </SlideBanner>
+      <CircleAnimationSection />
+      <Aside />
+      <FooterBanner />
+      <Footer />
+    </>
+  );
+}
+
+function Aside() {
+  return (
+    <section className="relative">
+      <aside className={clsx('absolute', HomeStyle.aside)}>
+        There are other services for investors!
+        <button
+          className="flex w-16 h-16 justify-center items-center bg-kc-red"
+          type="button"
+        >
+          <FiChevronDown size={40} />
+        </button>
+      </aside>
+      <AsideBanner />
+    </section>
   );
 }

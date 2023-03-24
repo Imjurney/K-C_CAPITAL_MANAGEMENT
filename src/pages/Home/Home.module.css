@@ -132,7 +132,7 @@
 /* -------------------------------------------------------------------------- */
 
 .aside {
-  @apply bg-black flex justify-between top-0 m-0 ml-auto mr-auto items-center pl-14 text-white text-2xl font-bold;
+  @apply bg-black flex justify-between left-1/2 -translate-x-1/2 -top-8 m-0 ml-auto mr-auto items-center pl-14 text-white text-2xl font-bold;
   @apply desktop:w-[75.0625rem] laptop:w-[61.5rem] mobile:hidden;
 }
 
