@@ -221,6 +221,22 @@ function AsideBanner() {
   );
 }
 
+function Aside() {
+  return (
+    <section className="relative">
+      <aside className={clsx('absolute', HomeStyle.aside)}>
+        There are other services for investors!
+        <button
+          className="flex w-16 h-16 justify-center items-center bg-kc-red"
+          type="button"
+        >
+          <FiChevronDown size={40} />
+        </button>
+      </aside>
+      <AsideBanner />
+    </section>
+  );
+}
 /* -------------------------최종 컴포넌트------------------------------------------------- */
 export default function HomePage() {
   const [windowSize] = useInnerWidthState();
@@ -288,22 +304,5 @@ export default function HomePage() {
       <FooterBanner />
       <Footer />
     </>
-  );
-}
-
-function Aside() {
-  return (
-    <section className="relative">
-      <aside className={clsx('absolute', HomeStyle.aside)}>
-        There are other services for investors!
-        <button
-          className="flex w-16 h-16 justify-center items-center bg-kc-red"
-          type="button"
-        >
-          <FiChevronDown size={40} />
-        </button>
-      </aside>
-      <AsideBanner />
-    </section>
   );
 }
