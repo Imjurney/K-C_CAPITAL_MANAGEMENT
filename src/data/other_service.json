@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "icontype": "Calcu",
+    "subject": "ACCOUNTING SERVICE",
+    "contents_Direction": "Left",
+    "contents_strong": "Tax and Returns",
+    "contents": "Providing local Accounting and taxation service through our affiliated chartered accountant, giving you the clear picture and hassle-free professional expertise in accounting."
+  },
+  {
+    "id": 2,
+    "icontype": "PassPort",
+    "subject": "REPORTING TO IMMIGRATION NEW ZELAND",
+    "contents_Direction": "Right",
+    "contents_strong": "Tax and Returns",
+    "contents": "Providing local Accounting and taxation service through our affiliated chartered accountant, giving you the clear picture and hassle-free professional expertise in accounting."
+  },
+  {
+    "id": 3,
+    "icontype": "Report",
+    "subject": "PROGRESS REPORT ON INVESTMENT",
+    "contents_Direction": "Left",
+    "contents_strong": "Tax and Returns",
+    "contents": "Providing local Accounting and taxation service through our affiliated chartered accountant, giving you the clear picture and hassle-free professional expertise in accounting."
+  },
+  {
+    "id": 4,
+    "icontype": "Grow",
+    "subject": "REINVESTMENT ASSESSMENT AND ASSISTANCE",
+    "contents_Direction": "Reft",
+    "contents_strong": "Tax and Returns",
+    "contents": "Providing local Accounting and taxation service through our affiliated chartered accountant, giving you the clear picture and hassle-free professional expertise in accounting."
+  }
+]

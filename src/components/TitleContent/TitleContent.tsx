@@ -34,6 +34,8 @@ export function TitleContent({
   );
 
   useEffect(() => {
+    if (h2Ref.current?.textContent?.match('OTHER SERVICES'))
+      h2Ref.current.textContent = 'OTHER SERVICES';
     window.addEventListener('resize', handleReduceWords);
     return () => window.removeEventListener('resize', handleReduceWords);
   }, []);

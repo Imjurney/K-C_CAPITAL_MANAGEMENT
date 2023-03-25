@@ -1,0 +1,73 @@
+.speech_bubble__right {
+  @apply w-full col-span-2;
+  @apply mobile:p-5;
+  @apply mobile:text-sm;
+  @apply leading-loose;
+  @apply relative bg-kc-bg_lightgray border-t-[3px] border-t-kc-red;
+}
+
+.speech_bubble__right:after {
+  @apply content-[''] absolute top-0 left-1/2 w-0 h-0 block;
+  @apply z-[1];
+  border-width: 0 16px 27px;
+  @apply border-kc-bg_lightgray border-b-kc-bg_lightgray border-l-transparent border-r-transparent;
+  @apply -top-[25px] left-[250px];
+}
+
+.speech_bubble__right::before {
+  @apply content-[''] absolute block w-0 z-0 -top-[30px] left-[248px];
+  border-width: 0 18px 29px;
+  @apply border-t-kc-red border-b-kc-red border-l-transparent border-r-transparent;
+}
+
+.speech_bubble__left {
+  @apply w-full col-span-2;
+  @apply relative bg-white border-t-[3px] border-t-kc-red;
+}
+
+.speech_bubble__left:after {
+  @apply content-[''] absolute top-0 left-1/2 w-0 h-0 block;
+  @apply z-[1];
+  border-width: 0 16px 27px;
+  @apply border-t-white border-b-white border-l-transparent border-r-transparent;
+  @apply -top-[27px] -left-[80px];
+}
+
+.speech_bubble__left::before {
+  @apply content-[''] absolute block w-0 z-0 -top-[31px] left-[78px];
+  border-width: 0 18px 29px;
+  @apply border-t-kc-red border-b-kc-red border-l-transparent border-r-transparent;
+}
+
+.strong {
+  @apply block text-kc-red;
+  @apply mobile:text-base;
+}
+/* ---------------------ButtonStyle----------------------------------------------------- */
+
+.grid__wrapper {
+  @apply grid place-items-center;
+  @apply mobile:grid-cols-2 mobile:gap-x-3 mobile:gap-y-10;
+}
+
+.grid__wrapper > li[id^='grid__']:nth-of-type(2n + 1) {
+  @apply mobile:bg-kc-red;
+  @apply mobile:w-[152px] mobile:h-[135px] mobile:pt-1 rounded-[0.625rem] ml-5;
+}
+
+.grid__wrapper > li[id^='grid__']:nth-of-type(2n) {
+  @apply bg-orange-600;
+  @apply mobile:w-[152px] mobile:h-[135px] mobile:pt-1 rounded-[0.625rem] mr-5;
+}
+
+.round {
+  @apply mobile:bg-white mobile:w-fit mobile:p-3 mobile:rounded-full;
+}
+
+.figcation {
+  @apply text-center text-black;
+}
+
+.figcation__active {
+  @apply text-center text-white;
+}
