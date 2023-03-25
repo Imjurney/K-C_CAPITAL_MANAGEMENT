@@ -92,7 +92,7 @@ export function Report() {
   );
 }
 export function ReportDefault() {
-  return <img width={42} src={report} alt="Provide investment reports icon" />;
+  return <img width={44} src={report} alt="Provide investment reports icon" />;
 }
 
 export function Grow() {
@@ -108,6 +108,6 @@ export function Grow() {
 
 export function GrowDefault() {
   return (
-    <img src={grow} width={42} alt="Reinvestment Assessment and Support icon" />
+    <img src={grow} width={44} alt="Reinvestment Assessment and Support icon" />
   );
 }

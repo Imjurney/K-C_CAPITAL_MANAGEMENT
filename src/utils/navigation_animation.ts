@@ -6,7 +6,7 @@ export function navigation_animation(
 ) {
   const tweens = gsap.to(targetNode, {
     translateX: -1000,
-    duration: 2,
+    duration: 4,
     ease: Power4.easeOut,
     opacity: 0.9,
     delay: 0.2,
