@@ -339,6 +339,7 @@
   @apply font-bold;
   @apply laptop:pb-5 laptop:pt-10;
   @apply desktop:pb-8 desktop:pt-10;
+  @apply w-full;
 }
 
 .img__figcaption__active[id='figcaption_1'] {
@@ -350,6 +351,7 @@
   @apply font-bold;
   @apply laptop:pb-5 laptop:pt-10;
   @apply desktop:pb-8 desktop:pt-10;
+  @apply w-full;
 }
 
 .img__figcaption__active:not([id='figcaption_1']) {
@@ -367,43 +369,41 @@
   @apply desktop:text-2xl leading-none;
   @apply laptop:leading-tight desktop:leading-tight;
   @apply relative;
-  @apply laptop:w-[118px] desktop:w-full;
-  @apply desktop:w-[200px];
+  @apply laptop:w-[117px];
+  @apply desktop:w-[219px];
 }
 
 .img__figcaption__active > span {
   @apply desktop:text-2xl leading-none;
   @apply laptop:leading-tight desktop:leading-tight;
   @apply relative;
-  @apply laptop:w-[118px] desktop:block;
-  @apply desktop:w-[200px];
+  @apply laptop:w-[117px];
+  @apply desktop:w-[219px];
 }
 
 .img__figcaption > span[id*='2'] {
   @apply desktop:text-2xl leading-none;
   @apply laptop:leading-tight desktop:leading-tight;
   @apply relative;
-  @apply w-full;
-  @apply desktop:w-[200px];
+  @apply desktop:w-[219px];
 }
 .img__figcaption__active > span[id*='2'] {
   @apply desktop:text-2xl leading-none;
   @apply laptop:leading-tight desktop:leading-tight;
   @apply relative;
-  @apply w-full;
-  @apply desktop:w-[200px];
+  @apply desktop:w-[219px];
 }
 
 .img__figcaption > span[id*='4'] {
   @apply desktop:text-2xl leading-none;
   @apply laptop:leading-tight desktop:leading-tight;
   @apply relative;
-  @apply desktop:w-[400px];
+  @apply laptop:w-[224px];
 }
 
 .img__figcaption__active > span[id*='4'] {
   @apply desktop:text-2xl leading-none;
   @apply laptop:leading-tight desktop:leading-tight;
   @apply relative;
-  @apply desktop:w-[400px];
+  @apply laptop:w-[224px];
 }
