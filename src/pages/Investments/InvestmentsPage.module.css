@@ -1,0 +1,20 @@
+.bg_img {
+  @apply mobile:flex mobile:justify-center mobile:items-center;
+  @apply mobile:px-4 mobile:pb-10;
+  @apply laptop:w-[47rem] desktop:w-[47rem];
+}
+
+.investment_section {
+  @apply bg-white mobile:pt-[3.75rem] mobile:px-1;
+  @apply laptop:pt-[15.625rem] desktop:pt-[15.625rem];
+  @apply flex flex-col items-center laptop:gap-16 desktop:gap-[3.8125rem];
+  @apply laptop:pb-[5.25rem] desktop:pb-[5.25rem];
+}
+
+.investment_section > article {
+  @apply mobile:text-sm mobile:px-5 mobile:pt-7 mobile:pb-10 font-normal;
+  @apply laptop:text-lg desktop:text-lg laptop:leading-loose desktop:leading-loose;
+  @apply laptop:px-10 desktop:px-64;
+  @apply laptop:pt-[3.75rem] desktop:pt-[1.4375rem];
+  @apply laptop:pb-[5.25rem] desktop:pb-[5.25rem];
+}
