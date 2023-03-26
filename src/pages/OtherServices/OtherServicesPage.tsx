@@ -252,6 +252,7 @@ function GridItems() {
                   )}
                 >
                   <img
+                    loading="lazy"
                     className={clsx(
                       item.id === number ? style.img__active : style.img
                     )}
