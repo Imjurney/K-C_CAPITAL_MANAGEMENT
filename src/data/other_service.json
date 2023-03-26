@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "icontype": "Calcu",
+    "path": "slide_1.png",
+    "subject": "ACCOUNTING SERVICE",
+    "contents_Direction": "Left",
+    "contents_Direction2": "Left",
+    "contents_strong": "Tax and Returns",
+    "contents": "Providing local Accounting and taxation service through our affiliated chartered accountant, giving you the clear picture and hassle-free professional expertise in accounting."
+  },
+  {
+    "id": 2,
+    "icontype": "PassPort",
+    "path": "slide_2.png",
+    "subject": "REPORTING TO IMMIGRATION NEW ZELAND",
+    "contents_Direction": "Right",
+    "contents_Direction2": "Left_Middle",
+    "contents_strong": "Tax and Returns",
+    "contents": "2번 Providing local Accounting and taxation service through our affiliated chartered accountant, giving you the clear picture and hassle-free professional expertise in accounting."
+  },
+  {
+    "id": 3,
+    "icontype": "Report",
+    "path": "slide_3.png",
+    "subject": "PROGRESS REPORT ON INVESTMENT",
+    "contents_Direction": "Left",
+    "contents_Direction2": "Right_Middle",
+    "contents_strong": "Tax and Returns",
+    "contents": "3번 Providing local Accounting and taxation service through our affiliated chartered accountant, giving you the clear picture and hassle-free professional expertise in accounting."
+  },
+  {
+    "id": 4,
+    "icontype": "Grow",
+    "path": "slide_4.png",
+    "subject": "REINVESTMENT ASSESSMENT AND ASSISTANCE",
+    "contents_Direction": "Right",
+    "contents_Direction2": "Right",
+    "contents_strong": "Tax and Returns",
+    "contents": "4번 Providing local Accounting and taxation service through our affiliated chartered accountant, giving you the clear picture and hassle-free professional expertise in accounting."
+  }
+]
