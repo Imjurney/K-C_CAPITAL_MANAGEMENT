@@ -76,3 +76,45 @@
 .animation_off {
   @apply scale-110 duration-300 ease-in-out;
 }
+
+@media screen and (max-width: 1279px) {
+  .embla {
+    --slide-spacing: 1rem;
+    --slide-size: 80%;
+    --slide-height: 32.875rem;
+    padding: 1.6rem;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .embla {
+    --slide-spacing: 4rem;
+    --slide-size: 80%;
+    --slide-height: 32.875rem;
+    padding: 1.6rem;
+  }
+}
+.embla__viewport {
+  overflow: hidden;
+  /* @apply bg-black; */
+}
+.embla__container {
+  @apply flex h-auto;
+  margin-left: calc(var(--slide-spacing) * -1);
+}
+.embla__slide {
+  flex: 0 0 var(--slide-size);
+  min-width: 0;
+  padding-left: var(--slide-spacing);
+  position: relative;
+  @apply bg-transparent;
+}
+
+.embla__slide__img {
+  display: block;
+  height: var(--slide-height);
+  width: 100%;
+  object-fit: cover;
+  @apply mobile:w-[275px];
+  @apply mobile:h-[183px];
+}

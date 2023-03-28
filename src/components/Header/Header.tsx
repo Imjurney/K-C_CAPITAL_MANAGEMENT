@@ -1,6 +1,8 @@
 import LogoImage from '@/assets/Logo.svg';
 import {
   createContext,
+  ForwardedRef,
+  forwardRef,
   ReactNode,
   RefObject,
   useCallback,
@@ -178,43 +180,54 @@ function HamburgerButton() {
   );
 }
 
-export function Header({ description = 'This is HomePage' }: HeaderProps) {
-  const { toggle } = useSelector();
-  const [windowSize, setWindowSize] = useState({
-    width: window.innerWidth,
-  });
+export const Header = forwardRef(
+  (
+    { description = 'This is HomePage' }: HeaderProps,
+    ref: ForwardedRef<HTMLHeadElement>
+  ) => {
+    const { toggle } = useSelector();
+    const [windowSize, setWindowSize] = useState({
+      width: window.innerWidth,
+    });
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const handleResize = useCallback(
-    debounce(() => {
-      setWindowSize({
-        width: window.innerWidth,
-      });
-    }, 100),
-    []
-  );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    const handleResize = useCallback(
+      debounce(() => {
+        setWindowSize({
+          width: window.innerWidth,
+        });
+      }, 100),
+      []
+    );
 
-  useEffect(() => {
-    if (windowSize.width >= 1024) toggle === true;
+    useEffect(() => {
+      if (windowSize.width >= 1024) toggle === true;
 
-    window.addEventListener('resize', handleResize);
+      window.addEventListener('resize', handleResize);
 
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
 
-  return (
-    <ToggleProvider>
-      <header className={HeaderStyle.header} title="K&C Management Navigation">
-        <h1 className="sr-only">{description}</h1>
-        <div className={HeaderStyle.wrapper}>
-          <Logo />
-          <NavigationItem />
-          <HamburgerButton />
-        </div>
-        {windowSize.width < 1024 && <BurgerNavigationItem />}
-      </header>
-    </ToggleProvider>
-  );
-}
+    return (
+      <ToggleProvider>
+        <header
+          ref={ref}
+          className={HeaderStyle.header}
+          title="K&C Management Navigation"
+        >
+          <h1 className="sr-only">{description}</h1>
+          <div className={HeaderStyle.wrapper}>
+            <Logo />
+            <NavigationItem />
+            <HamburgerButton />
+          </div>
+          {windowSize.width < 1024 && <BurgerNavigationItem />}
+        </header>
+      </ToggleProvider>
+    );
+  }
+);
+
+Header.displayName = 'Header';

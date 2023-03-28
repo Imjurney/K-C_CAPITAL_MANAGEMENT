@@ -18,3 +18,40 @@
   @apply laptop:pt-[3.75rem] desktop:pt-[1.4375rem];
   @apply laptop:pb-[5.25rem] desktop:pb-[5.25rem];
 }
+
+.semicircle__slide__wrapper {
+  @apply relative;
+  @apply bg-kc-bg_lightgray w-[150%] h-[931px] -translate-x-[15%];
+  @apply rounded-t-full rounded-l-[50%] rounded-r-[50%]  rounded-b-none;
+}
+
+.semicircle__slide__card {
+  @apply cursor-pointer mobile:cursor-default;
+  @apply w-[18.75rem] h-[18.75rem] bg-white rounded-[0.625rem];
+  @apply shadow-contents_shadow;
+  @apply flex flex-col gap-10 items-center justify-center;
+  @apply mobile:w-[13rem] mobile:h-[13rem];
+  @apply mobile:gap-6;
+  @apply mobile:m-0 mobile:ml-auto mobile:mr-auto;
+}
+
+.semicircle__slide__card > div {
+  @apply border-2 border-kc-red;
+  @apply w-20 h-20 flex items-center justify-center;
+  @apply m-0 ml-auto mr-auto rounded-[0.625rem];
+}
+
+.semicircle__slide__figcaption {
+  @apply flex flex-col;
+  @apply justify-center items-center;
+  @apply text-xl;
+  @apply mobile:text-sm;
+}
+
+.semicircle__slide__p {
+  @apply text-2xl absolute left-1/2 -translate-x-[40%] text-kc-article_gray66 w-[630px];
+  @apply -bottom-[350px];
+}
+.semicircle__slide__p > span {
+  @apply text-black;
+}

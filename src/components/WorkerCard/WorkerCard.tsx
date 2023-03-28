@@ -1,6 +1,4 @@
-import useEmblaCarousel from 'embla-carousel-react';
-import Embla from '@/components/WorkerCard//WorkerCard.module.css';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import ItemsCarousel from 'react-items-carousel';
 import {
   LeftWorkerCardButton,

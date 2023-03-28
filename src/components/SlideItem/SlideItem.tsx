@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { Button } from '@/components/Button/Button';
+// import { Button } from '@/components/Button/Button';
 import HomeStyle from '@/pages/Home/Home.module.css';
 
 interface SlideItemDescroption {

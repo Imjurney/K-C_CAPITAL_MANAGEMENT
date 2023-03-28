@@ -2,6 +2,7 @@ import { TitleContent } from '@/components/TitleContent/TitleContent';
 import style from '@/pages/Investments/InvestmentsPage.module.css';
 import investments_data from '@/data/investments.json';
 import { useQuery } from '@tanstack/react-query';
+import { ForwardedRef, forwardRef } from 'react';
 function SecondImage() {
   return (
     <picture className={style.bg_img}>
@@ -18,7 +19,7 @@ function SecondImage() {
   );
 }
 
-function SecondSection() {
+export const SecondSection = forwardRef((_, ref: ForwardedRef<HTMLElement>) => {
   const { data } = useQuery(
     ['INVESTMENT STRATEGY AND POTFOLIO'],
     () => Promise.resolve(investments_data),
@@ -28,12 +29,14 @@ function SecondSection() {
     }
   );
   return (
-    <section className={style.investment_section}>
+    <section ref={ref} className={style.investment_section}>
       <TitleContent content="INVESTMENT STRATEGY AND POTFOLIO" />
-      <article>{data && data[4].contents_5}</article>
+      <article>
+        <p className="leading-loose">{data && data[4].contents_5}</p>
+      </article>
       <SecondImage />
     </section>
   );
-}
+});
 
-export default SecondSection;
+SecondSection.displayName = 'SecondSection';
