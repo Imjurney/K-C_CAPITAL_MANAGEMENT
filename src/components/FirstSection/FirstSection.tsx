@@ -8,7 +8,7 @@ export const FirstSection = forwardRef((_, ref: ForwardedRef<HTMLElement>) => {
       <article className="mobile:px-5 mobile:text-sm laptop:text-xl desktop:text-xl mobile:pt-7 laptop:px-7 laptop:pt-[3.75rem]  desktop:px-[8.875rem] desktop:pt-[3.75rem] ">
         <p className="leading-loose">{investData[6].contents_7}</p>
       </article>
-      <picture>
+      <picture className="m-9 ml-auto mr-auto">
         <source
           srcSet="/assets/img/investments/first.png"
           media="(min-width: 1024px)"
