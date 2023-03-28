@@ -1,0 +1,58 @@
+[
+  {
+    "route": "home",
+    "contents_1": {
+      "subject": "What we do",
+      "description": "Helping you make a successful New Zealand real estate investment your partner K&C CAPITAL MANAGEMENT."
+    },
+    "contents_2": {
+      "subject": "New Zealand Real Estate Investment, Why Us?",
+      "description": [
+        {
+          "order": "first",
+          "contents": "K&C CAPITAL is a safe company.",
+          "image_name": "slide_1.jpeg"
+        },
+        {
+          "order": "second",
+          "contents": "Deliver guaranted returns",
+          "image_name": "slide_2.jpeg"
+        },
+        {
+          "order": "third",
+          "contents": "Ensuring a safe and sound",
+          "image_name": "slide_3.jpeg"
+        },
+        {
+          "order": "Fourth",
+          "contents": "Continuous investment portfolio management",
+          "image_name": "slide_4.jpeg"
+        }
+      ]
+    },
+    "contents_3": {
+      "subject": "How do we manage investment?",
+      "description_1": "We suggest you",
+      "important": "the best investment destination",
+      "description_2": "based on rigorous review and detailed financial analysis.",
+      "sub_contents": {
+        "investment company": "We invest in companies developing real estate, especially in residential properties where the securities provided are safe and sound. We carefully select the companies we invest through our extensive research and analysis of the companies’ performance, credibility, and potential to grow.",
+        "Investment Strategy": "입력하시오",
+        "Secured Reinvestment": "입력하시오"
+      }
+    },
+    "contents_4": {
+      "subject": "See what we provide to other investors",
+      "sub_contents": {
+        "0": "Provision of accounting and tax services",
+        "1": "Confirmation of successful visa",
+        "2": "Provide investment reports",
+        "3": "Reinvestment Assessment and Support"
+      }
+    },
+    "contents_5": {
+      "subject": "experience with K&C CAPITAL MANAGEMENT",
+      "description": "This is a testimonials  letter from customers who grow capital with us."
+    }
+  }
+]

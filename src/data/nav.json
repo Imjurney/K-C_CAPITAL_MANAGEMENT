@@ -1,0 +1,22 @@
+[
+  {
+    "navitem": "HOME",
+    "route": "/"
+  },
+  {
+    "navitem": "ABOUTUS",
+    "route": "/about_us"
+  },
+  {
+    "navitem": "INVESTMETS",
+    "route": "/investments"
+  },
+  {
+    "navitem": "OTHERSERVICES",
+    "route": "/other_services"
+  },
+  {
+    "navitem": "CONTACT",
+    "route": "/contact"
+  }
+]

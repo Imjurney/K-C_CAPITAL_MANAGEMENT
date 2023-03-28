@@ -1,0 +1,38 @@
+.wrapper {
+  @apply flex flex-col;
+  @apply border border-kc-contact_border;
+  @apply mobile:w-[17.5rem];
+  @apply laptop:w-[36.625rem] laptop:flex-row;
+  @apply desktop:w-[36.625rem] desktop:flex-row;
+}
+
+.wrapper:focus-visible {
+  @apply outline-none ring-offset-2 ring-2 rounded-sm border-blue-500;
+}
+
+.mail_wrapper {
+  @apply w-full;
+  @apply laptop:flex laptop:items-center laptop:gap-2;
+  @apply desktop:flex desktop:items-center desktop:gap-2;
+}
+.outline_vertical {
+  @apply text-kc-contact_gray font-medium;
+  @apply flex;
+  @apply mobile:pt-[0.625rem] mobile:flex-col mobile:ml-[0.625rem] mobile:text-sm;
+  @apply laptop:ml-5 laptop:w-[7.6875rem] laptop:items-center laptop:justify-center laptop:flex-row;
+  @apply desktop:ml-5 desktop:w-[7.6875rem] desktop:items-center desktop:justify-center desktop:flex-row;
+}
+
+.outline_vertical::after {
+  @apply content-[''] border-[1px] inline-block border-kc-contact_border;
+  @apply mobile:mt-[0.6875rem] mobile:w-[16.25rem];
+  @apply laptop:ml-[3.625rem] laptop:h-[1.375rem];
+  @apply desktop:ml-[3.625rem] desktop:h-[1.375rem];
+}
+
+.input {
+  @apply outline-none text-start w-full;
+  @apply mobile:text-xs mobile:h-[2.0625rem] mobile:indent-3;
+  @apply laptop:h-[2.625rem] laptop:indent-6;
+  @apply desktop:h-[2.625rem]  desktop:indent-6;
+}

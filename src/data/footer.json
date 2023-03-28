@@ -1,0 +1,15 @@
+[
+  {
+    "subject": "Fax",
+    "contents": "+64 27 3159618"
+  },
+  {
+    "subject": "Tel",
+    "contents": "+64 27 2229980"
+  },
+  {
+    "subject": "Address",
+    "contents": "17 HAWDON STREET, SYDENHAM CHRISTCHURCH",
+    "className": "flex"
+  }
+]

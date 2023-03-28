@@ -1,0 +1,55 @@
+.ul {
+  @apply bg-kc-contents_dark w-2/3 h-[100vh] text-kc-footer_gray text-sm text-left float-left;
+  @apply shadow-shadow_sm;
+  @apply laptop:hidden desktop:hidden;
+  @apply absolute top-0 z-50;
+  @apply pt-10;
+  @apply mobile:-translate-x-[1000px];
+}
+
+.link > li {
+  @apply px-5 py-2;
+}
+
+.link__active {
+  @apply text-kc-red;
+  @apply font-medium;
+  @apply relative;
+}
+
+.link__active::after {
+  @apply content-[''] border block border-kc-red absolute w-10;
+  @apply -bottom-4 left-1/2 -translate-x-1/2;
+}
+
+.link > li:hover {
+  @apply text-white;
+  @apply cursor-pointer;
+}
+
+.wrapper {
+  @apply bg-black flex justify-between items-center px-5;
+  @apply mobile:py-4 laptop:py-8 desktop:py-8 desktop:px-10;
+  @apply sticky top-0 z-30;
+  @apply shadow-shadow_sm;
+}
+
+.header {
+  @apply w-full sticky top-0 z-50;
+}
+.navItem {
+  @apply text-white flex text-base leading-none;
+  @apply mobile:hidden;
+  @apply laptop:gap-10 laptop:ml-[111px];
+  @apply desktop:gap-[3.75rem] desktop:ml-[164px];
+}
+
+.button {
+  @apply text-white;
+  @apply flex items-center;
+  @apply laptop:hidden desktop:hidden;
+}
+
+.navItem > li {
+  @apply cursor-pointer;
+}
