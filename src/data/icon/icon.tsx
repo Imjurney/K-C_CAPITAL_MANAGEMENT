@@ -12,7 +12,8 @@ export const CUSTOM_ICONS = [
     discription:
       'We invest in companies developing real estate, especially in residential properties where the securities provided are safe and sound. We carefully select the companies we invest through our extensive research and analysis of the companies’ performance, credibility, and potential to grow.',
     icon_name: [<MdApartment color="white" key={'kc_custom_icon_apart'} />],
-    path: '/Contact',
+    path: '/investments',
+    scroll: 200,
   },
   {
     id: 2,
@@ -23,7 +24,8 @@ export const CUSTOM_ICONS = [
     icon_name: [
       <CustomIcon icon="Score" color="White" key={'kc_custom_icon_Score'} />,
     ],
-    path: '/Contact',
+    path: '/investments',
+    scroll: 800,
   },
   {
     id: 3,
@@ -34,7 +36,8 @@ export const CUSTOM_ICONS = [
     icon_name: [
       <CustomIcon icon="Cycle" color="White" key={'kc_custom_icon_Cycle'} />,
     ],
-    path: '/Home',
+    path: '/investments',
+    scroll: 900,
   },
 ];
 

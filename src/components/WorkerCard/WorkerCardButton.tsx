@@ -1,7 +1,6 @@
 import clsx from 'clsx';
 import { ReactNode } from 'react';
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
-clsx;
 
 interface WorkerCardButtonProps {
   children?: ReactNode;

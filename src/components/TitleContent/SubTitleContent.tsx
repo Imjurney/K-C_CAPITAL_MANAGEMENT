@@ -5,10 +5,10 @@ import { debounce } from 'lodash';
 import { useRef, useCallback, useEffect } from 'react';
 
 interface SubTitleContentProps extends TitleContent {
-  subContent: string;
+  subContent?: string;
 }
 export function SubTitleContent({
-  content = 'experience with K&C CAPITAL MANAGEMENT',
+  content = 'Experience with K&C CAPITAL MANAGEMENT',
   subContent = 'This is a testimonials letter from customers who grow capital with us.',
 }: SubTitleContentProps) {
   const h2Ref = useRef<HTMLHeadingElement>(null);
@@ -33,13 +33,13 @@ export function SubTitleContent({
   }, []);
 
   return (
-    <>
+    <div className="pt-[6.25rem] bg-kc-bg_lightgray desktop:pb-20 laptop:pb-[5.625rem] mobile:pt-[3.75rem] mobile:pb-[1.875rem]">
       <h2 ref={h2Ref} className={clsx(TitleStyle.underlineBase_sub)}>
         {content}
         <p ref={pRef} className={TitleStyle.p}>
           {subContent}
         </p>
       </h2>
-    </>
+    </div>
   );
 }
