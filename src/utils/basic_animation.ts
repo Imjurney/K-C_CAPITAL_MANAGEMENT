@@ -1,7 +1,6 @@
 import { MutableRefObject } from 'react';
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import SplitText from 'gsap';
 // gsap.registerPlugin(ScrollTrigger);
 // gsap.registerPlugin(SplitText);
 export function basic_animation(

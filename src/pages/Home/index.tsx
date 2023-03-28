@@ -21,6 +21,7 @@ import { INVESTOR_ICON } from '@/data/icon/icon';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import matchMedia from 'gsap';
 import { Link } from 'react-router-dom';
+import MoveScroll from '@/components/MoveScroll/MoveScroll';
 
 function SubBanner() {
   return (
@@ -302,6 +303,7 @@ export default function HomePage() {
       <CircleAnimationSection />
       <Aside />
       <FooterBanner />
+      <MoveScroll />
       <Footer />
     </>
   );

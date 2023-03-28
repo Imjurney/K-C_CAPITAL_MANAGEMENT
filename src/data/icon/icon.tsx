@@ -2,6 +2,7 @@ import { MdApartment } from 'react-icons/md';
 
 import CustomIcon from '@/utils/creactCustomIcon';
 import { CalcuIcon, PassPort, Report, Grow } from './Icons';
+import CustomIconNormal from '@/utils/creatCustomIcon_normal';
 
 export const CUSTOM_ICONS = [
   {
@@ -73,4 +74,18 @@ export const VariationIcon = [
   <MdApartment size={48} color="#E7020F" key={'kc_custom_icon_apart'} />,
   <CustomIcon icon="Score" color="#E7020F" key={'kc_custom_icon_Score'} />,
   <CustomIcon icon="Cycle" color="#E7020F" key={'kc_custom_icon_Cycle'} />,
+];
+
+export const InvestmentIcons = [
+  <MdApartment size={48} color="#E7020F" key={'kc_custom_icon_apart'} />,
+  <CustomIconNormal
+    icon="Cycle"
+    color="#E7020F"
+    key={'kc__investment_custom_icon_Cycle'}
+  />,
+  <CustomIconNormal
+    icon="Score"
+    color="#E7020F"
+    key={'kc_investment_custom_icon_Score'}
+  />,
 ];

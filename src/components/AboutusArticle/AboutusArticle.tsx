@@ -1,7 +1,7 @@
 import { useInnerWidthState } from '@/utils/useInnerWidthState';
 import clsx from 'clsx';
 import style from '@/components/AboutusArticle/AboutusArticle.module.css';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { FiMoreHorizontal as More, FiChevronUp as Fold } from 'react-icons/fi';
 import article from '@/data/about_us_article.json';
 import { useQuery } from '@tanstack/react-query';

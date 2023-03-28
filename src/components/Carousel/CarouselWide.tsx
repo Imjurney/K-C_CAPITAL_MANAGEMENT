@@ -8,7 +8,7 @@ import { IconContext } from 'react-icons';
 import { useInnerWidthState } from '@/utils/useInnerWidthState';
 import { Link } from 'react-router-dom';
 import { CUSTOM_ICONS } from '@/data/icon/icon';
-import { Circle } from '../Circle/Circle';
+import { Circle } from '@/components/Circle/Circle';
 
 type PropType = {
   options?: EmblaOptionsType;

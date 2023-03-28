@@ -12,7 +12,7 @@ import style from '@/pages/OtherServices/OtherServicePage.module.css';
 import { useInnerWidthState } from '@/utils/useInnerWidthState';
 import { useQuery } from '@tanstack/react-query';
 import clsx from 'clsx';
-import { memo, ReactNode, SetStateAction, useEffect, useState } from 'react';
+import { memo, ReactNode, SetStateAction, useState } from 'react';
 
 interface GridProps {
   data:
@@ -315,7 +315,7 @@ export default function OtherServicesPage() {
   return (
     <>
       <Header description="this page is otherservices page" />
-      <section className="bg-white mobile:pt-[3.75rem] pt-[7.5rem] mobile:flex mobile:flex-col mobile:items-center">
+      <section className="bg-white mobile:pt-[3.75rem] pt-[7.5rem] mobile:flex mobile:flex-col mobile:items-center flex flex-col justify-center items-center">
         <TitleContent content="OTHER SERVICES WE PROVIDE TO OUR INVESTORS" />
         <main className="mobile:mt-16 mobile:pb-10 laptop:mt-[5.125rem] desktop:mt-[3.75rem] pb-[3.875rem]">
           <GridItems />

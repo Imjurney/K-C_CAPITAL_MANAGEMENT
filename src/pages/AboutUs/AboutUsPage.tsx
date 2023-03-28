@@ -6,6 +6,7 @@ import { ReactNode } from 'react';
 import { CareerSection } from '@/components/CareerSection/CareerSection';
 import { AboutusBanner } from '@/components/AboutusBanner/AboutusBanner';
 import { AboutusArticle } from '@/components/AboutusArticle/AboutusArticle';
+import MoveScroll from '@/components/MoveScroll/MoveScroll';
 
 interface AboutusProps {
   children?: ReactNode;
@@ -36,6 +37,7 @@ export default function AboutUsPage() {
         <TitleContent content="THE DIRECTORS OF COMPANY" />
         <CareerSection />
       </BottomSection>
+      <MoveScroll />
       <Footer />
     </>
   );

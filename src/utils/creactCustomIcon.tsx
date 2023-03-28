@@ -1,5 +1,4 @@
 import SvgPath from '@/data/icon/icon.json';
-import { IconBaseProps } from 'react-icons';
 import { useInnerWidthState } from '@/utils/useInnerWidthState';
 
 interface IconContexts {

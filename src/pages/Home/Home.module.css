@@ -146,6 +146,7 @@
   @apply flex gap-16 justify-center;
   @apply mobile:grid mobile:grid-cols-2 mobile:gap-4;
   @apply mobile:mt-14;
+  @apply mobile:px-5;
 }
 .article > ul > li {
   @apply flex flex-col items-center gap-5 desktop:mt-[3.75rem] laptop:mt-[3.75rem];
