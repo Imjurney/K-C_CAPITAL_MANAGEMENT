@@ -22,6 +22,8 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 import matchMedia from 'gsap';
 import { Link } from 'react-router-dom';
 import MoveScroll from '@/components/MoveScroll/MoveScroll';
+// import { WorkerCard } from '@/components/WorkerCard/WorkerCard';
+// import { SubTitleContent } from '@/components/TitleContent/SubTitleContent';
 
 function SubBanner() {
   return (
@@ -302,6 +304,8 @@ export default function HomePage() {
       </SlideBanner>
       <CircleAnimationSection />
       <Aside />
+      {/* <SubTitleContent /> */}
+      {/* <WorkerCard /> */}
       <FooterBanner />
       <MoveScroll />
       <Footer />

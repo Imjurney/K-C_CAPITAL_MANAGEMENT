@@ -1,15 +1,15 @@
 import useEmblaCarousel, { EmblaOptionsType } from 'embla-carousel-react';
-import { ReactNode, useCallback, useRef } from 'react';
+import { ReactNode, useCallback, useEffect, useRef } from 'react';
 import { Button } from '@/components/Button/Button';
 import { HiOutlineArrowLeft, HiOutlineArrowRight } from 'react-icons/hi';
 import { MdApartment as Apart } from 'react-icons/md';
 import style from '@/components/Carousel/Carousel.module.css';
 import { IconContext } from 'react-icons';
 import { useInnerWidthState } from '@/utils/useInnerWidthState';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { CUSTOM_ICONS } from '@/data/icon/icon';
 import { Circle } from '@/components/Circle/Circle';
-
+import { useLocation } from 'react-router-dom';
 type PropType = {
   options?: EmblaOptionsType;
   slides?: ReactNode[];
@@ -23,6 +23,7 @@ interface CarouselWideSlideCardProps {
     element?: Element[] | JSX.Element;
   };
   path: string;
+  scroll: number;
 }
 
 function CarouselWideSlideCard({
@@ -33,8 +34,9 @@ function CarouselWideSlideCard({
   subject = 'investment',
   subject2 = 'company',
   description,
+  scroll,
 }: CarouselWideSlideCardProps) {
-  const [window] = useInnerWidthState();
+  const [windowWidth] = useInnerWidthState();
 
   return (
     <>
@@ -44,7 +46,7 @@ function CarouselWideSlideCard({
             <IconContext.Provider
               value={{
                 color: 'white',
-                size: window.width >= 1024 ? 48 : 24,
+                size: windowWidth.width >= 1024 ? 48 : 24,
               }}
             >
               {icon.element}
@@ -86,6 +88,7 @@ function CarouselWideSlideCardGroup() {
           element: item.icon_name[0],
         }}
         path={item.path}
+        scroll={item.scroll}
       />
     );
   });

@@ -95,7 +95,7 @@ export default function InvestmentsPage() {
   };
   return (
     <>
-      <Header />
+      <Header description="this page is InvestmentsPage" />
       <InvestmentIntroduceSection />
       <InvestmentsTopSlide
         onclick={onMoveToElement}
