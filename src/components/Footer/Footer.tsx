@@ -1,7 +1,7 @@
 import clsx from 'clsx';
-import { ReactNode, useEffect, useState } from 'react';
+import { ReactNode, useEffect } from 'react';
 import FooterStyle from '@/components/Footer/Footer.module.css';
-import FooterLogo from '@/stories/assets/FooterLogo.svg';
+import FooterLogo from '../../../public/assets/img/FooterLogo.svg';
 import { useQuery } from '@tanstack/react-query';
 import footerData from '@/data/footer.json';
 // import { ReactComponent as FooterLogo } from '@/components/Footer/FooterLogo.svg';

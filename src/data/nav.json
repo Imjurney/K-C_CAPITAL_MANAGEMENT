@@ -12,10 +12,6 @@
     "route": "/investments"
   },
   {
-    "navitem": "TESTIMONIALS",
-    "route": "/testimonials"
-  },
-  {
     "navitem": "OTHERSERVICES",
     "route": "/other_services"
   },
