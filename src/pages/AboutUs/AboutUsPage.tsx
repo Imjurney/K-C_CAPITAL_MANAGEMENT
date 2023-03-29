@@ -13,7 +13,7 @@ interface AboutusProps {
   children?: ReactNode;
 }
 
-function Container({ children }: AboutusProps) {
+export function Container({ children }: AboutusProps) {
   return <main className="bg-black">{children}</main>;
 }
 

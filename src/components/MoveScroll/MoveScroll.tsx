@@ -15,7 +15,7 @@ export default function MoveScroll() {
               block: 'start',
             });
           }}
-          className="fixed bg-kc-red text-white px-3 py-1 text-sm bottom-20 rounded-3xl right-2 cursor-pointer"
+          className="fixed bg-kc-red text-white px-3 py-1 text-sm bottom-16 rounded-3xl right-2 cursor-pointer"
         >
           go to top
         </div>
