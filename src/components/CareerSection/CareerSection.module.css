@@ -12,12 +12,12 @@
 .wrapper__article {
   @apply desktop:flex desktop:items-start;
   @apply laptop:flex laptop:items-start;
-  @apply mobile:mt-7 mt-14;
+  @apply mobile:pt-7 pt-14;
 }
 
 .article {
   @apply desktop:w-1/2 laptop:w-1/2;
-  @apply mt-2 pb-8;
+  @apply pt-2 pb-8;
 }
 
 .article > div {
