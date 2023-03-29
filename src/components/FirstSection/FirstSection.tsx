@@ -3,12 +3,15 @@ import investData from '@/data/investments.json';
 import { ForwardedRef, forwardRef } from 'react';
 export const FirstSection = forwardRef((_, ref: ForwardedRef<HTMLElement>) => {
   return (
-    <section ref={ref} className="mobile:pt-[7.5rem] pt-[12.5rem]">
+    <section
+      ref={ref}
+      className="mobile:pt-[7.5rem] pt-[12.5rem] flex flex-col items-center justify-center"
+    >
       <TitleContent content="SECURED REINVESTMENT" />
       <article className="mobile:px-5 mobile:text-sm laptop:text-xl desktop:text-xl mobile:pt-7 laptop:px-7 laptop:pt-[3.75rem]  desktop:px-[8.875rem] desktop:pt-[3.75rem] ">
         <p className="leading-loose">{investData[6].contents_7}</p>
       </article>
-      <picture className="m-9 ml-auto mr-auto">
+      <picture className="pt-9">
         <source
           srcSet="/assets/img/investments/first.png"
           media="(min-width: 1024px)"

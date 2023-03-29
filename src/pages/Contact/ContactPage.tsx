@@ -58,7 +58,7 @@ function ContactForm() {
   const onSubmitHandler: SubmitHandler<FieldValues> = useCallback((data) => {
     axios
       .post(
-        'https://asia-northeast3-send-email-134f4.cloudfunctions.net/back/mail',
+        'https://australia-southeast1-send-email-134f4.cloudfunctions.net/back/mail',
         data
       )
       .then((res) => {
@@ -71,7 +71,7 @@ function ContactForm() {
   return (
     <RHForm onSubmit={onSubmitHandler}>
       <fieldset className={contact.fieldset}>
-        <legend className={contact.legend}>Send a Massage</legend>
+        <legend className={contact.legend}>Send a Message</legend>
         <div className="flex mobile:gap-x-3 mobile:px-5 laptop:gap-8 desktop:gap-8">
           <TextInput
             labelName={'First Name'}

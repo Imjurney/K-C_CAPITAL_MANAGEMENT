@@ -1,12 +1,9 @@
 import TextInputStyle from '@/components/TextInput/TextInput.module.css';
 import {
-  FieldErrors,
-  FieldValues,
   Path,
   RegisterOptions,
   useController,
   useFormContext,
-  UseFormRegister,
 } from 'react-hook-form';
 import clsx from 'clsx';
 import { InputHTMLAttributes, PropsWithChildren } from 'react';

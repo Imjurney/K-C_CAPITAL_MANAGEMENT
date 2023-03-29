@@ -95,7 +95,7 @@ function SemiCircleSlide({ onclick, onclick_2, onclick_3 }: Props) {
     });
     return () => cxt.revert();
   }, []);
-
+  // laptop:top-[800px] laptop:left-[300px]
   return (
     <section className="bg-white pt-[2.375rem] overflow-hidden">
       <div className={style.semicircle__slide__wrapper}>
@@ -138,45 +138,47 @@ function SemiCircleSlide({ onclick, onclick_2, onclick_3 }: Props) {
             </figcaption>
           </figure>
         </div>
-      </div>
-      <button
-        type="button"
-        className="-rotate-[30deg] absolute
-    laptop:top-[800px] laptop:left-[15%]
-    desktop:top-[800px] desktop:left-[25%]"
-        ref={goToLeftRef}
-      >
-        <BsArrowLeftCircle color="#CBD2DC" size={60} />
-      </button>
-      <button
-        type="button"
-        className="hidden
+        <button
+          type="button"
+          className="-rotate-[30deg] absolute
+   laptop:top-[35%] laptop:left-[30%]
+    desktop:top-[35%] desktop:left-[35%]"
+          ref={goToLeftRef}
+        >
+          <BsArrowLeftCircle color="#CBD2DC" size={60} />
+        </button>
+        <button
+          type="button"
+          className="rotate-[30deg] absolute 
+               laptop:top-[35%] laptop:right-[30%]
+    desktop:top-[35%] desktop:right-[35%]"
+          ref={goToRightRef}
+        >
+          <BsArrowRightCircle color="#CBD2DC" size={60} />
+        </button>
+        <button
+          type="button"
+          className="hidden
     rotate-[30deg] absolute
-     laptop:top-[800px] laptop:right-[15%]
-    desktop:top-[800px] desktop:right-[20%]
+            laptop:top-[35%] laptop:right-[30%]
+    desktop:top-[35%] desktop:right-[35%]
   "
-        ref={returnFrontFromLeftRef}
-      >
-        <BsArrowRightCircle color="#CBD2DC" size={60} />
-      </button>
-      <button
-        type="button"
-        className="rotate-[30deg] absolute 
-             laptop:top-[800px] laptop:right-[15%]
-    desktop:top-[800px] desktop:right-[20%]"
-        ref={goToRightRef}
-      >
-        <BsArrowRightCircle color="#CBD2DC" size={60} />
-      </button>
-      <button
-        type="button"
-        className="-rotate-[30deg] absolute hidden
-         laptop:top-[800px] laptop:left-[15%]
-    desktop:top-[800px] desktop:left-[25%]"
-        ref={btn3}
-      >
-        <BsArrowLeftCircle color="#CBD2DC" size={60} />
-      </button>
+          ref={returnFrontFromLeftRef}
+        >
+          <BsArrowRightCircle color="#CBD2DC" size={60} />
+        </button>
+
+        <button
+          type="button"
+          className="-rotate-[30deg] absolute hidden
+        laptop:top-[35%] laptop:left-[30%]
+    desktop:top-[35%] desktop:left-[35%]"
+          ref={btn3}
+        >
+          <BsArrowLeftCircle color="#CBD2DC" size={60} />
+        </button>
+      </div>
+
       <p className={style.semicircle__slide__p}>
         <span>New residential property development</span>
         &nbsp;with general house & Land packages in low-mid density zones in NZ.

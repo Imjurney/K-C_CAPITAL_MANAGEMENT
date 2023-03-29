@@ -9,7 +9,7 @@
 
 .names_wrapper_vertical {
   @apply mobile:flex-col;
-  @apply mobile:text-xs mobile:w-fit;
+  @apply mobile:text-xs mobile:w-[8.25rem];
   @apply laptop:w-[17.375rem] laptop:text-base laptop:leading-none;
   @apply desktop:w-[17.375rem] desktop:text-base desktop:leading-none;
 }
@@ -40,7 +40,7 @@
 }
 
 .input_vertical {
-  @apply self-center;
+  /* @apply self-center; */
   @apply mobile:text-center mobile:h-[2.0625rem];
   @apply laptop:h-10 laptop:items-center laptop:indent-5 laptop:w-[9.6875rem];
   @apply desktop:h-10 desktop:items-center desktop:indent-5 desktop:w-[9.6875rem];
