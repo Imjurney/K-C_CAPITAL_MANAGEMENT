@@ -1,15 +1,14 @@
 import useEmblaCarousel, { EmblaOptionsType } from 'embla-carousel-react';
-import { ReactNode, useCallback, useEffect, useRef } from 'react';
+import { ReactNode, useCallback, useRef } from 'react';
 import { Button } from '@/components/Button/Button';
 import { HiOutlineArrowLeft, HiOutlineArrowRight } from 'react-icons/hi';
 import { MdApartment as Apart } from 'react-icons/md';
 import style from '@/components/Carousel/Carousel.module.css';
 import { IconContext } from 'react-icons';
 import { useInnerWidthState } from '@/utils/useInnerWidthState';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { CUSTOM_ICONS } from '@/data/icon/icon';
 import { Circle } from '@/components/Circle/Circle';
-import { useLocation } from 'react-router-dom';
 type PropType = {
   options?: EmblaOptionsType;
   slides?: ReactNode[];

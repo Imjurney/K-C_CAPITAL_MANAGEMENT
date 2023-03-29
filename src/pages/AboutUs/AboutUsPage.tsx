@@ -2,7 +2,7 @@ import { Footer } from '@/components/Footer/Footer';
 import { Header } from '@/components/Header/Header';
 import { TitleContent } from '@/components/TitleContent/TitleContent';
 import AboutUsStyle from '@/pages/AboutUs/AboutUsPage.module.css';
-import { ReactNode } from 'react';
+import { ReactNode, useEffect } from 'react';
 import { CareerSection } from '@/components/CareerSection/CareerSection';
 import { AboutusBanner } from '@/components/AboutusBanner/AboutusBanner';
 import { AboutusArticle } from '@/components/AboutusArticle/AboutusArticle';

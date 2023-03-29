@@ -4,7 +4,7 @@ import { TitleContent } from '@/components/TitleContent/TitleContent';
 import { TopBanner } from '@/components/TopBanner/TopBanner';
 import HomeStyle from '@/pages/Home/Home.module.css';
 import { ReactNode, useEffect, useLayoutEffect, useRef } from 'react';
-import { aside_animation, basic_animation } from '@/utils/basic_animation';
+import { basic_animation } from '@/utils/basic_animation';
 import home from '@/data/image.json';
 import contents from '@/data/home.json';
 import clsx from 'clsx';

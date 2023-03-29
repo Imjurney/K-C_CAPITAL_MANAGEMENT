@@ -6,7 +6,7 @@ export default function MoveScroll() {
   const [windowH] = useInnerHeightState();
   return (
     <>
-      {window.width < 1023 && windowH.height > 600 && (
+      {window.width < 800 && windowH.height > 600 && (
         <div
           aria-label="go to top buttom"
           onClick={() => {
