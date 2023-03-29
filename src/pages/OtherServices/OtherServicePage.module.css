@@ -1,13 +1,15 @@
 /* -------------------------- 말풍선 왼쪽 --------------------------------------------- */
-
+.speech_bubble_wrapper {
+  @apply pb-[3.75rem];
+}
 .speech_bubble__left {
   @apply text-start;
-  @apply w-full mobile:col-span-2;
+  @apply mobile:col-span-2;
   @apply mobile:p-5;
   @apply mobile:text-sm mobile:leading-none;
   @apply leading-loose;
   @apply laptop:mx-10 laptop:pl-10 laptop:w-[96%];
-  @apply desktop:mx-10 desktop:pl-10 desktop:w-[96.5%];
+  @apply desktop:mx-10 desktop:pl-10;
   @apply relative bg-kc-bg_lightgray border-t-[3px] border-t-kc-red;
 }
 
@@ -219,7 +221,18 @@
 }
 
 /* -------------------------------image layout------------------------------------------- */
-
+.img__wrapper {
+  @apply desktop:pt-[3.75rem];
+}
+.img__wrapper > figure {
+  @apply mx-[0.9375rem];
+}
+.img__wrapper > figure:first-of-type {
+  @apply ml-10;
+}
+.img__wrapper > figure:last-of-type {
+  @apply mr-10;
+}
 .img__active {
   @apply transition delay-150 duration-300 ease-in-out;
   @apply object-cover object-center w-[214px] h-[330px];
@@ -248,6 +261,7 @@
   @apply relative inline-block;
 }
 
+/* 
 .img__figure:first-of-type {
   @apply ml-10 mr-[1.875rem];
 }
@@ -269,7 +283,7 @@
 
 .img__figure__active:nth-of-type(3) {
   @apply mr-[1.875rem];
-}
+} */
 
 /* ---------------------------텍스트 옆 원---------------------------------------------- */
 .img__figure:first-of-type::after {

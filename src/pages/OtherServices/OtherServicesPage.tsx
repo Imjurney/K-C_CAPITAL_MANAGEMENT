@@ -1,5 +1,6 @@
 import { Footer } from '@/components/Footer/Footer';
 import { Header } from '@/components/Header/Header';
+import MaxWidthWrapperLayout from '@/components/Layout/MaxWidthWrapperLayout';
 import { TitleContent } from '@/components/TitleContent/TitleContent';
 import {
   CalcuIconDefault,
@@ -64,7 +65,7 @@ const Directions = [
 function GridSectionWrapper({ children }: GridSectionWrapperProps) {
   return (
     <>
-      <h3 className="laptop:hidden desktop:hidden text-center mb-5 text-kc-article_gray">
+      <h3 className="laptop:hidden desktop:hidden text-center my-5 text-kc-article_gray">
         click the content below
         <p className="animate-bounce mt-2 text-kc-red">&#8595;</p>
       </h3>
@@ -238,7 +239,7 @@ function GridItems() {
           />
         </>
       ) : (
-        <section>
+        <section className={style.img__wrapper}>
           {data?.map((item, index) => {
             return (
               <>
@@ -273,51 +274,55 @@ function GridItems() {
               </>
             );
           })}
-          {data
-            ?.filter((bubble) => bubble.id === number)
-            .map((item, index) => {
-              const findDirection = Directions.find(
-                (direction) => direction.type === item.contents_Direction2
-              );
-              return (
-                <div
-                  key={`bubble__${index}`}
-                  role="listitem"
-                  id={`decription_${index}`}
-                  className={clsx(
-                    findDirection?.css,
-                    'laptop:mt-14 desktop:mt-14'
-                  )}
-                >
-                  <strong className={style.strong}>
-                    {item.contents_strong}
-                  </strong>
-                  {item.contents.split(',').map((item, contents_index) => {
-                    return (
-                      <p
-                        className={style.p_contents}
-                        key={`other_service_${contents_index}`}
-                      >
-                        {item}
-                      </p>
-                    );
-                  })}
-                </div>
-              );
-            })}
+          <MaxWidthWrapperLayout>
+            <section className={style.speech_bubble_wrapper}>
+              {data
+                ?.filter((bubble) => bubble.id === number)
+                .map((item, index) => {
+                  const findDirection = Directions.find(
+                    (direction) => direction.type === item.contents_Direction2
+                  );
+                  return (
+                    <div
+                      key={`bubble__${index}`}
+                      role="listitem"
+                      id={`decription_${index}`}
+                      className={clsx(
+                        findDirection?.css,
+                        'laptop:mt-14 desktop:mt-14'
+                      )}
+                    >
+                      <strong className={style.strong}>
+                        {item.contents_strong}
+                      </strong>
+                      {item.contents.split(',').map((item, contents_index) => {
+                        return (
+                          <p
+                            className={style.p_contents}
+                            key={`other_service_${contents_index}`}
+                          >
+                            {item}
+                          </p>
+                        );
+                      })}
+                    </div>
+                  );
+                })}
+            </section>
+          </MaxWidthWrapperLayout>
         </section>
       )}
     </GridSectionWrapper>
   );
 }
-
+// mobile:mt-16 mobile:pb-10 bg-white laptop:mt-[5.125rem] desktop:mt-[3.75rem] pb-[3.875rem]
 export default function OtherServicesPage() {
   return (
     <>
       <Header description="this page is otherservices page" />
-      <section className="bg-white mobile:pt-[3.75rem] pt-[7.5rem] mobile:flex mobile:flex-col mobile:items-center flex flex-col justify-center items-center">
-        <TitleContent content="OTHER SERVICES WE PROVIDE TO OUR INVESTORS" />
-        <main className="mobile:mt-16 mobile:pb-10 laptop:mt-[5.125rem] desktop:mt-[3.75rem] pb-[3.875rem]">
+      <section className="bg-black mobile:bg-white mobile:pb-10  mobile:flex mobile:flex-col mobile:items-center flex flex-col justify-center items-center">
+        <main className="bg-white pt-[7.5rem]">
+          <TitleContent content="OTHER SERVICES WE PROVIDE TO OUR INVESTORS" />
           <GridItems />
         </main>
       </section>
