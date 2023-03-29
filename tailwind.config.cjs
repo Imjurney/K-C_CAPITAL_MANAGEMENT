@@ -34,11 +34,11 @@ module.exports = {
     },
     screens: {
       mobile: { max: '800px' },
-      laptop: { min: '801px', max: '1140px' },
-      desktop: { min: '1141px' },
+      laptop: { min: '801px', max: '1279px' },
+      desktop: { min: '1280px' },
     },
     maxWidth: {
-      dx: '1440px',
+      dx: '1280px',
     },
     boxShadow: {
       article_shadow:

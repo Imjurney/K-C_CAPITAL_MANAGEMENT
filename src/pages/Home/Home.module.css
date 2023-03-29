@@ -2,6 +2,7 @@
   @apply desktop:pt-20 desktop:pb-[22.625rem];
   @apply laptop:pt-20 laptop:pb-[22.625rem];
   @apply mobile:pt-[3.75rem] mobile:mb-8;
+  @apply bg-white;
 }
 
 .image {
@@ -70,6 +71,7 @@
 
 .slide__grid__wrapper {
   @apply grid bg-white;
+  @apply mobile:pb-[2.375rem];
   @apply grid-flow-row-dense gap-5 grid-cols-2;
   @apply laptop:mx-5 laptop:mt-[9.375rem] laptop:mb-[6.25rem];
   @apply laptop:overflow-hidden;
@@ -133,7 +135,7 @@
 
 .aside {
   @apply bg-black flex justify-between left-1/2 -translate-x-1/2 -top-8 m-0 ml-auto mr-auto items-center pl-14 text-white text-2xl font-bold;
-  @apply desktop:w-[90%] laptop:w-[90%] mobile:hidden;
+  @apply desktop:w-[75.0625rem] laptop:w-[90%] mobile:hidden;
 }
 
 .article {
