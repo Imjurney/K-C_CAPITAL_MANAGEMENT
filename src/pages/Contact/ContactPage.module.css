@@ -11,6 +11,8 @@
 }
 
 .form {
+  @apply z-30;
+  @apply desktop:mr-10 laptop:pr-[4.625rem];
   @apply bg-white;
   @apply mobile:m-0 mobile:ml-auto mobile:mr-auto;
   @apply mobile:flex mobile:flex-col mobile:items-center mobile:justify-center;

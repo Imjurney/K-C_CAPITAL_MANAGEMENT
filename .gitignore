@@ -12,9 +12,9 @@ dist
 dist-ssr
 *.local
 server/*
-.eslintcache
 
 # Editor directories and files
+.eslintcache
 .vscode/*
 !.vscode/extensions.json
 .idea

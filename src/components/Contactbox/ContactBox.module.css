@@ -2,6 +2,8 @@
   @apply flex mobile:place-content-center;
   @apply laptop:justify-center;
   @apply w-full;
+  @apply z-40;
+  @apply mobile:bg-kc-bg_lightgray;
 }
 
 .ul {

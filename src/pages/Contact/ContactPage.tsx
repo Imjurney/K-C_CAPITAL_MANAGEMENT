@@ -18,6 +18,7 @@ import {
 } from 'react-hook-form';
 import axios from 'axios';
 import clsx from 'clsx';
+import MaxWidthWrapperLayout from '@/components/Layout/MaxWidthWrapperLayout';
 
 interface IRHForm<FormType extends object> {
   onSubmit: SubmitHandler<FormType>;
@@ -114,8 +115,12 @@ export default function ContactPage() {
   return (
     <>
       <Header description="this is Contact Page" />
-      <div className="mobile:mb-6 mobile:pt-14 laptop:pt-28 desktop:pt-[7.5rem]">
-        <TitleContent content="CONTACT US" />
+      <div className="bg-black">
+        <MaxWidthWrapperLayout>
+          <div className="mobile:mb-6 mobile:pt-14 laptop:pt-28 desktop:pt-[7.5rem] bg-white">
+            <TitleContent content="CONTACT US" />
+          </div>
+        </MaxWidthWrapperLayout>
       </div>
       <ContactLayout>
         <ContactBox />
