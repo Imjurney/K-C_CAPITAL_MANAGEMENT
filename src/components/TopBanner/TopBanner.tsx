@@ -13,6 +13,7 @@ export function TopBanner() {
   return (
     <section className="relative text-white">
       <img
+        width={200}
         className="brightness-50 -z-50 w-full"
         src={`/assets/img/${home['home'][0].image_url1}`}
         alt="K&C Capital Mangagement introduce Picture"

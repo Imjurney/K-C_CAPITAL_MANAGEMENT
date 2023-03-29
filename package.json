@@ -81,6 +81,7 @@
     "typescript": "^4.9.3",
     "vite": "4.2.0",
     "vite-plugin-express": "1.0.3",
+    "vite-plugin-imagemin": "0.6.1",
     "vite-plugin-react-svg": "0.2.0",
     "vite-plugin-svgr": "2.4.0",
     "vite-svg-loader": "4.0.0",
