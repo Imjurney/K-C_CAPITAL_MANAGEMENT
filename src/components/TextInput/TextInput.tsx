@@ -47,7 +47,7 @@ export function TextInput<FormType extends object>({
       )}
       tabIndex={0}
     >
-      <label className={directions[direction]} htmlFor="firstName">
+      <label className={directions[direction]} htmlFor="{}">
         {labelName}
       </label>
       <input

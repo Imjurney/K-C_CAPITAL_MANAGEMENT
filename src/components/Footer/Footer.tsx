@@ -32,8 +32,8 @@ const ResPonsiveCopyright = [
 
 function FooterWrapper({ children }: FooterWrapper) {
   return (
-    <footer id="footer" className={clsx('bg-kc-contents_dark')}>
-      {children}
+    <footer id="footer" className="bg-kc-contents_dark">
+      <div className="mx-auto desktop:max-w-dx">{children}</div>
     </footer>
   );
 }
@@ -69,11 +69,7 @@ function FooterContents({ width = 240 }: FooterContentsProps) {
   return (
     <FooterWrapper>
       <address className={clsx(FooterStyle.default, ResPonsiveLayout)}>
-        <img
-          width={width}
-          src={FooterLogo}
-          alt="K&amp;C Capital Management 로고 입니다"
-        />
+        <img width={width} src={FooterLogo} alt="K&amp;C Capital Management" />
         {data && getFooterContentsItem(data)}
       </address>
       <p className={clsx('text-kc-footer_gray text-sm', ResPonsiveCopyright)}>
