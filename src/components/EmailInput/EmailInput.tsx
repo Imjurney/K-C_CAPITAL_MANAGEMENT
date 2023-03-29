@@ -31,7 +31,7 @@ export function EmailInput<FormType extends object>({
   return (
     <>
       <div className={clsx(className, EamilInputStyle.wrapper)} tabIndex={0}>
-        <label className={EamilInputStyle.outline_vertical} htmlFor="email">
+        <label className={EamilInputStyle.outline_vertical} htmlFor="Email">
           Email
         </label>
         <div className={EamilInputStyle.mail_wrapper}>
@@ -39,6 +39,7 @@ export function EmailInput<FormType extends object>({
             type="emaii"
             className={EamilInputStyle.input}
             required
+            id="Email"
             placeholder="kccompany01 @ google.com"
             name={field.name}
             onChange={field.onChange}

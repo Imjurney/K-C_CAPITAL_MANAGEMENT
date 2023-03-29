@@ -1,4 +1,5 @@
 .underlineBase {
+  @apply bg-inherit;
   @apply flex flex-col items-center;
   @apply font-bold;
   @apply mobile:text-lg mobile:leading-none  mobile:text-center laptop:text-3xl desktop:text-3xl;

@@ -33,8 +33,8 @@ export function CareerSection() {
             <EmtyBox
               className={
                 item.role.css === 'bold'
-                  ? 'bg-gradient-to-tl from-white to-gray-100'
-                  : 'bg-gradient-to-br from-white to-gray-100'
+                  ? 'bg-gradient-to-tl from-white to-gray-200'
+                  : 'bg-gradient-to-br from-white to-gray-200'
               }
             />
             <article className={sectionStyle.article}>

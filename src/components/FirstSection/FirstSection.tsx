@@ -5,7 +5,7 @@ export const FirstSection = forwardRef((_, ref: ForwardedRef<HTMLElement>) => {
   return (
     <section
       ref={ref}
-      className="mobile:pt-[7.5rem] pt-[12.5rem] flex flex-col items-center justify-center"
+      className="mobile:pt-[7.5rem] pt-[12.5rem] flex flex-col items-center justify-center bg-white"
     >
       <TitleContent content="SECURED REINVESTMENT" />
       <article className="mobile:px-5 mobile:text-sm laptop:text-xl desktop:text-xl mobile:pt-7 laptop:px-7 laptop:pt-[3.75rem]  desktop:px-[8.875rem] desktop:pt-[3.75rem] ">

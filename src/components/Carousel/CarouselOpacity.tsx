@@ -69,7 +69,7 @@ export default function CarouselOpacity({ ...props }: PropType) {
               <img
                 className={style.embla__slide__img}
                 src={imageByIndex(index)}
-                alt="Your alt text"
+                alt="this pictures are about Panorama"
               />
             </div>
           ))}

@@ -4,7 +4,7 @@ import { TitleContent } from '@/components/TitleContent/TitleContent';
 import { TopBanner } from '@/components/TopBanner/TopBanner';
 import HomeStyle from '@/pages/Home/Home.module.css';
 import { ReactNode, useEffect, useLayoutEffect, useRef } from 'react';
-import { aside_animation, basic_animation } from '@/utils/basic_animation';
+import { basic_animation } from '@/utils/basic_animation';
 import home from '@/data/image.json';
 import contents from '@/data/home.json';
 import clsx from 'clsx';
@@ -22,6 +22,7 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 import matchMedia from 'gsap';
 import { Link } from 'react-router-dom';
 import MoveScroll from '@/components/MoveScroll/MoveScroll';
+import MaxWidthWrapperLayout from '@/components/Layout/MaxWidthWrapperLayout';
 // import { WorkerCard } from '@/components/WorkerCard/WorkerCard';
 // import { SubTitleContent } from '@/components/TitleContent/SubTitleContent';
 
@@ -85,12 +86,14 @@ function HowdoweManageInvestmentComment() {
 function WhatWedoBanner() {
   return (
     <>
-      <section className="relative">
-        <div id="what we do" className={HomeStyle.title_wrapper}>
-          <TitleContent content="What we do" />
-        </div>
-        <SubBanner />
-        <SubBannerDescription />
+      <section className="relative bg-black mobile:bg-white">
+        <MaxWidthWrapperLayout>
+          <div id="what we do" className={HomeStyle.title_wrapper}>
+            <TitleContent content="What we do" />
+          </div>
+          <SubBanner />
+          <SubBannerDescription />
+        </MaxWidthWrapperLayout>
       </section>
     </>
   );
@@ -102,21 +105,25 @@ interface SlideBannerProps {
 
 function SlideBanner({ children }: SlideBannerProps) {
   return (
-    <section className="pb-9 pt-14 w-full bg-white">
-      <TitleContent content={`New Zealand Real Estate Investment,Why Us?`} />
-      {children}
+    <section className="bg-black">
+      <MaxWidthWrapperLayout className="bg-white desktop:pt-[12.5rem] desktop:pb-[6.25rem] laptop:pt-[7.125rem] laptop:pb-[6.25rem] mobile:pt-[3.75rem]">
+        <TitleContent content={`New Zealand Real Estate Investment,Why Us?`} />
+        {children}
+      </MaxWidthWrapperLayout>
     </section>
   );
 }
 
 function CircleAnimationSection() {
   return (
-    <section className="desktop:h-[83.4375rem] laptop:h-[83.4375rem] mobile:pb-10 pt-[6.25rem] mobile:pt-16 bg-kc-bg_lightgray relative">
-      <div className="pb-[3.75rem] mobile:pb-7">
-        <TitleContent content="How do we manage investment?" />
-      </div>
-      <HowdoweManageInvestmentComment />
-      <CarouselWide />
+    <section className="mobile:bg-white bg-black">
+      <MaxWidthWrapperLayout className="bg-kc-bg_lightgray relative overflow-hidden pt-[6.25rem] mobile:pb-10">
+        <div className="mobile:pb-7 bg-kc-bg_lightgray">
+          <TitleContent content="How do we manage investment?" />
+        </div>
+        <HowdoweManageInvestmentComment />
+        <CarouselWide />
+      </MaxWidthWrapperLayout>
     </section>
   );
 }
@@ -124,28 +131,32 @@ function CircleAnimationSection() {
 function FooterBanner() {
   const asideRef = useRef(null);
   const pref = useRef(null);
-  useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
-      aside_animation(pref, asideRef);
-    }, asideRef);
-    return () => ctx.revert();
-  }, []);
+  // useLayoutEffect(() => {
+  //   const ctx = gsap.context(() => {
+  //     aside_animation(pref, asideRef);
+  //   }, asideRef);
+  //   return () => ctx.revert();
+  // }, []);
   return (
-    <aside ref={asideRef} className="relative bg-black">
-      <img
-        className="opacity-30 h-[500px] mobile:h-[17.5rem] object-center object-cover mobile:object-bottom"
-        src="/assets/img/home/buttomBanner/buttom_Banner.png"
-        alt="footer banner image"
-      />
-      <p
-        ref={pref}
-        className={clsx(
-          'text-white absolute right-10 top-20 text-3xl mobile:text-base mobile:text-center mobile:w-[10.875rem] mobile:ab_center'
-        )}
-      >
-        Would you like to start your journey with us?
-        <span className="block mt-5">&#10230;</span>
-      </p>
+    <aside ref={asideRef} className="bg-black">
+      <MaxWidthWrapperLayout>
+        <div className="relative">
+          <img
+            className="opacity-30 h-[500px] mobile:h-[17.5rem] object-center object-cover mobile:object-bottom"
+            src="/assets/img/home/buttomBanner/buttom_Banner.png"
+            alt="footer banner image"
+          />
+          <p
+            ref={pref}
+            className={clsx(
+              'text-white absolute right-10 top-20 text-3xl mobile:text-base mobile:text-center mobile:w-[10.875rem] mobile:ab_center'
+            )}
+          >
+            Would you like to start your journey with us?
+            <span className="block mt-5">&#10230;</span>
+          </p>
+        </div>
+      </MaxWidthWrapperLayout>
     </aside>
   );
 }
@@ -226,17 +237,19 @@ function AsideBanner() {
 
 function Aside() {
   return (
-    <section className="relative">
-      <aside className={clsx('absolute', HomeStyle.aside)}>
-        There are other services for investors!
-        <button
-          className="flex w-16 h-16 justify-center items-center bg-kc-red"
-          type="button"
-        >
-          <FiChevronDown size={40} />
-        </button>
-      </aside>
-      <AsideBanner />
+    <section className="relative bg-black">
+      <MaxWidthWrapperLayout>
+        <aside className={clsx('absolute', HomeStyle.aside)}>
+          There are other services for investors!
+          <button
+            className="flex w-16 h-16 justify-center items-center bg-kc-red"
+            type="button"
+          >
+            <FiChevronDown size={40} />
+          </button>
+        </aside>
+        <AsideBanner />
+      </MaxWidthWrapperLayout>
     </section>
   );
 }

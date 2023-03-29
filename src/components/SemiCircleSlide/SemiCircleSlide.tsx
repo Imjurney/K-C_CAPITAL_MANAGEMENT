@@ -142,7 +142,7 @@ function SemiCircleSlide({ onclick, onclick_2, onclick_3 }: Props) {
           type="button"
           className="-rotate-[30deg] absolute
    laptop:top-[35%] laptop:left-[30%]
-    desktop:top-[35%] desktop:left-[35%]"
+    desktop:top-[35%] desktop:left-[30%]"
           ref={goToLeftRef}
         >
           <BsArrowLeftCircle color="#CBD2DC" size={60} />
@@ -151,7 +151,7 @@ function SemiCircleSlide({ onclick, onclick_2, onclick_3 }: Props) {
           type="button"
           className="rotate-[30deg] absolute 
                laptop:top-[35%] laptop:right-[30%]
-    desktop:top-[35%] desktop:right-[35%]"
+    desktop:top-[35%] desktop:right-[30%]"
           ref={goToRightRef}
         >
           <BsArrowRightCircle color="#CBD2DC" size={60} />
@@ -161,7 +161,7 @@ function SemiCircleSlide({ onclick, onclick_2, onclick_3 }: Props) {
           className="hidden
     rotate-[30deg] absolute
             laptop:top-[35%] laptop:right-[30%]
-    desktop:top-[35%] desktop:right-[35%]
+    desktop:top-[35%] desktop:right-[30%]
   "
           ref={returnFrontFromLeftRef}
         >
@@ -172,17 +172,17 @@ function SemiCircleSlide({ onclick, onclick_2, onclick_3 }: Props) {
           type="button"
           className="-rotate-[30deg] absolute hidden
         laptop:top-[35%] laptop:left-[30%]
-    desktop:top-[35%] desktop:left-[35%]"
+    desktop:top-[35%] desktop:left-[30%]"
           ref={btn3}
         >
           <BsArrowLeftCircle color="#CBD2DC" size={60} />
         </button>
+        <p className={style.semicircle__slide__p}>
+          <span>New residential property development</span>
+          &nbsp;with general house & Land packages in low-mid density zones in
+          NZ.
+        </p>
       </div>
-
-      <p className={style.semicircle__slide__p}>
-        <span>New residential property development</span>
-        &nbsp;with general house & Land packages in low-mid density zones in NZ.
-      </p>
     </section>
   );
 }
@@ -246,7 +246,7 @@ function SemiCircleSlideMobile() {
           <SlideMobileCard />
         </ItemsCarousel>
       </div>
-      <p className="text-kc-article_gray66 flex flex-col px-5">
+      <p className="text-kc-article_gray66 flex flex-col px-5 bg-white">
         <span className="text-black">New residential property development</span>
         <span>
           with general house & Land packages in low-mid density zones in NZ.

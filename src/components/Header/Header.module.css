@@ -28,14 +28,16 @@
 }
 
 .wrapper {
-  @apply bg-black flex justify-between items-center px-5;
+  @apply flex justify-between items-center px-5;
   @apply mobile:py-4 laptop:py-8 desktop:py-8 desktop:px-10;
   @apply sticky top-0 z-30;
   @apply shadow-shadow_sm;
+  @apply desktop:max-w-dx mx-auto;
 }
 
 .header {
   @apply w-full sticky top-0 z-50;
+  @apply bg-black;
 }
 .navItem {
   @apply text-white flex text-base leading-none;

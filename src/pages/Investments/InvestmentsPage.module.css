@@ -49,8 +49,9 @@
 }
 
 .semicircle__slide__p {
-  @apply text-2xl absolute left-1/2 -translate-x-[40%] text-kc-article_gray66 w-[630px];
-  @apply -bottom-[350px];
+  @apply absolute;
+  @apply text-2xl  text-kc-article_gray66 w-[630px];
+  @apply bottom-[300px] left-[33%];
 }
 .semicircle__slide__p > span {
   @apply text-black;

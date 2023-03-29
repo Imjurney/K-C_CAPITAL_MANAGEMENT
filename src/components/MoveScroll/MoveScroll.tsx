@@ -6,7 +6,7 @@ export default function MoveScroll() {
   const [windowH] = useInnerHeightState();
   return (
     <>
-      {window.width < 1023 && windowH.height > 600 && (
+      {window.width < 800 && windowH.height > 600 && (
         <div
           aria-label="go to top buttom"
           onClick={() => {
@@ -15,7 +15,7 @@ export default function MoveScroll() {
               block: 'start',
             });
           }}
-          className="fixed bg-kc-red text-white px-3 py-1 text-sm bottom-20 rounded-3xl right-2 cursor-pointer"
+          className="fixed bg-kc-red text-white px-3 py-1 text-sm bottom-16 rounded-3xl right-2 cursor-pointer"
         >
           go to top
         </div>

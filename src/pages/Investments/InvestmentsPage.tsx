@@ -11,9 +11,11 @@ import { useInnerWidthState } from '@/utils/useInnerWidthState';
 import MoveScroll from '@/components/MoveScroll/MoveScroll';
 import useMoveScroll from '@/utils/useMoveScroll';
 import { ForwardedRef, forwardRef, useRef } from 'react';
+import { Container } from '@/pages/AboutUs/AboutUsPage';
+import MaxWidthWrapperLayout from '@/components/Layout/MaxWidthWrapperLayout';
 function InvestmentIntroduceSection() {
   return (
-    <section className="pt-[7.5rem] mobile:pt-[3.75rem]">
+    <section className="pt-[7.5rem] mobile:pt-[3.75rem] bg-white">
       <TitleContent content="INVESTMENTS" />
       <p className="pt-[3.75rem] mobile:pt-[1.875rem] laptop:px-10 desktop:px-[10.5rem] mobile:px-5 leading-loose">
         <strong className="text-3xl mobile:text-base font-normal">
@@ -96,19 +98,23 @@ export default function InvestmentsPage() {
   return (
     <>
       <Header description="this page is InvestmentsPage" />
-      <InvestmentIntroduceSection />
-      <InvestmentsTopSlide
-        onclick={onMoveToElement}
-        onclick_2={MoveToElementSecond}
-        onclick_3={MoveToElement}
-      />
-      <ResidentalSection ref={ResidentalSectionElement} />
-      {/* <NZSection /> */}
-      {/* <SubLogoSection /> */}
+      <Container>
+        <MaxWidthWrapperLayout>
+          <InvestmentIntroduceSection />
+          <InvestmentsTopSlide
+            onclick={onMoveToElement}
+            onclick_2={MoveToElementSecond}
+            onclick_3={MoveToElement}
+          />
+          <ResidentalSection ref={ResidentalSectionElement} />
+          {/* <NZSection /> */}
+          {/* <SubLogoSection /> */}
 
-      <FirstSection ref={element} />
-      <SecondSection ref={secondElement} />
-      <MoveScroll />
+          <FirstSection ref={element} />
+          <SecondSection ref={secondElement} />
+          <MoveScroll />
+        </MaxWidthWrapperLayout>
+      </Container>
       <Footer />
     </>
   );
