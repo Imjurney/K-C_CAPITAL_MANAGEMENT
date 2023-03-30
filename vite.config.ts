@@ -4,6 +4,7 @@ import path from 'path';
 import svgr from 'vite-plugin-svgr';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import viteImagemin from 'vite-plugin-imagemin';
+import { chunkSplitPlugin } from 'vite-plugin-chunk-split';
 // import express from 'vite-plugin-express';
 
 export default defineConfig({
@@ -11,7 +12,9 @@ export default defineConfig({
     react(),
     svgr(),
     tsconfigPaths(),
-    splitVendorChunkPlugin(),
+    chunkSplitPlugin({
+      strategy: 'default',
+    }),
     viteImagemin({
       gifsicle: {
         optimizationLevel: 7,
@@ -43,13 +46,7 @@ export default defineConfig({
   resolve: {
     alias: [{ find: '@', replacement: path.resolve('src') }],
   },
-  // build: {
-  //   rollupOptions: {
-  //     output: {
-  //       manualChunks: {
-  //         vendors: ['react', 'react-dom'],
-  //       },
-  //     },
-  //   },
-  // },
+  build: {
+    chunkSizeWarningLimit: 1600,
+  },
 });
