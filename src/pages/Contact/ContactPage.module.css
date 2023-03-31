@@ -1,49 +1,52 @@
 .fieldset {
   @apply flex flex-col items-center;
-  @apply mobile:gap-4 laptop:gap-5 desktop:gap-5;
+  @apply mobile:gap-4  desktop:gap-5;
+  /* @apply laptop:gap-5 */
 }
 
 .legend {
   @apply text-center font-medium;
   @apply mobile:text-base mobile:mb-[1.4375rem];
-  @apply laptop:text-3xl laptop:mb-11 laptop:pt-20;
+  /* @apply laptop:text-3xl laptop:mb-11 laptop:pt-20; */
   @apply desktop:text-3xl desktop:mb-11 desktop:pt-20;
 }
 
 .form {
   @apply z-30;
-  @apply desktop:mr-10 laptop:pr-[4.625rem];
+  @apply desktop:mr-10;
+  /* @applylaptop:pr-[4.625rem]; */
   @apply bg-white;
   @apply mobile:m-0 mobile:ml-auto mobile:mr-auto;
   @apply mobile:flex mobile:flex-col mobile:items-center mobile:justify-center;
-  @apply mobile:py-7 mobile:w-80 desktop:pb-8 laptop:pb-8 laptop:px-12 desktop:px-12 laptop:w-[42.9375rem] desktop:w-[42.9375rem];
+  @apply mobile:py-7 mobile:w-80 desktop:pb-8 desktop:w-[42.9375rem];
+  /* laptop:pb-8 laptop:px-12 desktop:px-12 laptop:w-[42.9375rem]; */
 }
 
 .li {
   @apply text-kc-red flex;
   @apply mobile:font-medium mobile:gap-4;
-  @apply laptop:flex-col laptop:pb-16 laptop:gap-5;
+  /* @apply laptop:flex-col laptop:pb-16 laptop:gap-5; */
   @apply desktop:flex-col desktop:gap-5 desktop:ml-[7.6875rem] desktop:mb-20;
 }
 
 .error {
   @apply text-red-500;
   @apply mobile:self-start mobile:ml-6  mobile:-mt-4  mobile:text-sm  mobile:inline-block;
-  @apply laptop:text-base laptop:self-start laptop:-mt-4 laptop:ml-1;
+  /* @apply laptop:text-base laptop:self-start laptop:-mt-4 laptop:ml-1; */
   @apply desktop:text-base desktop:self-start desktop:-mt-4 desktop:ml-1;
 }
 .span {
   @apply font-normal text-kc-contact_gray;
-  @apply laptop:text-base;
+  /* @apply laptop:text-base; */
   @apply desktop:text-base;
 }
 
 .div {
   @apply flex gap-3;
-  @apply laptop:text-xl;
+  /* @apply laptop:text-xl; */
 }
 
 .address_span {
   @apply mobile:w-[9.9375rem] mobile:inline-block mobile:leading-4;
-  @apply laptop:w-[9.9375rem] laptop:inline-block laptop:leading-5;
+  /* @apply laptop:w-[9.9375rem] laptop:inline-block laptop:leading-5; */
 }

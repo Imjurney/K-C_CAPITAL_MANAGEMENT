@@ -27,23 +27,24 @@
 .slide__wrapper {
   @apply m-0 ml-auto mr-auto;
   @apply desktop:w-[23.75rem] desktop:h-[32.5rem];
-  @apply laptop:w-[18.375rem] laptop:h-[25.4375rem]  rounded-[0.625rem]  bg-white flex flex-col py-7;
+  @apply rounded-[0.625rem]  bg-white flex flex-col py-7;
 }
+/* laptop:w-[18.375rem] laptop:h-[25.4375rem]  */
 
 .img_v {
-  @apply laptop:w-[55px] laptop:h-[70px] laptop:bg-[left_-20px_top_-378px];
+  /* @apply laptop:w-[55px] laptop:h-[70px] laptop:bg-[left_-20px_top_-378px]; */
   @apply desktop:w-[84px] desktop:h-[120px] desktop:bg-[left_-20px_top_-710px];
   @apply mobile:w-[40px] mobile:h-[45px]  mobile:bg-[left_-20px_top_-20px];
 }
 
 .img_glasses {
   @apply desktop:w-[84px] desktop:h-[120px] desktop:bg-[left_-20px_top_-578px];
-  @apply laptop:w-[56px] laptop:h-[70px] laptop:bg-[left_-20px_top_-278px];
+  /* @apply laptop:w-[56px] laptop:h-[70px] laptop:bg-[left_-20px_top_-278px]; */
   @apply mobile:w-[40px] mobile:h-[45px] mobile:bg-[left_-20px_top_-105px];
 }
 
 .img_w {
   @apply desktop:w-[84px] desktop:h-[120px] desktop:bg-[left_-20px_top_-843px];
-  @apply laptop:w-[50px] laptop:h-[70px] laptop:bg-[left_-20px_top_-478px];
+  /* @apply laptop:w-[50px] laptop:h-[70px] laptop:bg-[left_-20px_top_-478px]; */
   @apply mobile:w-[40px] mobile:h-[48px] mobile:bg-[left_-20px_top_-190px];
 }

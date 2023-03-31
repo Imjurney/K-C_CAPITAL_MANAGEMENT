@@ -13,7 +13,7 @@ import { useInnerWidthState } from '@/utils/useInnerWidthState';
 export function WorkerCard() {
   const [window] = useInnerWidthState();
   return (
-    <div className="z-40 bg-kc-bg_lightgray desktop:p-10 laptop:p-10 pb-30 pb-24 mobile:pt-7 laptop:pt-[9.0625rem] desktop:pt-[9.0625rem]">
+    <div className="z-40 bg-kc-bg_lightgray desktop:p-10 pb-30 pb-24 mobile:pt-7 desktop:pt-[9.0625rem]">
       {window.width > 1023 ? (
         <WorkerCardItem />
       ) : (

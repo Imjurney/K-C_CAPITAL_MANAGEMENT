@@ -22,7 +22,7 @@ export function TitleContent({
   const handleReduceWords = useCallback(
     debounce(() => {
       if (h2Ref.current?.textContent?.match('OTHER SERVICES')) {
-        if (document.body.getBoundingClientRect().width <= 720) {
+        if (document.body.getBoundingClientRect().width < 1000) {
           h2Ref.current.textContent = 'OTHER SERVICES';
         } else {
           h2Ref.current.textContent =

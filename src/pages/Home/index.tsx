@@ -30,7 +30,7 @@ function SubBanner() {
   return (
     <img
       src={`/assets/img/home/${home.home[1].image_url2}`}
-      className={clsx(HomeStyle.image, 'desktop:ab_center laptop:ab_center')}
+      className={clsx(HomeStyle.image, 'desktop:ab_center')}
       alt="k&c capital Management introduce picture"
     />
   );
@@ -106,7 +106,7 @@ interface SlideBannerProps {
 function SlideBanner({ children }: SlideBannerProps) {
   return (
     <section className="bg-black">
-      <MaxWidthWrapperLayout className="bg-white desktop:pt-[12.5rem] desktop:pb-[6.25rem] laptop:pt-[7.125rem] laptop:pb-[6.25rem] mobile:pt-[3.75rem]">
+      <MaxWidthWrapperLayout className="bg-white desktop:pt-[7.125rem] desktop:pb-[6.25rem] mobile:pt-[3.75rem]">
         <TitleContent content={`New Zealand Real Estate Investment,Why Us?`} />
         {children}
       </MaxWidthWrapperLayout>
@@ -264,7 +264,7 @@ export default function HomePage() {
       <TopBanner />
       <WhatWedoBanner />
       <SlideBanner>
-        {windowSize.width < 1024 ? (
+        {windowSize.width < 801 ? (
           <Carousel
             slides={[
               data && (

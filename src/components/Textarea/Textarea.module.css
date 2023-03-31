@@ -3,7 +3,7 @@
   @apply border border-kc-contact_border;
   @apply leading-none;
   @apply mobile:text-xs mobile:w-[17.5rem];
-  @apply laptop:text-base laptop:w-[36.5625rem];
+  /* @apply laptop:text-base laptop:w-[36.5625rem]; */
   @apply desktop:text-base desktop:w-[36.5625rem];
 }
 
@@ -12,9 +12,9 @@
 }
 .textarea {
   @apply resize-none outline-none;
-  @apply mobile:px-2.5 laptop:px-5 desktop:px-5 pt-2.5;
+  @apply mobile:px-2.5 desktop:px-5 pt-2.5;
   @apply mobile:h-[8.375rem];
-  @apply laptop:h-[11.1875rem];
+  /* @apply laptop:h-[11.1875rem]; */
   @apply desktop:h-[11.1875rem];
 }
 
@@ -22,7 +22,7 @@
   @apply text-kc-contact_gray font-medium;
   @apply flex;
   @apply mobile:flex-col mobile:pt-2.5 mobile:mx-2.5;
-  @apply laptop:flex-col laptop:pt-3 laptop:mx-5;
+  /* @apply laptop:flex-col laptop:pt-3 laptop:mx-5; */
   @apply desktop:flex-col desktop:pt-3 desktop:mx-5;
 }
 

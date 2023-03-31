@@ -1,22 +1,22 @@
 .img {
-  @apply desktop:h-[38rem] laptop:h-[39.6875rem];
-  @apply desktop:w-1/2 laptop:w-1/2 mobile:w-full;
+  @apply desktop:h-[38rem];
+  @apply desktop:w-1/2  mobile:w-full;
   @apply mobile:h-2;
 }
 
 .wrapper {
   @apply bg-white;
-  @apply laptop:mb-24 desktop:mb-[6.4375rem];
+  @apply desktop:mb-[6.4375rem];
 }
 
 .wrapper__article {
   @apply desktop:flex desktop:items-start;
-  @apply laptop:flex laptop:items-start;
+
   @apply mobile:pt-7 pt-14;
 }
 
 .article {
-  @apply desktop:w-1/2 laptop:w-1/2;
+  @apply desktop:w-1/2;
   @apply pt-2 pb-8;
 }
 

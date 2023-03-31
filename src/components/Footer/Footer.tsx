@@ -14,19 +14,19 @@ interface FooterContentsProps {
 
 const ResPonsiveLayout = [
   'mobile:px-16 mobile:pt-10',
-  'laptop:px-10 laptop:pt-14',
+  // 'laptop:px-10 laptop:pt-14',
   'desktop:px-10 desktop:pt-14',
 ];
 
 const ResPonsiveContents = [
   'mobile:flex mobile:flex-col mobile:gap-4 mobile:my-4',
-  'laptop:flex laptop:flex-col-reverse laptop:gap-4 laptop:mt-8',
+  // 'laptop:flex laptop:flex-col-reverse laptop:gap-4 laptop:mt-8',
   'desktop:flex desktop:flex-col-reverse desktop:gap-4 desktop:mt-8',
 ];
 
 const ResPonsiveCopyright = [
   'mobile:ml-[63px] mobile:pb-10',
-  'laptop:flex laptop:justify-end laptop:px-10 laptop:pb-12',
+  // 'laptop:flex laptop:justify-end laptop:px-10 laptop:pb-12',
   'desktop:flex desktop:justify-end desktop:px-10 desktop:pb-12',
 ];
 

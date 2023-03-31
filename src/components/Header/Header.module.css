@@ -1,7 +1,7 @@
 .ul {
   @apply bg-kc-contents_dark w-2/3 h-[100vh] text-kc-footer_gray text-sm text-left float-left;
   @apply shadow-shadow_sm;
-  @apply laptop:hidden desktop:hidden;
+  @apply desktop:hidden;
   @apply absolute top-0 z-50;
   @apply pt-10;
   @apply mobile:-translate-x-[1000px];
@@ -29,7 +29,7 @@
 
 .wrapper {
   @apply flex justify-between items-center px-5;
-  @apply mobile:py-4 laptop:py-8 desktop:py-8 desktop:px-10;
+  @apply mobile:py-4 desktop:py-8 desktop:px-5;
   @apply sticky top-0 z-30;
   @apply shadow-shadow_sm;
   @apply desktop:max-w-dx mx-auto;
@@ -42,14 +42,13 @@
 .navItem {
   @apply text-white flex text-base leading-none;
   @apply mobile:hidden;
-  @apply laptop:gap-10 laptop:ml-[111px];
-  @apply desktop:gap-[3.75rem] desktop:ml-[164px];
+  @apply desktop:gap-10 desktop:ml-[111px];
 }
 
 .button {
   @apply text-white;
   @apply flex items-center;
-  @apply laptop:hidden desktop:hidden;
+  @apply desktop:hidden;
 }
 
 .navItem > li {

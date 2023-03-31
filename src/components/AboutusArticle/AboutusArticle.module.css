@@ -5,8 +5,8 @@
   @apply mobile:px-3 mobile:pt-5;
   @apply font-normal;
   @apply desktop:font-medium;
-  @apply w-[94%] laptop:h-[37.375rem] desktop:h-[27rem];
+  @apply w-[94%] desktop:h-[27rem];
   @apply p-7 mobile:pb-0;
-  @apply laptop:-mt-[230px];
+  /* @apply laptop:-mt-[230px]; */
   @apply desktop:-mt-[230px];
 }

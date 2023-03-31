@@ -138,10 +138,11 @@ function SemiCircleSlide({ onclick, onclick_2, onclick_3 }: Props) {
             </figcaption>
           </figure>
         </div>
+        {/* laptop:top-[35%] laptop:left-[30%] */}
         <button
           type="button"
           className="-rotate-[30deg] absolute
-   laptop:top-[35%] laptop:left-[30%]
+
     desktop:top-[35%] desktop:left-[30%]"
           ref={goToLeftRef}
         >
@@ -150,28 +151,28 @@ function SemiCircleSlide({ onclick, onclick_2, onclick_3 }: Props) {
         <button
           type="button"
           className="rotate-[30deg] absolute 
-               laptop:top-[35%] laptop:right-[30%]
+             
     desktop:top-[35%] desktop:right-[30%]"
           ref={goToRightRef}
         >
           <BsArrowRightCircle color="#CBD2DC" size={60} />
         </button>
+        {/* laptop:top-[35%] laptop:right-[30%] */}
         <button
           type="button"
           className="hidden
     rotate-[30deg] absolute
-            laptop:top-[35%] laptop:right-[30%]
     desktop:top-[35%] desktop:right-[30%]
   "
           ref={returnFrontFromLeftRef}
         >
           <BsArrowRightCircle color="#CBD2DC" size={60} />
         </button>
-
+        {/* laptop:top-[35%] laptop:left-[30%] */}
         <button
           type="button"
           className="-rotate-[30deg] absolute hidden
-        laptop:top-[35%] laptop:left-[30%]
+
     desktop:top-[35%] desktop:left-[30%]"
           ref={btn3}
         >

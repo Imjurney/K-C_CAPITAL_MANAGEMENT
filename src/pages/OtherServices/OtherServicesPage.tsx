@@ -65,7 +65,7 @@ const Directions = [
 function GridSectionWrapper({ children }: GridSectionWrapperProps) {
   return (
     <>
-      <h3 className="laptop:hidden desktop:hidden text-center my-5 text-kc-article_gray">
+      <h3 className="desktop:hidden text-center my-5 text-kc-article_gray">
         click the content below
         <p className="animate-bounce mt-2 text-kc-red">&#8595;</p>
       </h3>
@@ -221,7 +221,7 @@ function GridItems() {
   );
   return (
     <GridSectionWrapper>
-      {window.width < 1024 ? (
+      {window.width < 1000 ? (
         <>
           <FirstGridSection
             data={data}
@@ -287,10 +287,7 @@ function GridItems() {
                       key={`bubble__${index}`}
                       role="listitem"
                       id={`decription_${index}`}
-                      className={clsx(
-                        findDirection?.css,
-                        'laptop:mt-14 desktop:mt-14'
-                      )}
+                      className={clsx(findDirection?.css, ' desktop:mt-14')}
                     >
                       <strong className={style.strong}>
                         {item.contents_strong}

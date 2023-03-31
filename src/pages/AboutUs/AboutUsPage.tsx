@@ -23,7 +23,7 @@ function TopSection({ children }: AboutusProps) {
 
 function BottomSection({ children }: AboutusProps) {
   return (
-    <section className="pt-14 flex flex-col gap-7 mobile:pb-10 laptop:pt-[29.5625rem] desktop:pt-[23.5625rem] bg-white">
+    <section className="pt-14 flex flex-col gap-7 mobile:pb-10  desktop:pt-[23.5625rem] bg-white">
       {children}
     </section>
   );

@@ -13,12 +13,12 @@ const ResPonsiveLayout = {
   Form: [
     'text-base font-normal self-center',
     'mobile:px-5 mobile:py-2',
-    'laptop:px-8 laptop:py-2.5',
+    // 'laptop:px-8 laptop:py-2.5',
     'desktop:px-8 desktop:py-2.5',
   ],
   Normal: [
     'mobile:px-3.5 mobile:py-2 mobile:text-sm mobile:font-normal',
-    'laptop:px-10 laptop:py-5 laptop:font-medium laptop:text-base',
+    // 'laptop:px-10 laptop:py-5 laptop:font-medium laptop:text-base',
     'desktop:px-10 desktop:py-5 desktop:font-medium desktop:text-base',
   ],
   More: ['px-5 py-2'],

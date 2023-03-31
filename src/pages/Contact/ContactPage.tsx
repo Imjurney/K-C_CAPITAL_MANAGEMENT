@@ -73,7 +73,7 @@ function ContactForm() {
     <RHForm onSubmit={onSubmitHandler}>
       <fieldset className={contact.fieldset}>
         <legend className={contact.legend}>Send a Message</legend>
-        <div className="flex mobile:gap-x-3 mobile:px-5 laptop:gap-8 desktop:gap-8">
+        <div className="flex mobile:gap-x-3 mobile:px-5  desktop:gap-8">
           <TextInput
             labelName={'First Name'}
             placeholder={'your first name'}

@@ -16,13 +16,13 @@ const TextWeightType = {
 
 const responsiveLabel: string[] = [
   `mobile:text-xs`,
-  'laptop:text-sm',
+  // 'laptop:text-sm',
   'desktop:text-sm',
 ];
 
 const responsiveName: string[] = [
   'mobile:text-base',
-  'laptop:text-3xl',
+  // 'laptop:text-3xl',
   'desktop:text-3xl',
 ];
 export function Label({

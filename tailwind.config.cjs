@@ -33,12 +33,11 @@ module.exports = {
       },
     },
     screens: {
-      mobile: { max: '800px' },
-      laptop: { min: '801px', max: '1279px' },
-      desktop: { min: '1280px' },
+      mobile: { max: '999px' },
+      desktop: { min: '1000px' },
     },
     maxWidth: {
-      dx: '1280px',
+      dx: '1024px',
     },
     boxShadow: {
       article_shadow:

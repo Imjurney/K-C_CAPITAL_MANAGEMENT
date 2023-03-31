@@ -6,7 +6,7 @@
   @apply relative;
   @apply mobile:relative;
   @apply bg-white;
-  @apply laptop:pr-[4.625rem] laptop:mt-16;
+  /* @apply laptop:pr-[4.625rem] laptop:mt-16; */
   @apply desktop:pt-16 desktop:pb-20;
   @apply mobile:flex;
   @apply mobile:flex-col mobile:items-center mobile:justify-center;
@@ -15,7 +15,7 @@
 
 .max__wrapper::after {
   @apply w-full;
-  @apply desktop:pb-10 mobile:h-[860px] mobile:mt-8 laptop:h-[644px] laptop:pt-[3.75rem] desktop:mt-5  desktop:h-[644px];
+  @apply desktop:pb-10 mobile:h-[860px] mobile:mt-8 desktop:mt-5  desktop:h-[644px];
   @apply mobile:top-0;
   @apply absolute;
   @apply bottom-[3.75rem];
@@ -25,6 +25,6 @@
 }
 
 .wrapper {
-  @apply w-full mobile:pb-11 laptop:mb-16 laptop:flex desktop:flex mobile:flex;
+  @apply w-full mobile:pb-11 desktop:flex mobile:flex;
   @apply mobile:flex-col;
 }

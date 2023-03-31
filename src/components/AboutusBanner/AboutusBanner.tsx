@@ -22,7 +22,7 @@ export function AboutusBanner() {
   return (
     <figure ref={figureRef} className={clsx('relative', AboutUsStyle.figure)}>
       <img
-        className="object-center w-full laptop:h-[45rem] desktop:h-[45rem] object-cover"
+        className="object-center w-full desktop:h-[45rem] object-cover"
         src="/assets/img/aboutus/top_bg.png"
         alt=""
       />

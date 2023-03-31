@@ -26,7 +26,7 @@
 
 .arrow__body__bifurcation::before {
   @apply absolute content-[''] h-[16.3125rem] border-l border-kc-contact_border;
-  @apply laptop:top-0 laptop:-left-[0.0625rem];
+  /* @apply laptop:top-0 laptop:-left-[0.0625rem]; */
   @apply desktop:top-0 desktop:-left-[0.0625rem];
   @apply mobile:h-[4.125rem] mobile:right-0;
 }

@@ -1,11 +1,12 @@
 .section__top {
   @apply bg-white;
-  @apply mobile:pt-[3.75rem] laptop:pt-[7.5rem]  desktop:pt-[7.1875rem];
+  @apply mobile:pt-[3.75rem]  desktop:pt-[7.1875rem];
+  /* laptop:pt-[7.5rem]  */
 }
 
 .figure {
   @apply mobile:mt-[1.875rem];
-  @apply laptop:mt-[3.75rem];
+  /* @apply laptop:mt-[3.75rem]; */
   @apply desktop:mt-[4.0625rem];
 }
 .figcaption {
@@ -13,12 +14,13 @@
   @apply mobile:bg-kc-contents_dark mobile:w-full;
   @apply mobile:text-center;
   @apply mobile:px-2 mobile:pt-5 mobile:pb-10;
-  @apply absolute mobile:top-3/4 laptop:top-1/2 desktop:top-1/2;
-  @apply laptop:text-3xl desktop:text-3xl;
+  @apply absolute mobile:top-3/4 desktop:top-1/2;
+  /* @apply laptop:text-3xl desktop:text-3xl;
   @apply laptop:right-8 desktop:right-8;
-  @apply laptop:text-end desktop:text-end;
+  @apply laptop:text-end desktop:text-end; */
+  /* @apply  laptop:top-1/2 */
 }
 
 .figcaption > div {
-  @apply laptop:flex desktop:flex;
+  @apply desktop:flex;
 }

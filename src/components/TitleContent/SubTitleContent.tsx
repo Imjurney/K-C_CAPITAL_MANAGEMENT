@@ -33,7 +33,7 @@ export function SubTitleContent({
   }, []);
 
   return (
-    <div className="pt-[6.25rem] bg-kc-bg_lightgray desktop:pb-20 laptop:pb-[5.625rem] mobile:pt-[3.75rem] mobile:pb-[1.875rem]">
+    <div className="pt-[6.25rem] bg-kc-bg_lightgray desktop:pb-20  mobile:pt-[3.75rem] mobile:pb-[1.875rem]">
       <h2 ref={h2Ref} className={clsx(TitleStyle.underlineBase_sub)}>
         {content}
         <p ref={pRef} className={TitleStyle.p}>
@@ -43,3 +43,5 @@ export function SubTitleContent({
     </div>
   );
 }
+
+// laptop:pb-[5.625rem]

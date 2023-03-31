@@ -42,7 +42,7 @@ export function ContactBox() {
             <li className={ContactPage.li}>
               <div className={ContactPage.div}>
                 <Address />
-                <span className="laptop:text-xl desktop:text-xl">ADDRESS</span>
+                <span className="desktop:text-xl">ADDRESS</span>
               </div>
               <span
                 className={clsx(ContactPage.span, ContactPage.address_span)}
@@ -56,9 +56,7 @@ export function ContactBox() {
                 <span>
                   <Tel />
                 </span>
-                <span className="text-kc-red gap-4 aptop:text-xl desktop:text-xl">
-                  TEL
-                </span>
+                <span className="text-kc-red gap-4 desktop:text-xl">TEL</span>
               </div>
               <span className={ContactPage.span}>+64 27 2229980</span>
             </li>
@@ -68,9 +66,7 @@ export function ContactBox() {
                 <span>
                   <Fax />
                 </span>
-                <span className="text-kc-red gap-4 laptop:text-xl desktop:text-xl">
-                  FAX
-                </span>
+                <span className="text-kc-red gap-4 desktop:text-xl">FAX</span>
               </div>
               <span className={ContactPage.span}>+64 27 3159618</span>
             </li>

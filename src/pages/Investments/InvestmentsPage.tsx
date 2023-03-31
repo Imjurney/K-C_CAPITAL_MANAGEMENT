@@ -34,7 +34,7 @@ const ResidentalSection = forwardRef((_, ref: ForwardedRef<HTMLElement>) => {
   return (
     <section ref={ref} className="pt-[12.5rem] mobile:pt-[3.75rem] bg-white">
       <TitleContent content="RESIDENTIAL PROPETY DEVELOPMENTS" />
-      <article className="mobile:px-5 font-normal mobile:pt-8 mobile:pb-7 pb-14 mobile:text-sm laptop:text-lg desktop:text-lg pt-[3.75rem] laptop:px-8 desktop:px-[8.875rem]">
+      <article className="mobile:px-5 font-normal mobile:pt-8 mobile:pb-7 pb-14 mobile:text-sm  desktop:text-lg pt-[3.75rem] desktop:px-[8.875rem]">
         <p className="leading-loose">{investData[1].contents_2}</p>
       </article>
       <CarouselOpacity slides={SLIDES} options={OPTIONS} />
@@ -46,7 +46,7 @@ function NZSection() {
   return (
     <section className="h-[200vh] bg-white mobile:pt-[7.5rem] pt-[12.5rem]">
       <TitleContent content="NZ LEADING RESIDENTIAL PROPERTY DEVELOPERS" />
-      <article className="mobile:pt-[1.875rem] pt-[3.75rem] mobile:px-5 laptop:px-7 desktop:px-[8.875rem]">
+      <article className="mobile:pt-[1.875rem] pt-[3.75rem] mobile:px-5 desktop:px-[8.875rem]">
         <p className="leading-loose mobile:text-sm text-lg">
           Single, Multi and Hi-end apartments NZ leading developers, they are
           carefully selected and screened by K&C Capital Management to maximise

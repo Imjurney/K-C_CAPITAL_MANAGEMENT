@@ -1,9 +1,9 @@
 .card_wrapper {
   @apply mobile:hidden;
   @apply bg-white;
-  @apply laptop:shadow-article_shadow laptop:w-40 laptop:h-40;
+  /* @apply laptop:shadow-article_shadow laptop:w-40 laptop:h-40;
   @apply laptop:inline-flex laptop:flex-col laptop:justify-center laptop:items-center;
-  @apply laptop:py-7 laptop:px-12 laptop:rounded-[0.625rem] laptop:gap-2;
+  @apply laptop:py-7 laptop:px-12 laptop:rounded-[0.625rem] laptop:gap-2; */
   @apply desktop:shadow-article_shadow desktop:w-40 desktop:h-40;
   @apply desktop:inline-flex desktop:flex-col desktop:justify-center desktop:items-center;
   @apply desktop:py-7 desktop:px-12 desktop:rounded-[0.625rem] desktop:gap-2;
