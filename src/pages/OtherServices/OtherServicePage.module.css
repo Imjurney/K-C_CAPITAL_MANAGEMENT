@@ -102,14 +102,14 @@
   border-width: 0 16px 27px;
   @apply border-kc-bg_lightgray border-b-kc-bg_lightgray border-l-transparent border-r-transparent;
   @apply -top-[25px] left-[250px];
-  @apply desktop:-top-[25px] desktop:left-[50rem];
+  @apply desktop:-top-[25px] desktop:left-[53.125rem];
 }
 
 .speech_bubble__right::before {
   @apply content-[''] absolute block w-0 z-0;
   @apply -top-[30px] left-[248px];
 
-  @apply desktop:-top-[30px] desktop:left-[49.875rem];
+  @apply desktop:-top-[30px] desktop:left-[53rem];
   border-width: 0 18px 29px;
   @apply border-t-kc-red border-b-kc-red border-l-transparent border-r-transparent;
 }
@@ -234,20 +234,11 @@
 .img__figure {
   @apply cursor-pointer;
   @apply relative inline-block;
-  @apply mr-3;
-}
-
-.img__figure:last-of-type {
-  @apply mr-0;
 }
 
 .img__figure__active {
   @apply cursor-pointer;
   @apply relative inline-block;
-  @apply mr-3;
-}
-.img__figure__active:last-of-type {
-  @apply mr-0;
 }
 
 /* ---------------------------텍스트 옆 원---------------------------------------------- */

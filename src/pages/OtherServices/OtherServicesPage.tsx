@@ -241,9 +241,9 @@ function GridItems() {
       ) : (
         <section className={style.img__wrapper}>
           <MaxWidthWrapperLayout>
-            {data?.map((item, index) => {
-              return (
-                <>
+            <div className="flex justify-center gap-[1.875rem]">
+              {data?.map((item, index) => {
+                return (
                   <figure
                     onClick={() => setNumber(item.id)}
                     key={`other_service_image_${index}`}
@@ -272,9 +272,9 @@ function GridItems() {
                       <span id={item.id.toString()}>{item.subject}</span>
                     </figcaption>
                   </figure>
-                </>
-              );
-            })}
+                );
+              })}
+            </div>
 
             <section className={style.speech_bubble_wrapper}>
               {data
