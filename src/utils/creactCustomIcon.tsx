@@ -12,8 +12,8 @@ function CustomIcon({ icon, color = '#E7020F' }: IconContexts): JSX.Element {
   const { path, viewboxX, viewboxY } = SvgPath[icon];
   return (
     <svg
-      width={width.width >= 1024 ? 48 : 24}
-      height={width.width >= 1024 ? 48 : 24}
+      width={width.width >= 970 ? 48 : 24}
+      height={width.width >= 970 ? 48 : 24}
       viewBox={`0 0 ${viewboxX} ${viewboxY}`}
       xmlns="http://www.w3.org/2000/svg"
     >

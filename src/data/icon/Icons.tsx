@@ -7,8 +7,8 @@ export function CalcuIcon() {
   const [window] = useInnerWidthState();
   return (
     <svg
-      width={window.width >= 1024 ? 42 : 24}
-      height={window.width >= 1024 ? 42 : 24}
+      width={window.width >= 981 ? 42 : 24}
+      height={window.width >= 981 ? 42 : 24}
       viewBox="0 0 42 42"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +69,7 @@ export function PassPort() {
   const [window] = useInnerWidthState();
   return (
     <img
-      width={window.width >= 1024 ? 42 : 24}
+      width={window.width >= 981 ? 42 : 24}
       src={passport}
       alt="Confirmation of successful visa icon"
     />
@@ -85,7 +85,7 @@ export function Report() {
   const [window] = useInnerWidthState();
   return (
     <img
-      width={window.width >= 1024 ? 42 : 24}
+      width={window.width >= 981 ? 42 : 24}
       src={report}
       alt="Provide investment reports icon"
     />
@@ -100,7 +100,7 @@ export function Grow() {
   return (
     <img
       src={grow}
-      width={window.width >= 1024 ? 42 : 24}
+      width={window.width >= 981 ? 42 : 24}
       alt="Reinvestment Assessment and Support icon"
     />
   );

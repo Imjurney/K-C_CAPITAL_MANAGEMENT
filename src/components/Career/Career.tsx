@@ -55,10 +55,7 @@ export function Career({
   }, []);
 
   return (
-    <div
-      ref={parentsRef}
-      className={clsx('flex mobile:px-5 p-10 pt-7', className)}
-    >
+    <div ref={parentsRef} className={clsx('flex mobile:px-5', className)}>
       <div className="inline-flex flex-col">
         <div className="w-4 h-4 rounded-full bg-kc-contact_border"></div>
         <div

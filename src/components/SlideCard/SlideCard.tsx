@@ -8,6 +8,7 @@ interface SlideCardProps {
   name2?: string;
   icon?: JSX.Element;
   className?: string;
+  onclick?: () => void;
 }
 
 export const SlideCard = forwardRef<HTMLHtmlElement, SlideCardProps>(
@@ -17,11 +18,13 @@ export const SlideCard = forwardRef<HTMLHtmlElement, SlideCardProps>(
       name2 = 'company',
       icon = VariationIcon[0],
       className,
+      onclick,
     },
     ref
   ) => {
     return (
       <figure
+        onClick={onclick}
         ref={ref}
         className={clsx(SlideCardStyle.card_wrapper, className)}
       >

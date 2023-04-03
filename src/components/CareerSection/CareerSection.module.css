@@ -6,18 +6,17 @@
 
 .wrapper {
   @apply bg-white;
-  @apply desktop:mb-[6.4375rem];
+  @apply desktop:mb-[3.125rem] desktop:pt-14;
 }
 
 .wrapper__article {
   @apply desktop:flex desktop:items-start;
-
-  @apply mobile:pt-7 pt-14;
+  @apply mobile:pt-7;
 }
 
 .article {
   @apply desktop:w-1/2;
-  @apply pt-2 pb-8;
+  @apply pt-2;
 }
 
 .article > div {

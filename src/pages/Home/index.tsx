@@ -4,7 +4,7 @@ import { TitleContent } from '@/components/TitleContent/TitleContent';
 import { TopBanner } from '@/components/TopBanner/TopBanner';
 import HomeStyle from '@/pages/Home/Home.module.css';
 import { ReactNode, useEffect, useLayoutEffect, useRef } from 'react';
-import { basic_animation } from '@/utils/basic_animation';
+import { aside_animation, basic_animation } from '@/utils/basic_animation';
 import home from '@/data/image.json';
 import contents from '@/data/home.json';
 import clsx from 'clsx';
@@ -25,7 +25,7 @@ import MoveScroll from '@/components/MoveScroll/MoveScroll';
 import MaxWidthWrapperLayout from '@/components/Layout/MaxWidthWrapperLayout';
 // import { WorkerCard } from '@/components/WorkerCard/WorkerCard';
 // import { SubTitleContent } from '@/components/TitleContent/SubTitleContent';
-
+const VEIWPORT = 981;
 function SubBanner() {
   return (
     <img
@@ -106,7 +106,7 @@ interface SlideBannerProps {
 function SlideBanner({ children }: SlideBannerProps) {
   return (
     <section className="bg-black">
-      <MaxWidthWrapperLayout className="bg-white desktop:pt-[7.125rem] desktop:pb-[6.25rem] mobile:pt-[3.75rem]">
+      <MaxWidthWrapperLayout className="bg-white desktop:pt-[12.5rem] desktop:pb-[6.25rem] mobile:pt-[3.75rem]">
         <TitleContent content={`New Zealand Real Estate Investment,Why Us?`} />
         {children}
       </MaxWidthWrapperLayout>
@@ -131,12 +131,12 @@ function CircleAnimationSection() {
 function FooterBanner() {
   const asideRef = useRef(null);
   const pref = useRef(null);
-  // useLayoutEffect(() => {
-  //   const ctx = gsap.context(() => {
-  //     aside_animation(pref, asideRef);
-  //   }, asideRef);
-  //   return () => ctx.revert();
-  // }, []);
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      aside_animation(pref, asideRef);
+    }, asideRef);
+    return () => ctx.revert();
+  }, []);
   return (
     <aside ref={asideRef} className="bg-black">
       <MaxWidthWrapperLayout>
@@ -171,7 +171,7 @@ function AsideBanner() {
       gsap.registerPlugin(matchMedia);
       const mm = gsap.matchMedia();
 
-      mm.add('(min-width: 1024px)', () => {
+      mm.add(`(min-width:${VEIWPORT}px)`, () => {
         iconRef.current.forEach((element, index) => {
           gsap
             .timeline({
@@ -198,7 +198,7 @@ function AsideBanner() {
   return (
     <article ref={articleRef} className={HomeStyle.article}>
       <TitleContent
-        color={width.width < 1024 ? 'Default' : 'White'}
+        color={width.width < VEIWPORT ? 'Default' : 'White'}
         content={`See what we provide to other investors`}
       />
       <ul key={'Investor_icons'}>
@@ -264,7 +264,7 @@ export default function HomePage() {
       <TopBanner />
       <WhatWedoBanner />
       <SlideBanner>
-        {windowSize.width < 801 ? (
+        {windowSize.width < VEIWPORT ? (
           <Carousel
             slides={[
               data && (

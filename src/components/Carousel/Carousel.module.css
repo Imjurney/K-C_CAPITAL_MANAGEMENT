@@ -1,7 +1,6 @@
 .carouselWide__card__wrapper {
-  @apply desktop:ml-4;
-
-  @apply desktop:w-[35.5rem] desktop:h-[13.9375rem];
+  @apply desktop:pl-7;
+  @apply desktop:w-[30.25rem] desktop:h-auto;
   @apply mobile:flex mobile:flex-col mobile:justify-center;
   @apply mobile:px-7 mobile:pb-5;
   @apply mobile:rounded-[1.25rem];
@@ -32,16 +31,13 @@
 }
 
 .carouselWide__card__p {
-  @apply break-all;
+  @apply break-words;
   @apply mt-5;
-  @apply desktop:pr-4;
 
-  @apply desktop:w-[35.5rem];
-  @apply desktop:h-[7rem];
   @apply mobile:w-[12.75rem] h-[10.125rem];
   @apply mobile:text-xs mobile:mt-7;
 
-  @apply desktop:text-sm;
+  @apply desktop:text-sm  desktop:leading-loose;
   @apply font-medium;
 }
 
@@ -60,9 +56,9 @@
 
 /* ---------------------------- 슬라이드 래퍼 ---------------------------------------------- */
 .carouselWide__container {
-  @apply desktop:absolute desktop:left-1/2 desktop:top-[55%];
-  @apply desktop:w-[35.25rem] mobile:w-full;
-  @apply mobile:mt-0 mobile:mr-auto mobile:bg-kc-bg_lightgray rounded-md;
+  /* @apply desktop:absolute desktop:left-1/2 desktop:top-[55%] desktop:w-[35.25rem] ; */
+  @apply mobile:w-[380px] mobile:m-0 mobile:mx-auto;
+  @apply mobile:bg-kc-bg_lightgray rounded-md;
 }
 
 /* -------------------------------------------------------------------------- */

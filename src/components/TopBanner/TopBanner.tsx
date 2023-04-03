@@ -22,7 +22,7 @@ export function TopBanner() {
         <div className="absolute text-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <h2
             ref={h1Ref}
-            className="leading-none mobile:text-2xl block  desktop:text-[5rem] justify-self-center mobile:font-medium desktop:font-bold"
+            className="leading-none mobile:text-2xl block desktop:text-[5rem] justify-self-center font-medium"
           >
             Grow&nbsp;your&nbsp;investment
           </h2>

@@ -26,8 +26,11 @@ export function Carousel(props: PropType) {
   }, [embla, setScrollSnaps, onSelect]);
   return (
     <div className="relative w-full rounded-md">
-      <div className="overflow-hidden relative rounded-md" ref={emblaRef}>
-        <div className="flex flex-col flex-wrap h-[360px] ml-4 flex-none">
+      <div
+        className="overflow-hidden relative w-[21rem] mx-auto m-0 h-[23.75rem] rounded-md"
+        ref={emblaRef}
+      >
+        <div className="flex flex-col flex-wrap h-[23.75rem] ml-4 flex-none">
           {slides.map((slide, index) => (
             <div className="relative mr-4" key={index}>
               {slide}

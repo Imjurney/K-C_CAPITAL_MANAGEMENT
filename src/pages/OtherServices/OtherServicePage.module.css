@@ -8,8 +8,6 @@
   @apply mobile:p-5;
   @apply mobile:text-sm mobile:leading-none;
   @apply leading-loose;
-  @apply desktop:ml-10 desktop:mr-10;
-  @apply w-[59rem];
   @apply relative bg-kc-bg_lightgray border-t-[3px] border-t-kc-red;
   @apply mobile:w-[360px];
 }
@@ -40,7 +38,7 @@
   @apply mobile:p-5;
   @apply mobile:text-sm mobile:leading-none;
   @apply leading-loose;
-  @apply desktop:mx-10 desktop:w-[59rem];
+  /* @apply desktop:w-[59rem]; */
   @apply relative bg-kc-bg_lightgray border-t-[3px] border-t-kc-red;
 }
 
@@ -67,7 +65,7 @@
   @apply mobile:p-5;
   @apply mobile:text-sm mobile:leading-none;
   @apply leading-loose;
-  @apply desktop:mx-10 desktop:w-[59rem];
+  /* @apply desktop:w-[59rem]; */
   @apply relative bg-kc-bg_lightgray border-t-[3px] border-t-kc-red;
 }
 
@@ -94,7 +92,7 @@
   @apply mobile:p-5;
   @apply mobile:text-sm mobile:leading-none;
   @apply leading-loose;
-  @apply desktop:mx-10 desktop:w-[59rem];
+  /* @apply desktop:w-[59rem]; */
   @apply relative bg-kc-bg_lightgray border-t-[3px] border-t-kc-red;
 }
 
@@ -104,14 +102,14 @@
   border-width: 0 16px 27px;
   @apply border-kc-bg_lightgray border-b-kc-bg_lightgray border-l-transparent border-r-transparent;
   @apply -top-[25px] left-[250px];
-  @apply desktop:-top-[25px] desktop:left-[53.125rem];
+  @apply desktop:-top-[25px] desktop:left-[50rem];
 }
 
 .speech_bubble__right::before {
   @apply content-[''] absolute block w-0 z-0;
   @apply -top-[30px] left-[248px];
 
-  @apply desktop:-top-[30px] desktop:left-[53rem];
+  @apply desktop:-top-[30px] desktop:left-[49.875rem];
   border-width: 0 18px 29px;
   @apply border-t-kc-red border-b-kc-red border-l-transparent border-r-transparent;
 }
@@ -198,7 +196,7 @@
 /* -----------------------------텍스트 스타일--------------------------------------------- */
 
 .p_contents {
-  @apply desktop:text-base  desktop:font-normal;
+  @apply desktop:text-base desktop:font-normal;
   @apply desktop:leading-loose desktop:ml-[4.3125rem];
 }
 .p_contents:last-of-type {
@@ -211,12 +209,7 @@
 /* -------------------------------image layout------------------------------------------- */
 .img__wrapper {
   @apply desktop:pt-[3.75rem];
-}
-.img__wrapper > figure {
-  @apply mr-[1.875rem];
-}
-.img__wrapper > figure:first-of-type {
-  @apply ml-10;
+  @apply mx-10;
 }
 
 .img__active {
@@ -241,10 +234,20 @@
 .img__figure {
   @apply cursor-pointer;
   @apply relative inline-block;
+  @apply mr-3;
 }
+
+.img__figure:last-of-type {
+  @apply mr-0;
+}
+
 .img__figure__active {
   @apply cursor-pointer;
   @apply relative inline-block;
+  @apply mr-3;
+}
+.img__figure__active:last-of-type {
+  @apply mr-0;
 }
 
 /* ---------------------------텍스트 옆 원---------------------------------------------- */
