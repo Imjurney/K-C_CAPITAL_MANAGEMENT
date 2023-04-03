@@ -15,10 +15,7 @@
   @apply mobile:text-center;
   @apply mobile:px-2 mobile:pt-5 mobile:pb-10;
   @apply absolute mobile:top-3/4 desktop:top-1/2;
-  /* @apply laptop:text-3xl desktop:text-3xl;
-  @apply laptop:right-8 desktop:right-8;
-  @apply laptop:text-end desktop:text-end; */
-  /* @apply  laptop:top-1/2 */
+  @apply desktop:text-3xl desktop:right-8 desktop:text-end;
 }
 
 .figcaption > div {
