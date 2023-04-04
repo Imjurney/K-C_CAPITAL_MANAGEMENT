@@ -19,49 +19,39 @@ export function AboutusArticle() {
 
   return (
     <section
-      className={clsx(
-        'relative',
-        width.width > 359 && width.width < 720 && toggle
-          ? 'mobile:h-[33rem] mobile:pb-[3.75rem]'
-          : 'mobile:h-[48rem] mobile:pb-[3.75rem]',
-        width.width > 720 && toggle && 'mobile:h-[15em] mobile:pb-[3.75rem]',
-        width.width > 720 && !toggle && 'mobile:h-[21em] mobile:pb-[3.75rem]'
-      )} // ---> 720 size대가 어색해서 임의로 넣음.
+      className="relative" // ---> 720 size대가 어색해서 임의로 넣음.
     >
       <article
         className={clsx(
-          'shadow-contents_shadow desktop:leading-9 laptop:leading-9',
+          'shadow-contents_shadow desktop:leading-9',
           style.article,
           [
-            width.width > 720 && width.width < 1024 ? '-top-20' : ' -top-5',
-            toggle ? 'mobile:translate-y-20' : 'mobile:translate-y-20',
+            width.width >= 360 && width.width <= 800
+              ? 'mobile:mt-15'
+              : 'mobile:-mt-4',
           ]
         )}
       >
-        <p className="mobile:pb-3 laptop:pb-10 desktop:pb-8">
-          <strong className="mobile:text-xl text-3xl laptop:font-normal desktop:font-medium">
+        <p className="mobile:pb-3 desktop:pb-10">
+          <strong className="mobile:text-xl text-3xl desktop:font-normal">
             {`${data && data[0].article.article_strong}`}&nbsp;
           </strong>
           {data && data[0].article.article_1}
         </p>
-        <p className="mobile:pb-3 laptop:pb-10 desktop:pb-8">
+        <p className="mobile:pb-3 desktop:pb-10 ">
           {data && data[0].article.article_2}
         </p>
         <p
-          className={clsx('laptop:pb-10  desktop:pb-8', [
+          className={clsx('desktop:pb-10', [
             toggle ? 'mobile:hidden' : 'mobile:pb-3',
           ])}
         >
           {data && data[0].article.article_3}
         </p>
-        <p
-          className={
-            toggle ? 'mobile:hidden ' : 'mobile:pb-3 laptop:pb-10 desktop:pb-8'
-          }
-        >
+        <p className={toggle ? 'mobile:hidden' : 'mobile:pb-3'}>
           {data && data[0].article.article_4}
         </p>
-        {width.width < 1024 && (
+        {width.width < 981 && (
           <div className="flex justify-center py-3">
             <button
               aria-label="article toggle Button"

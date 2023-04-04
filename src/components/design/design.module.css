@@ -1,0 +1,125 @@
+/* ---------------------------first section----------------------------------------------- */
+.design__wrapper {
+  @apply bg-kc-bg_lightgray  relative inline-flex;
+  @apply desktop:items-center desktop:justify-center;
+  @apply desktop:mx-10 desktop:w-[59rem] desktop:h-[17.9375rem] desktop:rounded-[8.96875rem];
+  @apply desktop:gap-12;
+  @apply desktop:mt-[4.6875rem];
+  @apply mobile:gap-10;
+  @apply mobile:w-[11.1875rem] mobile:h-[24.375rem]  mobile:rounded-[1.875rem];
+  @apply mobile:flex mobile:flex-col mobile:justify-center mobile:items-center;
+  @apply mobile:m-0 mobile:mr-[8.0625rem];
+  @apply mobile:mt-9;
+}
+
+.button {
+  @apply z-30;
+  @apply rounded-[3.125rem] w-fit h-fit;
+  @apply desktop:py-4 desktop:px-6;
+  @apply mobile:py-2 mobile:px-3;
+  @apply mobile:text-xs desktop:text-lg;
+  @apply font-bold;
+  @apply mobile:w-[9.125rem];
+  @apply desktop:w-[14.375rem] text-center;
+}
+
+.button__red {
+  @apply bg-kc-red text-white;
+}
+
+.button__white {
+  @apply bg-white ring-2 ring-kc-red text-kc-red ring-inset;
+  @apply desktop:ring-[3px];
+}
+
+.button__gray {
+  @apply bg-white ring-2 desktop:ring-[3px] ring-inset;
+  @apply ring-kc-design_gray text-kc-design_gray;
+  @apply mobile:px-7;
+  @apply mobile:w-20 mobile:py-[0.625rem];
+}
+
+.button__wrapper {
+  @apply flex flex-col;
+}
+
+.description__wrapper {
+  @apply flex flex-col items-center;
+  @apply desktop:h-[6.75rem] desktop:mt-4;
+  @apply mobile:mt-2;
+  @apply mobile:text-xs desktop:text-lg;
+}
+
+/* ------------------------------position-------------------------------------------- */
+
+.first__arrow {
+  @apply desktop:top-[28%] desktop:left-[32.5%];
+  @apply mobile:top-1/3;
+}
+
+.forexit__arrow {
+  @apply desktop:top-[28%] desktop:right-[32%];
+  @apply mobile:-right-[52px] mobile:top-[47%];
+}
+
+.second__arrow {
+  @apply desktop:-bottom-[163px] desktop:right-[32%];
+  @apply mobile:bottom-14 mobile:right-[49.5%];
+}
+
+.exit__position {
+  @apply absolute;
+  @apply desktop:right-[8%] desktop:-bottom-[205px];
+  @apply mobile:-right-[90px] mobile:bottom-[89px];
+}
+
+/* -------------------------------second section------------------------------------------- */
+
+.second_design_wrapper {
+  @apply relative rounded-full border-kc-contact_border;
+  @apply mobile:w-[279px] mobile:h-[279px] mobile:border-[0.42px] mobile:mb-[4.0625rem];
+  @apply desktop:w-[752px] desktop:h-[752px] desktop:border desktop:mb-[5.25rem];
+}
+
+.inner__circle {
+  @apply rounded-full bg-white ring-kc-bg_lightgray;
+  @apply mobile:w-[117.08px] mobile:h-[117.08px] mobile:ring-[55px];
+  @apply desktop:w-[276px] desktop:h-[276px] desktop:ring-[123px];
+}
+
+.center__ring {
+  @apply bg-white rounded-full ring-kc-design_gray flex justify-center items-center;
+  @apply mobile:w-20 mobile:h-20 mobile:ring-[9px];
+  @apply desktop:w-[168px] desktop:h-[168px] desktop:ring-[17px];
+}
+
+.center__ring > span {
+  @apply text-center text-kc-design_gray font-bold;
+  @apply mobile:text-[10px] mobile:h-[3.75rem] mobile:w-[2.9375rem];
+  @apply desktop:text-lg desktop:h-[6.75rem] desktop:w-[5.3125rem];
+}
+
+/* ---------------------------- 4 circle---------------------------------------------- */
+
+.four__circle__common {
+  @apply rounded-full bg-kc-red absolute z-20;
+  @apply flex items-center justify-center;
+  @apply mobile:text-[10px] mobile:w-[5.375rem] mobile:h-[5.375rem];
+  @apply desktop:text-lg desktop:w-40 desktop:h-40;
+}
+
+.four__circle__common > span {
+  @apply h-fit text-center text-white font-bold;
+  @apply mobile:w-14 mobile:text-[10px];
+  @apply desktop:w-[6.375rem];
+}
+
+.line {
+  @apply border-[0.85px] border-kc-contact_border w-5 h-0 absolute z-10;
+  @apply desktop:border-2 desktop:w-[55px] desktop:h-0;
+}
+
+.four__arrow__circle {
+  @apply absolute z-20 w-1.5 h-1.5 rounded-full bg-kc-contact_border;
+  @apply desktop:w-4 desktop:h-4;
+}

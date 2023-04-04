@@ -221,7 +221,7 @@ function GridItems() {
   );
   return (
     <GridSectionWrapper>
-      {window.width < 1000 ? (
+      {window.width < 981 ? (
         <>
           <FirstGridSection
             data={data}
@@ -240,41 +240,42 @@ function GridItems() {
         </>
       ) : (
         <section className={style.img__wrapper}>
-          {data?.map((item, index) => {
-            return (
-              <>
-                <figure
-                  onClick={() => setNumber(item.id)}
-                  key={`other_service_image_${index}`}
-                  className={clsx(
-                    item.id === number
-                      ? style.img__figure__active
-                      : style.img__figure
-                  )}
-                >
-                  <img
-                    loading="lazy"
-                    className={clsx(
-                      item.id === number ? style.img__active : style.img
-                    )}
-                    src={`/assets/img/other/${item.path}`}
-                    alt={`image about "${item.subject}"`}
-                  />
-                  <figcaption
-                    id={`figcaption_${item.id}`}
+          <MaxWidthWrapperLayout>
+            <div className="flex justify-center gap-[1.875rem]">
+              {data?.map((item, index) => {
+                return (
+                  <figure
+                    onClick={() => setNumber(item.id)}
+                    key={`other_service_image_${index}`}
                     className={clsx(
                       item.id === number
-                        ? style.img__figcaption__active
-                        : style.img__figcaption
+                        ? style.img__figure__active
+                        : style.img__figure
                     )}
                   >
-                    <span id={item.id.toString()}>{item.subject}</span>
-                  </figcaption>
-                </figure>
-              </>
-            );
-          })}
-          <MaxWidthWrapperLayout>
+                    <img
+                      loading="lazy"
+                      className={clsx(
+                        item.id === number ? style.img__active : style.img
+                      )}
+                      src={`/assets/img/other/${item.path}`}
+                      alt={`image about "${item.subject}"`}
+                    />
+                    <figcaption
+                      id={`figcaption_${item.id}`}
+                      className={clsx(
+                        item.id === number
+                          ? style.img__figcaption__active
+                          : style.img__figcaption
+                      )}
+                    >
+                      <span id={item.id.toString()}>{item.subject}</span>
+                    </figcaption>
+                  </figure>
+                );
+              })}
+            </div>
+
             <section className={style.speech_bubble_wrapper}>
               {data
                 ?.filter((bubble) => bubble.id === number)

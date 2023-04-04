@@ -11,7 +11,7 @@ export function AboutusBanner() {
   useLayoutEffect(() => {
     const cxt = gsap.context(() => {
       const mm = gsap.matchMedia();
-      mm.add('(min-width: 1024px)', () => {
+      mm.add('(min-width: 981px)', () => {
         aside_animation(pRef, figureRef);
         aside_animation(pRef_second, figureRef);
       });

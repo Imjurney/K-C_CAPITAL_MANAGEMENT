@@ -8,8 +8,6 @@
   @apply mobile:p-5;
   @apply mobile:text-sm mobile:leading-none;
   @apply leading-loose;
-  @apply desktop:ml-10 desktop:mr-10;
-  @apply w-[59rem];
   @apply relative bg-kc-bg_lightgray border-t-[3px] border-t-kc-red;
   @apply mobile:w-[360px];
 }
@@ -40,7 +38,7 @@
   @apply mobile:p-5;
   @apply mobile:text-sm mobile:leading-none;
   @apply leading-loose;
-  @apply desktop:mx-10 desktop:w-[59rem];
+  /* @apply desktop:w-[59rem]; */
   @apply relative bg-kc-bg_lightgray border-t-[3px] border-t-kc-red;
 }
 
@@ -67,7 +65,7 @@
   @apply mobile:p-5;
   @apply mobile:text-sm mobile:leading-none;
   @apply leading-loose;
-  @apply desktop:mx-10 desktop:w-[59rem];
+  /* @apply desktop:w-[59rem]; */
   @apply relative bg-kc-bg_lightgray border-t-[3px] border-t-kc-red;
 }
 
@@ -94,7 +92,7 @@
   @apply mobile:p-5;
   @apply mobile:text-sm mobile:leading-none;
   @apply leading-loose;
-  @apply desktop:mx-10 desktop:w-[59rem];
+  /* @apply desktop:w-[59rem]; */
   @apply relative bg-kc-bg_lightgray border-t-[3px] border-t-kc-red;
 }
 
@@ -198,7 +196,7 @@
 /* -----------------------------텍스트 스타일--------------------------------------------- */
 
 .p_contents {
-  @apply desktop:text-base  desktop:font-normal;
+  @apply desktop:text-base desktop:font-normal;
   @apply desktop:leading-loose desktop:ml-[4.3125rem];
 }
 .p_contents:last-of-type {
@@ -211,12 +209,7 @@
 /* -------------------------------image layout------------------------------------------- */
 .img__wrapper {
   @apply desktop:pt-[3.75rem];
-}
-.img__wrapper > figure {
-  @apply mr-[1.875rem];
-}
-.img__wrapper > figure:first-of-type {
-  @apply ml-10;
+  @apply mx-10;
 }
 
 .img__active {
@@ -242,6 +235,7 @@
   @apply cursor-pointer;
   @apply relative inline-block;
 }
+
 .img__figure__active {
   @apply cursor-pointer;
   @apply relative inline-block;

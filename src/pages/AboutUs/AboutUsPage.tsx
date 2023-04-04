@@ -2,7 +2,7 @@ import { Footer } from '@/components/Footer/Footer';
 import { Header } from '@/components/Header/Header';
 import { TitleContent } from '@/components/TitleContent/TitleContent';
 import AboutUsStyle from '@/pages/AboutUs/AboutUsPage.module.css';
-import { ReactNode, useEffect } from 'react';
+import { ReactNode } from 'react';
 import { CareerSection } from '@/components/CareerSection/CareerSection';
 import { AboutusBanner } from '@/components/AboutusBanner/AboutusBanner';
 import { AboutusArticle } from '@/components/AboutusArticle/AboutusArticle';
@@ -23,7 +23,7 @@ function TopSection({ children }: AboutusProps) {
 
 function BottomSection({ children }: AboutusProps) {
   return (
-    <section className="pt-14 flex flex-col gap-7 mobile:pb-10  desktop:pt-[23.5625rem] bg-white">
+    <section className="pt-24 flex flex-col gap-7 mobile:pb-10  desktop:pt-[23.5625rem] bg-white">
       {children}
     </section>
   );

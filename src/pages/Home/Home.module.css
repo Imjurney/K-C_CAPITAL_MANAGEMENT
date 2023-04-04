@@ -1,5 +1,5 @@
 .title_wrapper {
-  @apply desktop:pt-20 desktop:pb-[22.625rem];
+  @apply desktop:pt-[7.5rem] desktop:pb-[22rem];
   /* @apply laptop:pt-20 laptop:pb-[22.625rem]; */
   @apply mobile:pt-[3.75rem] mobile:mb-8;
   @apply bg-white;
@@ -39,10 +39,8 @@
 
 .slide {
   @apply desktop:w-full;
-  /* @apply laptop:w-full; */
   @apply text-base font-semibold;
   @apply mobile:w-[11rem] mobile:absolute mobile:bottom-[1.875rem] mobile:left-[1.875rem];
-  /* @apply laptop:bottom-7 laptop:left-7 laptop:absolute; */
   @apply desktop:bottom-7 desktop:left-7 desktop:absolute;
 }
 
@@ -74,7 +72,7 @@
   @apply mobile:pb-[2.375rem];
   @apply grid-flow-row-dense gap-5 grid-cols-2;
   @apply desktop:overflow-hidden;
-  @apply desktop:mx-5 desktop:mt-[9.375rem] desktop:mb-[6.25rem];
+  @apply desktop:mx-5 desktop:mt-[9.375rem];
 }
 
 .slide__grid__wrapper > div {
@@ -118,11 +116,10 @@
 
 .comment_p {
   @apply text-kc-article_gray66 leading-normal;
-  @apply mobile:flex mobile:my-8 mobile:flex-col mobile:mx-12 mobile:text-start;
-  /* @apply laptop:absolute desktop:absolute;
-  @apply laptop:left-1/2 desktop:left-1/2 laptop:top-1/3  laptop:text-xl; desktop:top-1/3; laptop:inline-block  */
-  @apply whitespace-pre-line desktop:inline-block text-start;
-  @apply desktop:text-2xl;
+  @apply mobile:flex mobile:my-7 mobile:w-fit mobile:flex-col mobile:mx-auto mobile:text-start;
+  @apply desktop:absolute;
+  @apply desktop:right-6 desktop:top-1/4 desktop:text-xl desktop:block;
+  @apply whitespace-pre-line text-start;
 }
 
 .comment_p > span:first-child {
@@ -133,15 +130,13 @@
 
 .aside {
   @apply bg-black flex justify-between left-1/2 -translate-x-1/2 -top-8 m-0 ml-auto mr-auto items-center pl-14 text-white text-2xl font-bold;
-  @apply desktop:w-[75.0625rem] mobile:hidden;
-  /*  laptop:w-[90%]  */
+  @apply desktop:w-[61.5rem] mobile:hidden;
 }
 
 .article {
   @apply pt-28 mobile:pt-7 flex flex-col items-center justify-between;
   @apply desktop:bg-kc-article_bg;
   @apply mobile:bg-white;
-  /* @apply laptop:bg-kc-article_bg; */
 }
 
 .article > ul {
@@ -152,7 +147,6 @@
 }
 .article > ul > li {
   @apply flex flex-col items-center gap-5 desktop:mt-[3.75rem];
-  /* @apply laptop:mt-[3.75rem]; */
   @apply mobile:bg-kc-article_bg;
   @apply mobile:py-5 mobile:px-2;
   @apply mobile:rounded-3xl mobile:justify-center;
@@ -161,7 +155,6 @@
 .figure__icon {
   @apply flex justify-center items-center rounded-full bg-white;
   @apply desktop:w-20 desktop:h-20;
-  /* @apply laptop:w-20  laptop:h-20; */
   @apply mobile:w-10 mobile:h-10;
 }
 

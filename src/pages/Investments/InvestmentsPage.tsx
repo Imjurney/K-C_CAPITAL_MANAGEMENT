@@ -16,8 +16,10 @@ import MaxWidthWrapperLayout from '@/components/Layout/MaxWidthWrapperLayout';
 function InvestmentIntroduceSection() {
   return (
     <section className="pt-[7.5rem] mobile:pt-[3.75rem] bg-white">
-      <TitleContent content="INVESTMENTS" />
-      <p className="pt-[3.75rem] mobile:pt-[1.875rem] laptop:px-10 desktop:px-[10.5rem] mobile:px-5 leading-loose">
+      <div className="mb-[3.75rem] mobile:mb-[1.875rem]">
+        <TitleContent content="INVESTMENTS" />
+      </div>
+      <p className="pb-[3.75rem] bg-white mobile:pt-[1.875rem] desktop:px-10 mobile:px-5 leading-loose">
         <strong className="text-3xl mobile:text-base font-normal">
           {investData[0].contents_1_strong}
         </strong>
@@ -34,7 +36,7 @@ const ResidentalSection = forwardRef((_, ref: ForwardedRef<HTMLElement>) => {
   return (
     <section ref={ref} className="pt-[12.5rem] mobile:pt-[3.75rem] bg-white">
       <TitleContent content="RESIDENTIAL PROPETY DEVELOPMENTS" />
-      <article className="mobile:px-5 font-normal mobile:pt-8 mobile:pb-7 pb-14 mobile:text-sm  desktop:text-lg pt-[3.75rem] desktop:px-[8.875rem]">
+      <article className="mobile:px-5 font-normal mobile:pt-8 mobile:pb-7 pb-14 mobile:text-sm  desktop:text-lg pt-[3.75rem] desktop:px-8">
         <p className="leading-loose">{investData[1].contents_2}</p>
       </article>
       <CarouselOpacity slides={SLIDES} options={OPTIONS} />
@@ -62,17 +64,17 @@ function SubLogoSection() {
   return (
     <aside className="bg-kc-article_bg flex mobile:flex-col mobile:gap-3.5 items-center mobile:py-7 py-[5.625rem] gap-[6.25rem] justify-center">
       <img
-        width={window.width > 1023 ? 207 : 120}
+        width={window.width > 981 ? 207 : 120}
         src="/assets/img/investments/sub_logo.png"
         alt="K&C Sub Logo"
       />
       <img
-        width={window.width > 1023 ? 207 : 120}
+        width={window.width > 981 ? 207 : 120}
         src="/assets/img/investments/sub_logo.png"
         alt="K&C Sub Logo"
       />
       <img
-        width={window.width > 1023 ? 207 : 120}
+        width={window.width > 981 ? 207 : 120}
         src="/assets/img/investments/sub_logo.png"
         alt="K&C Sub Logo"
       />

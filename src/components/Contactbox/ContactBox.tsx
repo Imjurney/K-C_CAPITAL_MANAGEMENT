@@ -3,7 +3,7 @@ import { useCallback, useEffect, useState } from 'react';
 import {
   MdOutlinePhoneInTalk as Tel,
   MdOutlineApartment as Address,
-  MdOutlinePrint as Fax,
+  // MdOutlinePrint as Fax,
 } from 'react-icons/md';
 import { debounce } from 'lodash';
 import ContactPage from '@/pages/Contact/ContactPage.module.css';
@@ -36,7 +36,7 @@ export function ContactBox() {
           <IconContext.Provider
             value={{
               className: 'fill-kc-red inline',
-              size: windowSize.width >= 1024 ? 26 : 20,
+              size: windowSize.width >= 981 ? 26 : 20,
             }}
           >
             <li className={ContactPage.li}>
@@ -56,7 +56,9 @@ export function ContactBox() {
                 <span>
                   <Tel />
                 </span>
-                <span className="text-kc-red gap-4 desktop:text-xl">TEL</span>
+                <span className="text-kc-red gap-4 desktop:text-xl">
+                  TEL&nbsp;1
+                </span>
               </div>
               <span className={ContactPage.span}>+64 27 2229980</span>
             </li>
@@ -64,9 +66,11 @@ export function ContactBox() {
             <li className={ContactPage.li}>
               <div className={clsx(ContactPage.div, 'mr-9')}>
                 <span>
-                  <Fax />
+                  <Tel />
                 </span>
-                <span className="text-kc-red gap-4 desktop:text-xl">FAX</span>
+                <span className="text-kc-red gap-4 desktop:text-xl">
+                  TEL&nbsp;2
+                </span>
               </div>
               <span className={ContactPage.span}>+64 27 3159618</span>
             </li>
