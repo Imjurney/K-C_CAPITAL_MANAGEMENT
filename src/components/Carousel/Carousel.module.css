@@ -5,17 +5,16 @@
   @apply mobile:px-7 mobile:pb-5;
   @apply mobile:rounded-[1.25rem];
   @apply mobile:bg-white;
+  @apply desktop:ml-10;
 }
 
 .carouselWide__card__icon {
   @apply flex items-center justify-center bg-kc-red;
   @apply mobile:w-10 mobile:h-10;
   @apply mobile:rounded-[0.25rem];
-
-  @apply desktop:w-20 desktop:h-20;
+  @apply desktop:p-4;
   @apply desktop:flex desktop:items-center desktop:justify-center desktop:rounded-[0.625rem];
 }
-
 .carouselWide__card__dt {
   @apply flex desktop:items-center;
   @apply mobile:gap-[0.625rem] desktop:gap-5;
@@ -24,8 +23,7 @@
 
 .carouselWide__card__figcaption {
   @apply mobile:text-base;
-
-  @apply desktop:text-4xl;
+  @apply desktop:text-3xl;
   @apply font-medium;
   @apply self-center;
 }
@@ -70,7 +68,7 @@
   @apply scale-110 duration-300 ease-in-out;
 }
 
-@media screen and (max-width: 1279px) {
+@media screen and (max-width: 980px) {
   .embla {
     --slide-spacing: 1rem;
     --slide-size: 80%;
@@ -79,7 +77,7 @@
   }
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 981px) {
   .embla {
     --slide-spacing: 4rem;
     --slide-size: 80%;
@@ -87,6 +85,7 @@
     padding: 1.6rem;
   }
 }
+
 .embla__viewport {
   overflow: hidden;
   /* @apply bg-black; */
@@ -108,6 +107,6 @@
   height: var(--slide-height);
   width: 100%;
   object-fit: cover;
-  @apply mobile:w-[275px];
-  @apply mobile:h-[183px];
+  @apply mobile:w-full;
+  @apply mobile:h-auto;
 }

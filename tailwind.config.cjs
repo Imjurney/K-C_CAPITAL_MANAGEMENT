@@ -12,6 +12,7 @@ const BRANDCOLOR = {
   contents_dark: '#1A1A1A',
   content_darkgray: '#7D8695',
   outline_gray: '#D9D9D9',
+  design_gray: '#616161',
 };
 module.exports = {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],

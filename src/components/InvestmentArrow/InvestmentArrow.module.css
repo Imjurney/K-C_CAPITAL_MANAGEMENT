@@ -1,32 +1,39 @@
 .arrow__body {
-  @apply w-[3.3125rem] border-t border-l relative border-kc-contact_border;
+  @apply w-[3.3125rem] border-t-[3px] border-l-[3px] relative border-kc-contact_border;
   @apply mobile:h-[1.6875rem] mobile:w-0;
+  @apply mobile:border-t-[1.05px] mobile:border-l-[1.05px];
 }
 .arrow__body::after {
-  @apply absolute content-[''] top-0 left-0 w-2 h-2 border-t border-r border-kc-contact_border;
-  @apply top-0 left-1/2 -translate-x-1/2 -translate-y-[55%];
+  @apply absolute content-[''] top-0 left-0 w-3 h-3 border-t-[2.5px] border-r-[2.5px] border-kc-contact_border;
+  @apply top-0 left-1/2 -translate-x-1/2 -translate-y-[60%];
   @apply rotate-45;
   @apply mobile:rotate-[135deg] mobile:w-1 mobile:h-1 mobile:-translate-x-[60%];
   @apply mobile:translate-y-[1.3875rem];
+  @apply mobile:border-t-[1.05px] mobile:border-r-[1.05px];
 }
 
 .arrow__body__bifurcation {
-  @apply w-[3.3125rem] border-t border-l relative border-kc-contact_border;
+  @apply w-[3.5rem] border-t-[3px] border-l-[3px] relative border-kc-contact_border;
   @apply mobile:w-[4.3125rem];
+  @apply mobile:border-t-[1.05px] mobile:border-l-[1.05px];
 }
 
 .arrow__body__bifurcation::after {
   @apply absolute content-[''];
-  @apply top-0 left-0 w-2 h-2 border-t border-r border-kc-contact_border;
-  @apply top-1/2 left-1/2 -translate-x-1/2 -translate-y-[55%];
+  @apply top-0 left-0 w-3 h-3 border-t-[3px] border-r-[3px] border-kc-contact_border;
+  @apply desktop:top-1/2 desktop:left-1/2 desktop:-translate-x-1/2 desktop:-translate-y-[60%];
   @apply rotate-45;
   @apply mobile:rotate-[135deg] mobile:w-1 mobile:h-1;
-  @apply mobile:translate-y-[4.125rem] mobile:right-0;
+  @apply mobile:translate-x-[65.5px] mobile:translate-y-[62px];
+  @apply mobile:border-t-[1.05px] mobile:border-r-[1.05px];
 }
 
 .arrow__body__bifurcation::before {
-  @apply absolute content-[''] h-[16.3125rem] border-l border-kc-contact_border;
-  /* @apply laptop:top-0 laptop:-left-[0.0625rem]; */
-  @apply desktop:top-0 desktop:-left-[0.0625rem];
+  @apply absolute content-[''] h-[16.3125rem] border-l-[3px] border-kc-contact_border;
+  @apply desktop:top-0 desktop:-left-[3px];
   @apply mobile:h-[4.125rem] mobile:right-0;
+  @apply mobile:border-l-[1.05px];
+}
+.arrow__wrapper {
+  @apply h-[108px] absolute;
 }

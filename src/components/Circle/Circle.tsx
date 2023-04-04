@@ -3,7 +3,7 @@ import LogoImage from '@/assets/Logo_white.svg';
 import { VariationIcon } from '@/data/icon/icon';
 import { useRef, useState } from 'react';
 import clsx from 'clsx';
-import { EmblaCarouselType } from 'embla-carousel-react';
+// import { EmblaCarouselType } from 'embla-carousel-react';
 import { CarouselWideSlideCardGroup } from '@/components/Carousel/CarouselWide';
 
 function BackgroundCircleDesign() {

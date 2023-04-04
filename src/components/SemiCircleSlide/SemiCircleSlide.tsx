@@ -138,11 +138,10 @@ function SemiCircleSlide({ onclick, onclick_2, onclick_3 }: Props) {
             </figcaption>
           </figure>
         </div>
-        {/* laptop:top-[35%] laptop:left-[30%] */}
+
         <button
           type="button"
           className="-rotate-[30deg] absolute
-
     desktop:top-[35%] desktop:left-[30%]"
           ref={goToLeftRef}
         >
@@ -211,10 +210,11 @@ function SlideMobileCard({
 
 function SemiCircleSlideMobile() {
   const [activeItemIndex, setActiveItemIndex] = useState(0);
+  const [width] = useInnerWidthState();
   const chevronWidth = 60;
   return (
     <>
-      <div className="bg-kc-bg_lightgray self-center pt-[2.375rem] pb-5">
+      <div className="bg-kc-bg_lightgray mx-auto m-0 self-center pt-[2.375rem] pb-5">
         <ItemsCarousel
           requestToChangeActive={setActiveItemIndex}
           activeItemIndex={activeItemIndex}
@@ -232,7 +232,7 @@ function SemiCircleSlideMobile() {
               <BsArrowRightCircle color="#CBD2DC" size={40} />
             </button>
           }
-          chevronWidth={chevronWidth}
+          chevronWidth={width.width >= 500 ? 200 : chevronWidth}
         >
           <SlideMobileCard
             icon={InvestmentIcons[0]}
@@ -247,7 +247,7 @@ function SemiCircleSlideMobile() {
           <SlideMobileCard />
         </ItemsCarousel>
       </div>
-      <p className="text-kc-article_gray66 flex flex-col px-5 bg-white">
+      <p className="text-kc-article_gray66 flex flex-col px-5 bg-kc-bg_lightgray pb-[5.9375rem] items-center">
         <span className="text-black">New residential property development</span>
         <span>
           with general house & Land packages in low-mid density zones in NZ.
@@ -265,7 +265,7 @@ export default function InvestmentsTopSlide({
   const [window] = useInnerWidthState();
   return (
     <>
-      {window.width >= 1024 ? (
+      {window.width >= 981 ? (
         <SemiCircleSlide
           onclick={onclick}
           onclick_2={onclick_2}

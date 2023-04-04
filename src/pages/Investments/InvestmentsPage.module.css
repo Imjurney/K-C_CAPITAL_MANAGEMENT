@@ -15,7 +15,7 @@
 .investment_section > article {
   @apply mobile:text-sm mobile:px-5 mobile:pt-7 mobile:pb-10 font-normal;
   @apply desktop:text-lg desktop:leading-loose;
-  @apply desktop:px-64;
+  @apply desktop:px-8;
   @apply desktop:pt-[1.4375rem];
   @apply desktop:pb-[5.25rem];
 }
