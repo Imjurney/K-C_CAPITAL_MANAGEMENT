@@ -1,3 +1,4 @@
+/* ---------------------------first section----------------------------------------------- */
 .design__wrapper {
   @apply bg-kc-bg_lightgray  relative inline-flex;
   @apply desktop:items-center desktop:justify-center;
@@ -70,4 +71,55 @@
   @apply absolute;
   @apply desktop:right-[8%] desktop:-bottom-[205px];
   @apply mobile:-right-[90px] mobile:bottom-[89px];
+}
+
+/* -------------------------------second section------------------------------------------- */
+
+.second_design_wrapper {
+  @apply relative rounded-full border-kc-contact_border;
+  @apply mobile:w-[279px] mobile:h-[279px] mobile:border-[0.42px] mobile:mb-[4.0625rem];
+  @apply desktop:w-[752px] desktop:h-[752px] desktop:border desktop:mb-[5.25rem];
+}
+
+.inner__circle {
+  @apply rounded-full bg-white ring-kc-bg_lightgray;
+  @apply mobile:w-[117.08px] mobile:h-[117.08px] mobile:ring-[55px];
+  @apply desktop:w-[276px] desktop:h-[276px] desktop:ring-[123px];
+}
+
+.center__ring {
+  @apply bg-white rounded-full ring-kc-design_gray flex justify-center items-center;
+  @apply mobile:w-20 mobile:h-20 mobile:ring-[9px];
+  @apply desktop:w-[168px] desktop:h-[168px] desktop:ring-[17px];
+}
+
+.center__ring > span {
+  @apply text-center text-kc-design_gray font-bold;
+  @apply mobile:text-[10px] mobile:h-[3.75rem] mobile:w-[2.9375rem];
+  @apply desktop:text-lg desktop:h-[6.75rem] desktop:w-[5.3125rem];
+}
+
+/* ---------------------------- 4 circle---------------------------------------------- */
+
+.four__circle__common {
+  @apply rounded-full bg-kc-red absolute z-20;
+  @apply flex items-center justify-center;
+  @apply mobile:text-[10px] mobile:w-[5.375rem] mobile:h-[5.375rem];
+  @apply desktop:text-lg desktop:w-40 desktop:h-40;
+}
+
+.four__circle__common > span {
+  @apply h-fit text-center text-white font-bold;
+  @apply mobile:w-14 mobile:text-[10px];
+  @apply desktop:w-[6.375rem];
+}
+
+.line {
+  @apply border-[0.85px] border-kc-contact_border w-5 h-0 absolute z-10;
+  @apply desktop:border-2 desktop:w-[55px] desktop:h-0;
+}
+
+.four__arrow__circle {
+  @apply absolute z-20 w-1.5 h-1.5 rounded-full bg-kc-contact_border;
+  @apply desktop:w-4 desktop:h-4;
 }

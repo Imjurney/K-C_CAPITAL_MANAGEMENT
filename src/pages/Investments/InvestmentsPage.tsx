@@ -16,8 +16,10 @@ import MaxWidthWrapperLayout from '@/components/Layout/MaxWidthWrapperLayout';
 function InvestmentIntroduceSection() {
   return (
     <section className="pt-[7.5rem] mobile:pt-[3.75rem] bg-white">
-      <TitleContent content="INVESTMENTS" />
-      <p className="pt-[3.75rem] mobile:pt-[1.875rem] desktop:px-10 mobile:px-5 leading-loose">
+      <div className="mb-[3.75rem] mobile:mb-[1.875rem]">
+        <TitleContent content="INVESTMENTS" />
+      </div>
+      <p className="pb-[3.75rem] bg-white mobile:pt-[1.875rem] desktop:px-10 mobile:px-5 leading-loose">
         <strong className="text-3xl mobile:text-base font-normal">
           {investData[0].contents_1_strong}
         </strong>
