@@ -12,6 +12,7 @@ dist
 dist-ssr
 *.local
 server/*
+.husky/*
 
 # Editor directories and files
 .eslintcache
@@ -24,6 +25,6 @@ server/*
 *.njsproj
 *.sln
 *.sw?
-.husky
+
 
 
