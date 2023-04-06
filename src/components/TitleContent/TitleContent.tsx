@@ -22,11 +22,11 @@ export function TitleContent({
   const handleReduceWords = useCallback(
     debounce(() => {
       if (h2Ref.current?.textContent?.match('OTHER SERVICES')) {
-        if (document.body.getBoundingClientRect().width < 981) {
-          h2Ref.current.textContent = 'OTHER SERVICES';
-        } else {
+        if (window.innerWidth >= 981) {
           h2Ref.current.textContent =
             'OTHER SERVICES WE PROVIDE TO OUR INVESTORS';
+        } else {
+          h2Ref.current.textContent = 'OTHER SERVICES';
         }
       }
     }, 100),
@@ -35,8 +35,7 @@ export function TitleContent({
 
   useEffect(() => {
     if (h2Ref.current?.textContent?.match('OTHER SERVICES'))
-      h2Ref.current.textContent = 'OTHER SERVICES';
-    window.addEventListener('resize', handleReduceWords);
+      window.addEventListener('resize', handleReduceWords);
     return () => window.removeEventListener('resize', handleReduceWords);
   }, []);
   return (
