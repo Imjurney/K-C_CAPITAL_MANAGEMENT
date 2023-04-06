@@ -55,6 +55,7 @@ export function RHForm<FormType extends object>({
     </FormProvider>
   );
 }
+
 function ContactForm() {
   const onSubmitHandler: SubmitHandler<FieldValues> = useCallback((data) => {
     axios
