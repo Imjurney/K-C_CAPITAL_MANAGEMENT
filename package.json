@@ -26,6 +26,7 @@
     "react-icons": "4.7.1",
     "react-items-carousel": "2.8.0",
     "react-router-dom": "6.9.0",
+    "cors": "2.8.5",
     "recoil": "0.7.7"
   },
   "devDependencies": {
@@ -58,7 +59,6 @@
     "babel-loader": "8.3.0",
     "chromatic": "6.17.1",
     "clsx": "1.2.1",
-    "cors": "2.8.5",
     "embla-carousel-class-names": "7.0.9",
     "embla-carousel-react": "7.0.9",
     "embla-carousel-wheel-gestures": "3.0.0",
