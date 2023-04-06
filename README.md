@@ -1,5 +1,5 @@
 # K-C_CAPITAL_MANAGEMENT
-K&amp;C CAPITAL MANAGEMENT  웹 페이지 제작
+K&amp;C CAPITAL MANAGEMENT  웹 페이지 제작 <br>
 [회사 홈페이지 링크](http://knccapital.co.nz/) <br>
 [메일 보내기 기능 관련(with firebase) 레파지토리 링크](https://github.com/Imjurney/SendEMail)
 ## 제작 기간
