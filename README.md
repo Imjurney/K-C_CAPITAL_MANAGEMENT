@@ -1,6 +1,7 @@
 # K-C_CAPITAL_MANAGEMENT
 K&amp;C CAPITAL MANAGEMENT  웹 페이지 제작
-
+[회사 홈페이지 링크]: http://knccapital.co.nz/
+[메일 보내기 기능 관련(with firebase) 레파지토리 링크]: https://github.com/Imjurney/SendEMail
 ## 제작 기간
 2023년 3월 22일 ~ 2023년 4월 5일
 
@@ -44,7 +45,7 @@ K&amp;C CAPITAL MANAGEMENT  웹 페이지 제작
 
 ## KeyPoint
 1. 뉴질랜드 현지 인터넷 상황을 고려해 `vite` 툴체인 선택 및 3g 환경에서 개발을 진행하였습니다.
-2. css in css인 `tailwindcss`를 사용해 성능 향상을 도모했습니다.
+2. css in css인 `tailwindcss`를 사용해 반응형을 대응 및 성능 향상을 도모했습니다.
 3. `embla-carousel-react`, `react-items-carousel` 등 무겁지 않은 슬라이드 라이브러리를
    사용했습니다.
 4. 클라이언트 요청으로 어드민 계정 개발 및 DB설계는 하지 않았습니다. 그래서 변경될 여지가 
