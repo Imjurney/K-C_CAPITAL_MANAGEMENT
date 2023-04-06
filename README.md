@@ -43,7 +43,7 @@ K&amp;C CAPITAL MANAGEMENT  웹 페이지 제작
 
 
 ## KeyPoint
-1. 뉴질랜드 현지 인터넷 상황을 고려해 vite 툴체인 선택 및 3g 환경에서 개발을 진행하였습니다.
+1. 뉴질랜드 현지 인터넷 상황을 고려해 `vite` 툴체인 선택 및 3g 환경에서 개발을 진행하였습니다.
 2. css in css인 `tailwindcss`를 사용해 성능 향상을 도모했습니다.
 3. `embla-carousel-react`, `react-items-carousel` 등 무겁지 않은 슬라이드 라이브러리를
    사용했습니다.
@@ -52,3 +52,5 @@ K&amp;C CAPITAL MANAGEMENT  웹 페이지 제작
 5. 마이크로 애니메이션을 기업 문화에 해가 되지 않는 선에서 제작했습니다.
 6. 기존 서버가 존재(hostpapa)하였으나 `node.js`로 서버를 배포하려면 추가요금을 내야해서 `firebase cloud functions` 기능을 활용하여 http 요청이 있을때만 호출되도록 제작했습니다.
 7. 배포방식은 `FTP` 형태이며 직접 빌드된 파일을 `hostpapa` 서버에 접속해 배포를 진행했습니다.
+8. `storybook`을 사용해 UI 테스트를 진행 `chromatic`으로 정적배포 후 클라이언트에게 
+   제공하여 소통을 진행했습니다.
